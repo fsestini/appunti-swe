@@ -23,98 +23,11 @@
 \maketitle
 \tableofcontents
 
-\section{Introduzione}
-\subsection{Ingegneria del Software}
-L'Ingegneria è l'applicazione di principi matematici e fisici per fini pratici. Tali fini sono spesso di interesse sociale e civile, non solo legati a prodotti di consumo. L'\strong{\gls{Ingegneria del Software}} è l'approccio sistematico, disciplinato e quantificabile allo sviluppo, il mantenimento e il ritiro del software. È sistematico e disciplinato in quanto fatto secondo un piano prefissato o un insieme di regole in modo metodico e standardizzato. È quantificabile perchè si vuole che il costo di un processo, in termini di tempo e denaro in particolare, sia noto a priori.
-
-L'ingegnere del software segue una \frgnword{\gls{best practice}}, un metodo di lavoro che l'esperienza e lo studio hanno provato avere i migliori risultati in circostanze specifiche e ben note.
-
-L'Ingegneria del Software è strettamente correlata alle seguenti discipline:
-\begin{itemize}
-	\item Informatica: l'Ingegneria del Software non è una branca dell'Informatica, ma una disciplina ingegneristica che si appoggia in parte su essa;
-	\item Matematica: analisi numerica, matematica discreta, ricerca operativa, statistica, ecc.;
-	\item Economia e management;
-	\item Psicologia e sociologia;
-\end{itemize}
-
-L'ingegnere del software deve assicurare la qualità del prodotto richiesta dai requisiti, massimizzando l'\strong{\gls{efficacia}} dei processi, contenendo i costi e i tempi di produzione e minimizzando l'uso di risorse, massimizzandone quindi l'\strong{\gls{efficienza}}. I valori di efficienza ed efficacia sono inversamente proporzionali: la migliore soluzione al problema (tipicamente ve n'è più di una) tenderà ad avere valori ottimi per entrambi.
-
-Vi sono più tipi di prodotti software: prodotti generici, \frgnword{stand-alone}, prodotti da aziende di sviluppo software e messi apertamente sul mercato, e prodotti specifici, commissionati da un particolare cliente.
-
-Ogni prodotto software ha un \strong{\gls{ciclo di vita}}, che rappresenta tutti gli stati assunti dal prodotto dal concepimento al ritiro. Durante il loro ciclo di vita, molti sistemi software sono soggetti a varie forme di \strong{manutenzione}, che può essere di tre tipi: \todo{Aggiungere voce glossario per manutenzione}
-
-\begin{itemize}
-	\item Correttiva: corregge eventuali difetti riscontrati;
-	\item Adattiva: modifica il software per riflettere eventuali richieste del cliente o variazioni nel mercato;
-	\item Evolutiva: aggiunge nuove funzionalità al sistema;
-\end{itemize}
-
-La mantenibilità è una qualità essenziale del software.
-
-\subsection{Il \frgnword{software engineer}}
-L'ingegnere del software implementa parti di un sistema complesso conscio del fatto che altre persone potranno in futuro usarlo, completarlo o modificarlo. È necessario per lui comprendere il contesto in cui è posto il sistema che contribuisce a sviluppare.
-
-L'ingegnere del software è guidato da alcuni principi etici:
-\begin{itemize}
-	\item Considerare la qualità come obbiettivo primario;
-	\item Aiutare il cliente a comprendere ciò di cui ha veramente bisogno;
-	\item Scegliere i processi più adatti al progetto;
-	\item Ridurre la distanza intellettuale tra il software e il problema da risolvere;
-	\item Essere proattivo nella ricerca degli errori;
-	\item Motivare, formare e far crescere professionalmente le persone;
-\end{itemize}
-
-% L'evoluzione tecnica e tecnologica può essere d'aiuto nell'affrontare problematiche accidentali, ma non può evitare di scontrarsi con problemi essenziali (vedi \emph{No Silver Bullet -- Essence and Accidents of Software Engineering, Brooks})
-
-\subsection{Le persone}
-\todo{Fare}
-
-\subsection{Il progetto}
-Un progetto software è permeato dal principio `\frgnword{by construction}' più che da quello `\frgnword{by correction}': il prodotto è creato sapendo fin dall'inizio che funzionerà.
-\todo{Manca una vera e propria definizione di `progetto'}
-
-Un progetto è una serie di passi precisi:
-\begin{itemize}
-	\item Pianificazione: pianificare ciò che deve essere fatto, organizzare e controllare il tempo a disposizione, le risorse e i risultati;
-	\item Analisi dei requisiti: comprendere il problema e definire cosa bisogna fare per risolverlo, e quali risorse sono necessarie;
-	\item Progettazione: definire in forma concreta la soluzione, e come raggiungerla;
-	\item Realizzazione: arrivare alla soluzione con il massimo valore di efficienza ed efficacia, aderendo pienamente ai requisiti;
-	\item Verifica e validazione: garantire che ciò che si è fatto soddisfa i requisiti e non contiene difetti;
-	\item Manutenzione: assicurare la piena usabilità del software fino al suo ritiro;
-\end{itemize}
-
-%\subsection{Il processo}
-%\section{Processi software}
-%\subsection{Processi, modelli, progetti}
-%\subsection{Principio di miglioramento continuo}
-%\section{Ciclo di vita del software}
-%\subsection{Modelli di ciclo di vita}
-%\subsubsection{Modello sequenziale (%\frgnword{Waterfall model})}
-%\subsubsection{Modello iterativo}
-%\subsubsection{Modello incrementale}
-%\subsubsection{Modello evolutivo}
-%\subsubsection{Modello a spirale}
-%\subsubsection{Modello a componenti}
-%\subsubsection{Modelli agili}
-%\subsection{Standard di processo}
-%\subsubsection{ISO/IEC 12207:1995}
-%\section{Gestione di progetto}
-%\subsection{Gestione dei rischi}
-%\subsection{Ruoli}
-%\subsubsection{Analisti e progettisti}
-%\subsubsection{Programmatori e verificatori}
-%\subsubsection{Responsabile di progetto}
-%\subsubsection{Amministratore}
-%\subsection{Pianificazione di progetto}
-%\subsubsection{Project scheduling}
-%\subsubsection{Allocazione delle risorse}
-%\subsubsection{Stima dei costi di progetto}
-%\subsection{Piano di progetto}
-%\section{Amministrazione di progetto}
-%\subsection{Documentazione}
-%\subsection{Ambiente di lavoro}
-%\subsubsection{infrastruttura}
-%\subsection{Gestione di configurazione}
+\include{sections/introduzione}
+\include{sections/processi_software}
+\include{sections/ciclo_vita}
+\include{sections/gestione_progetto}
+\include{sections/amministrazione_progetto}
 
 \printglossaries
 
