@@ -6,7 +6,25 @@ Stati e transizioni hanno precise pre- e postcondizioni, determinate da vincoli,
 \subsection{Modelli di ciclo di vita}
 I modelli di ciclo di vita del software enfatizzano i processi chiave da attuare e le relazioni e interdipendenze logiche e temporali tra di essi. Il modello di ciclo di vita adottato pone vincoli su pianificazione e gestione del progetto. Esso è indipendente da metodi e strumenti di sviluppo, e precede la loro selezione. L'ingegnere del software deve essere a conoscenza del ciclo di vita da adottare in modo da stimare costi, tempi, vincoli e benefici fin dall'inizio.
 
-%\subsubsection{Modello sequenziale (%\frgnword{Waterfall model})}
+\subsubsection{Modello sequenziale (\frgnword{Waterfall model})}
+Il modello a cascata (o \frgnword{Waterfall model}) è un modello sequenziale nel quale il processo di realizzazione del software è strutturato in una sequenza strettamente lineare di passi, in cui il ritorno a fasi precedenti non è permesso. Al completamento di ogni passo è prodotta della documentazione, che permette al cliente di analizzare lo stato di avanzamento e approvarlo (\frgnword{document-driven model}). La fase successiva non può iniziare fintanto che quella precedente non è conclusa e approvata.
+
+Questo modello ha origine nell'industria manufatturiera, dove i cambiamenti in corso d'opera hanno costi proibitivi e sono difficilmente attuabili.
+
+Ogni passo del modello a cascata è definito in termini di
+\begin{itemize}
+	\item Attività e prodotti in \frgnword{input} e \frgnword{output} attesi;
+	\item Struttura e contenuto della documentazione;
+	\item Responsabilità e ruoli coinvolti;
+	\item Scadenze per la consegna della documentazione;
+\end{itemize}
+
+Il modello a cascata porta con se dei vantaggi: le pre- e postcondizioni sono ben note e rispettate per definizione, rendendolo facilmente valutabile nei costi e nelle risorse necessarie. Inoltre, per la sua semplicità, è sempre possibile sapere con precisione in che stato di avanzamento si trova il progetto ad un certo istante.
+
+Per contro, questo modello può risultare troppo inflessibile. Inoltre, non producendo prototipi agli stadi intermedi, il cliente riceve il prodotto solo alla fine del processo di sviluppo. È possibile limitare i difetti attuando alcune correzioni che rendano il modello più flessibile, come l'impiego di prototipi usa-e-getta. 
+
+Una scarsa conoscenza delle tecnologie da utilizzare da parte degli \frgnword{stakeholder} potrebbe causare un sostanziale cambiamento dei requisiti in corso d'opera e richiedere l'iterazione. Per questo motivo, è consigliabile impiegare il modello a cascata solo nel caso in cui i requisiti siano ben noti fin dall'inizio e difficilmente modificabili durante lo sviluppo. In casi particolari è possibile permettere iterazioni rieseguendo fasi precedenti, pur snaturando il modello.
+
 %\subsubsection{Modello iterativo}
 %\subsubsection{Modello incrementale}
 %\subsubsection{Modello evolutivo}
