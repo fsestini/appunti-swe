@@ -47,7 +47,33 @@ The model divides the software life cycle into smaller incremental waterfall cyc
 
 Il modello suddivide il ciclo di vita del software in piccoli cicli a cascata incrementali. All fine di ogni sotto-ciclo, gli utenti possono accedere al prodotto, testarne le funzionalità e fornire dei \frgnword{feedback}. Ogni versione del prodotto eredita dalla precedente le \frgnword{feature} migliori, raffinandole in base ai \frgnword{feedback}. \todo{maybe ripetizione di "feedback". alternativa?}
 
-%\subsubsection{Modello a spirale}
+\subsubsection{Modello a spirale}
+Il modello a spirale, proposto da Barry W. Boehm nel 1988, si focalizza sulla pianificazione e l'analisi dei rischi (modello \frgnword{risk-driven}. Un \strong{rischio} è un'incertezza sul progetto rispetto a una qualsiasi transizione nel ciclo di vita. Il modello rappresenta il processo come una spirale piuttosto che una sequenza di attività: ogni ciclo nella spirale equivale al completamento di una fase del processo software.
+
+\todo{Questa parte potrebbe fare cagare}
+Il modello a spirale richiede una forte interazione tra il fornitore e il cliente.
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline	
+		Acquirente & Definizione degli obbiettivi e dei vincoli sulla fase di pianificazione \\
+		\hline \\
+		Fornitore & Sviluppo e validazione \\
+		\hline \\
+		Entrambi & Analisi dei rischi \\
+		\hline
+	\end{tabular}
+\end{figure}
+
+Ogni ciclo della spirale è diviso in quattro settori, attraversati iterativamente. Più grande è la spirale, più risorse sono state spese, più rischi sono stati gestiti.
+\begin{enumerate}
+	\item Impostazione dei obbiettivi: vengono definiti obbiettivi specifici per quella fase di progetto, e identificati rischi e vincoli sul processo e sul prodotto;
+	\item Valutazione e riduzione dei rischi: ogni rischio è analizzato, e vengono presi provvedimenti atti a ridurlo;
+	\item Sviluppo e validazione: dopo aver valutato i rischi, viene selezionato un modello di sviluppo;
+	\item Pianificazione: viene deciso se è necessario fermarsi o continuare con un ulteriore ciclo;
+\end{enumerate}
+%Ideally, the model converges to a linear sequential one.
+
 %\subsubsection{Modello a componenti}
 %\subsubsection{Modelli agili}
 %\subsection{Standard di processo}
