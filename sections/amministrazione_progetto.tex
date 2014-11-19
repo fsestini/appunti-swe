@@ -43,4 +43,39 @@ un documento e' utile solo se:
 \subsubsection{Infrastruttura}
 L'infrastruttura e' una serie di elementi strutturali interconnessi, servizi e strumenti che insieme forniscono un \frgnword{framework} a supporto delle operazioni e dei processi. Si compone di risorse hardware (server, workstation, ecc.) e software (IDE, controllo di versione, ecc.). I servizi offerti dall'infrastruttura sono sotto la responsabilita' dell'amministratore.
 
-%\subsection{Gestione di configurazione}
+\subsection{Gestione di configurazione}
+Un prodotto software e' composto da diverse parti separate, unite secondo delle regole che costituiscono la \strong{configurazione}. Tutto cio' che e' posto sotto controllo di configurazione e' definito \strong{\frgnword{configuration item}}. Ogni \frgnword{configuration item} ha un nome identificativo unico, e si trova spesso in piu' versioni.
+
+\todo{la gestione di configurazione deve essere automatizzabile}
+
+Gli obbiettivi primari del controllo di configurazione sono l'identificazione e il controllo dei \frgnword{configuration item} e delle \frgnword{baseline}, e la gestione del processo di \frgnword{build}. Una \frgnword{baseline} e' una collezione di \frgnword{configuration item} formalmente approvati, che costituiscono un sistema. Costituisce una descrizione degli attributi di un prodotto ad un certo stato di avanzamento del prodotto, su cui ci si basa nelle successive definizioni di progresso.
+
+Le attivita' che compongono il processo di gestione di configurazione sono le seguenti:
+\begin{itemize}
+	\item Identificazione della configurazione;
+	\item Gestione dei cambiamenti;
+	\item Controllo di versione;
+	\item Processo di \frgnword{build};
+	\item \frgnword{Release management};
+\end{itemize}
+
+\paragraph{Identificazione della configurazione}
+L'identificazione della configurazione si occupa di impostare e mantenere le \frgnword{baseline}. Stabilisce e mantiene in maniera incrementale i \frgnword{configuration item} durante tutti il loro ciclo di vita. L'esistenza di \frgnword{baseline} ben definite permette riproducibilita', tracciabilita' e analisi del processo di sviluppo.
+
+\paragraph{Gestione dei cambiamenti}
+Il processo di gestione dei cambiamenti analizza i costi e i benefici relativi alle proposte di modifica ricevute, approva quelle significative e tiene traccia di quali componenti del sistema vengono modificati.
+
+Le proposte di cambiamento possono provenire da:
+\begin{itemize}
+	\item Utenti (bug report);
+	\item Sviluppatori;
+	\item Competizione con altre aziende;
+\end{itemize}
+
+Le proposte di modifica seguono un severo processo di analisi, decisione, implementazione e verifica. Ogni richiesta di modifica deve essere presentata tramite un \frgnword{change request form} (CRF), nel quale vengono inoltre memorizzate decisioni e raccomandazioni riguardanti la modifica, il costo stimato e le date di richiesta, approvazioine, implementazione e validazione. Grazie a strumenti di \frgnword{issue tracking} (o \frgnword{ticketing}) si e' in grado di tenere traccia dello stato di ogni richiesta di modifica.
+
+\paragraph{Controllo di versione}
+Ogni componente software si trova in piu' \strong{versioni}, istanze funzionalmente distinte dello stesso componente, alcune di esse destinate al rilascio all'utente. Il processo di controllo di versione si occupa di tenere traccia delle differenti versioni di ogni componente del sistema, e fa in modo che il lavoro di ogni sviluppatore non interferisca con quello degli altri.
+
+Il controllo di versione riguarda sostanzialmente la gestione di \frgnword{codeline} e \frgnword{baseline}. Una \frgnword{codeline} e' una sequenza di versioni del sorgente di un componente, dove ogni versione deriva da quella precedente. Il processo si serve di un \frgnword{repository}, una sorta di \frgnword{database}/\frgnword{filesystem} nel quale vengono memorizzati i \frgnword{configuration item} in tutte le loro versioni.
+
