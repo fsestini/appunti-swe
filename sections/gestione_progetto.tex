@@ -98,6 +98,50 @@ Le attivita' di progetto sono l'elemento di pianificazione di base. Ogni attivit
 %\paragraph{PERT diagram}
 %\paragraph{Work Breakdown Structure}
 
-%\subsubsection{Allocazione delle risorse}
-%\subsubsection{Stima dei costi di progetto}
+\subsubsection{Allocazione delle risorse}
+Le attivita' vanno assegnate ai ruoli, e i ruoli alle persone. E' importante non sovrastimare (o sottostimare) la quantita' di lavoro richiesto da ciascuna attivita'.
+
+\subsubsection{Stima dei costi di progetto}
+
+Stimare la quantita' di lavoro richiesto dalle attivita e calendarizzarle non e' un'operazione semplice, a causa di molteplici fattori di incertezza soprattutto nella fase iniziale. Le aziente possono avvalersi di due tipi di tecnice durante questa fase di progetto:
+
+\begin{itemize}
+	\item Tecniche basate sull'esperienza: la stima e' basata sull'esperienza maturata nei precedenti progetti dal responsabile;
+	\item Modellazione algoritmica dei costi: vengono utilizzate alcune formule per calcolare il lavoro richiesto dal progetto in base a stime sugli attributi del prodotto;
+\end{itemize}
+
+Una metrica tipicamente usata per misurare il lavoro necessario in termini di tempo e' il \strong{tempo/persona}.
+
+Tra i fattori che influenzano la stima vi sono:
+\begin{itemize}
+        \item Dimensione del progetto: quante linee di codice in relazione al tempo necessario a scriverle;
+        \item Esperienza nel dominio applicativo;
+        \item Tecnologie adottate;
+        \item Ambiente di sviluppo;
+        \item Livello di qualita' richiesto dai processi, in termini di efficienza ed efficacia;
+\end{itemize}
+
+\paragraph{Constructive Cost Model (CoCoMo)}
+Il CoCoMo e' un modello empirico definito sulla base di dati raccolti nel tempo da un largo numero di progetti software, successivamente analizzati per creare formule che aderissero il meglio possibile alle osservazioni. CoCoMo misura le risorse necessarie in mesi/persona (M/P).
+\[
+        M/P = C \times D^S \times M
+\]
+\begin{itemize}
+	\item \strong{C}: fattore di complessita' del progetto;
+	\item \strong{D}: dimensione stimata del prodotto software, espressa in KDSI (Kilo Delivered Source Instructions);
+	\item \strong{S}: fattore di complessita';
+	\item \strong{M}: moltiplicatori di costo, $\prod_i \alpha_i$ dove $\alpha_i$ sono attributi i cui valori cadono entro interfalli fissati;
+\end{itemize}
+
+Nella sua versione di base, CoCoMo assume l'utilizzo di un modello si sviluppo sequenziale (a cascata). \todo{da verificare}
+
+Si possono evidenziare tre gradi di complessita':
+\begin{enumerate}
+	\item 'Semplice' (complessita' bassa): una singola persona e' in grado di comprendere tutto il prodotto nel suo inseme;
+	\item 'Moderato' (media complessita'): una persona e' in grado di comprendere il prodotto solo isolandolo per componenti;
+	\item '\frgnword{embedded}' (complessita' elevata): il prodotto interagisce con componenti esterni e con l'ambiente;
+\end{enumerate}
+
+\todo{Inserire grafico CoCoMo}
+
 %\subsection{Piano di progetto}
