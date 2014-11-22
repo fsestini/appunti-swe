@@ -5,10 +5,9 @@
 * Ciclo di vita
 * Gestione di progetto
 * Amministrazione di progetto
+* Qualità di prodotto
 
 TODO:
-* Gestione di configurazione
-* Qualità di prodotto
 * Qualità di processo
 * Ingegneria dei requisiti
 
