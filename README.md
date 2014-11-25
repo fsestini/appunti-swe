@@ -6,10 +6,11 @@
 * Gestione di progetto
 * Amministrazione di progetto
 * Qualità di prodotto
-
-TODO:
-* Qualità di processo
 * Ingegneria dei requisiti
+
+Coming soon:
+* Qualità di processo
+
 
 ## Building
 Eseguire `make`.
