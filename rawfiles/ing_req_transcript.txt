@@ -1,0 +1,78 @@
+L'analista definisce il problema, non progetta. Il progettista non analizza, progetta la soluzione.
+
+Funzioni, servizi che devono essre erogati in risposta ad azioni dell'attore.
+
+Due modi di pensare un sistema: top-down o bottom-up.
+top-down: decomporre in parti più piccole e semplici, sapendo però che verranno aggregate. Associato a sviluppo funzionale (??)
+Pensare ad oggetti == pensare bottom-up (aggregare pezzi della mia soluzione)
+
+Studio di fattibilità -> capire se si può, se vale la pena procedere.
+	- fattibiità tecniche: ho le competenze, strumenti, ecc. necessari?
+	- Fattibilità organizzative
+	- Rapporto costi/benefici
+	- Inividuazione dei rischi (complessità, incertezze, ecc..)
+Lo studio di fatt. include una valutazione di cosa possa essere fatto con pezzi di soluzioni già presenti (riuso, from scratch, ecc.)
+
+Lo studio di fattibilità è un processo rapido (non ci si può mettere troppo, no time available), i cui risultati non vengono scartati, ma costituiscono una base per l'analisi dei requisiti (studiando la fattibilità faccio un minimo di analisi dei requisiti).
+
+Tecniche di analisi
+-------------------
+- studio del dominio, mi metto nei panni degli utilizzatori
+- interazione con il cliente/committente. Il ciente cerca un rapporto non invadente, intelligente, strutturato -> intervista, un dialogo da cui esce un resoconto approvato da entrambe le parti.
+- brainstorming: servono: un gruppo di persone che pensi al problema; una persona che faccia da "facilitatore", ovvero che aiuti la discussione a convergere in un tempo finito, che fissi un tempo e aiuti a valutare il risultato. Il facilitatore non è coinvolto nella discussione, non può essere biased; una persona che tenga le minute della discussione, che registri i punti salienti.
+- Prototipazione: interna -> per me fornitore
+                  esterna -> per arricchire il rapporto con il cliente.
+  Può essere * usa-e-getta  -> forse mi aiuta a capire il problema, ma spreco risorse
+             * incrementale -> ogni prototipo costituisce un appoggio su cui misuro il progresso (praticamente baseline)
+
+Classificazione dei requisiti
+-----------------------------
+Distinguiamo tra qualità di prodotto (cosa fare) e qualità di processo (come fare); entrambe sono due fonti di requisiti.
+Allo stesso modo, requisiti di prodotto e requisiti di processo.
+Dominio applicativo, capitolato, dialogo col committente, brainstorming, ISO9126 sono fonti di requisiti di prodotto.
+Le norme sono fonte di requisiti di processo.
+
+I requisiti si suddividono in maniera gerarchica: system requirements, project req, process req, etc...
+
+Gli standard di processo definiscono tre livelli: processi generici, processi istanziati in azienda e processi istanziati in progetto (ultime foglie nell'albero delle norme di comportamento).
+
+Performance requirements: nel tempo e nello spazio.
+
+Approccio strutturato: non mi invento i requisiti, applico una griglia prestabilita al problema e estraggo una struttura gerarchica.
+
+Classificaz. dei requisiti
+--------------------------
+I req. devono essere verificabili.
+Ci vuole un approccio top-down ai requisiti, parto da quelli grandi.
+E' importante, definendo un requisito, stabilire il modo in cui potrà essere verificato. Tale modo dovrà massimizzare efficacia (verifico correttamente e completamente) ed efficienza (la verifica è un'attività onerosa, e il cui costo deve essere minimizzato).
+
+Requisito -> doppio costo: soddisfarlo e verificarlo
+          -> assegnare importanza strategica ad ogni requisito, e negoziarne l'eliminazione se importanta << costo.
+
+I requisiti sono:
+- Obbligatori
+- Desiderabili
+- Opzionali: non li includo, ma se il committente li vuole peò negoziarne l'inserimento previo aumento del tempo e del budget a disposizione.
+
+Nel tempo incorporo quelli desiderabili in base alle possibilità.
+
+* Chiusura: quando faccio validazione, voglio essere sicuro che il sistema soddisfi tutti e soli i requisiti. L'unico modo di essere sicuri è creare un elenco di requisiti e un elenco di quelli che il sistema soddisfa, e vedo che tutti i requisiti vengono mappati dal sistema  -> chiusura.
+* Sinteticità: se il sistema presenta feature che non sono associate ad alcun bisogno in ingresso, ho cose che nessuna ha chiesto -> superflue -> da evitare.
+=> Tracciamento bidirezionale.
+
+Ad un prodotto estendibile vengono ovviamente aggiungi requisiti nel tempo, ma l'importante è che vi sia una ragione di partenza.
+
+I documenti prodotti dall'analisi dei requisiti sono in linguaggio naturale, per evitare ambiguità.
+
+Otto qualità essenziali della specifica dei requisiti:
+1) Vedi slide
+2) Corretta: verifico che vi sia un bisogno reale -> tracciamento all'indietro, verifico la fonte del bisogno.
+3) Completa: mostro che non ho dimenticato nulla. Come? Trasformo le fonti in elenco dei bisogni.
+4) Verificabile: mostro come verificare i requisiti.
+5) Consistente: non vogliamo requisiti in conflitto tra loro, dove uno nega l'altro.
+6) Modificabile: non devo produrre una specifica monolitica. Deve essere versionata e configurata.
+                 Organizzo i requisiti in termini di gerarchia e li numero, assegnando a ciascuno numeri distanti tra loro per permettere inserimenti futuri.
+7) Vedi slide: organizzo i requisiti in database, aggiungo e rimuovo da lì. I documenti che "raccontano" i requisiti sono prodotti automaticamente a partire dalla base di dati.
+8) Ordinati per importanza.
+
+Next lesson: Come verifico i requisiti? Ispezione a pettine (walkthrough), costosissima, fatta solo se non ho altri criteri (come l'inspection, che usa checklist).
