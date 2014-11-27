@@ -59,9 +59,21 @@ Con valutazione della qualità intendiamo il processo attraverso cui, con l'uso 
 
 Definiamo \strong{metrica} qualsiasi tipo di misurazione riguardante un sistema, un processo o un documento software. Le metriche costituiscono uno strumento di quantificazione del prodotto e del processo, e sono utilizzate per controllare i processi software, per effettuare previsioni sugli attributi del prodotto e per identificare componenti anomali.
 
-Esiste una relazione tra ciò che è possibile misurare e ciò che interessa conoscere: siamo in grado di misurare solamente gli attributi interni del sistema, ma spesso siamo più interessati a quelli esterni. Può essere difficoltoso mettere in relazione ciò che si riesce a misurare con gli attributi esterni desiderabili.
+\paragraph{Attributi interni e esterni}
+Le metriche misurano attributi interni del sistema, ma spesso siamo più interessati a quelli esterni. Gli attributi di qualità esterni, come mantenibilità o usabilità, sono tipicamente difficili da misurare, poichè dipendono da fattori soggettivi relativi all'esperienza dell'utente. Per farlo, occorre misurare gli attributi interni e assumere che esista una relazione con gli attributi esterni che si vogliono valutare.
 
-\todo{Espandere con contenuti dal Sommerville sulle metriche}
+Perchè la misurazione di un attributo interno del software sia utile alla valutazione di una caratteristica esterna, occorre che
+\begin{enumerate}
+	\item L'attributo interno sia misurato correttamente;
+	\item Il valore dell'attributo di qualità sia, in qualche modo, correlato con il valore che si sa misurare;
+	\item La relazione sia esprimibile e validabile formalmente in termini di formula o modello;
+\end{enumerate}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.6]{imgs/int_ext_attrib.jpg}
+	\caption{Relazione tra caratteristiche esterne e attributi interni del software}
+\end{figure}
 
 \subsubsection{Standard di qualità}
 Gli standard giocano un ruolo molto importante nella gestione della qualità del software. Essi:
