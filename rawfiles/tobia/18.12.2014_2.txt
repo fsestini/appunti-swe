@@ -1,0 +1,132 @@
+In un progetto vero 2/3 dell'impegno e' in verifica e validazione.
+
+Ricordiamo cosa significa verifica e cosa significa validazione.
+
+Quando vi introdussi per la prima volta il termine verifica - qualcuno d ivoi ricorda cosa significa?
+
+Parliamo di validazione quando andiamo a vedere che il prodotto che vogliamo consegnare e' conforme alle aspettative.
+
+Abbiamo parlato l'ultima volta di validazione quando abbiamo visto il modello A/V.
+
+La validazione e' un atto conclusivo.
+E' l'atto che mostra che cio' che ho fatto e' 'conforme alle aspettative.
+E' un'operazione che si fa per esame specifico.
+
+Non voglaimo che questa operazione abbia un esito binario, yes or no. (???)
+
+Voglliamo che abbia esito yes.
+
+Si ottiene questo con la verifica, che si fa su ogni fase del progetto che porta il prodotto da una baseline a una successiva.
+Con la verifica ci accorgiamo se quell'avanzamento e' un vero avanzamento oppure no - se e' una nuova buona baseline oppure no.
+
+La verifica e' un'operazione piu' di processo che di prodotto.
+
+Cosa accade se non faccio verifica?
+Rischio di non passare validazione (?)
+
+Vogliamo dare un significato preciso a verifica e validazione.
+
+Quello che chiameremo verifica e' un'operazione ordinata procedurale
+QUella che chiamerem ovalidzione e' un'poierazione normata, a procedura.
+Vogiamo che le cose siano il piu' possibile automatiche.
+Perche' possano essere applicate in maniera sistematica e disciplinata.
+
+Poiche' ci interessa moltissimo l'efficienza - la verifica, un sacco di volte - vogliamo che abbiano il massimo valore prodotto per il mini o costo possibile. di conseguenza automatizziamo.
+
+Guardate il modello A/v. Mettiamo in modo visibile il posto della verifica e il posto della validazinoe.
+
+Gli unici due punti in cui ho messo un arco orizzontale li ho etichettati validazione.
+
+//// 
+
+
+Tradotto: il primo momento nel quale postto fare validazione e' il momento in cui posso fare iltest di sistema [perche ho il sistema disponibile.
+
+Nel metterlo insieme verifico che il comportamento sia conforme e sto facendo validazione - rispetto ai requisiti software che ho documentato nell'analisi dei requisiti.
+
+Una volta che ho fatto questa azione e ho un sistema softwre da me gia' validato so che posso andare dal cliente e so che superera' i test del cliente.
+
+Ho passi verticali che conguingono passi di questa... macchina a stati.
+
+Ho ossia un metodo di lavoro che sta nel quadro mentale del software engineer.
+So che se lavoro secondo le norme l'outcome non potra' cessre che buona.
+
+Dentro la vostra esperienza umana... ???
+
+Qual'e' la precondizione per applicare una verifica?
+Che esistano regole su cui lavorare, se no non posso fare verifica.
+
+La precondzione sulla validazione?
+Che esistano requisiti da verificare.
+
+Nel ramo ascendente abbiamo T per Test.
+Perccato che il test non e' l'unico modo per fare una prova, per essere - accertare una qualita'.
+
+Tanto per cominciare se io potessi applicare solo dei test per fare verifica vorrebbe dire che -- 
+il test in swe si chiama analisi dinamica -- il test e' una azione di controllo effettuata tramite esecuzione dell'foggetto da verificare.
+SE la verifica fosse solo test sarebbe applicabile solo a partire da quando ho del codice da testare.
+Questo non e' possibile perche' ho indicato che anche negli altri stati c'e' verifica.
+
+Si fa allora analisi STATICA.
+
+Va da se che quando guardo documenti per dire se sono conformi alle norme applichero' analisi statica.
+
+Mentre parleremo in una lezione piu' avanti dell'impotanza e del valore aggiunto ENORME dell'analisi statica ci concentrerremo ora sull'analisi dinamica.
+
+Il test serve in generale a sapere quello che uno non sa.
+E' forse la piu' importante conoscenza umana quella di sapere di non sapere.
+
+Prima caratteristica di untest e' che dev'essere ripetibile.
+Un test agisce su tre parti:
+* Un oggetto di test - il programma che voglio provare
+* UN input - che passa a questo oggetto di test
+* Uno stato iniziale - in cui si svolgera' il test.
+
+Queste tre cose per poter fare un test ripetibile devon oessere tutte completamente sotto controllo.
+
+Basta che uno delle tre non sia completamente sotto controllo e non sto ripetendo un test.
+
+Un test e' fatto da tutte le informazioni che consentono a chi fa il test... ? 
+
+Quando parlo di stato dell'ambiente rispetto a... non mi interessa sapere se il cielo e' azzurro, ma se faccio un test di prestazioni ella drisposta di un server mi importera' tantissimo saree che carico c'e' sulla rete.
+Chi pensa auntest lo deve pensare in modo che sia ripetibile.
+
+Non cambiando il programma sotto test l'esito deve essere lo stesso.
+
+Secondo dato importante: chiediamoci com'e' fatto l'oggetto di un test.
+Un metodo potrebbe essere un ragionevole oggetto di test.
+
+Evidentemente se io voglio verificare per test un metodo il quale non sia un run devo scrivere qualche cosa che agisca, faccia una chiamata.
+Questo oggetti tipicamente si chiama driver.
+Per testare un metodo... (40 righe) devo scrivere un driver.
+Quante righe? Difficilmente una.
+20, 25 righe.
+
+Fare una prova tramite test richiede uno sforzo aggiuntiv oanche di programmazione.
+
+Uno stub e' un pezzo di software che raccoglie le azioni svolte da un oggetto di test che ha un main.
+PErche' mi serve uno stub?
+QUando testo un oggetto - metodo, entita' - da solo - questo oggetto nel sistema sara' insieme agli altri - m a io non voglio testarlo con gli altri, ma con un pezzo di software fittizio che si comporti esattamente come voglio che si comporti.
+
+Per fare un esmepio non di programmazione: immaginate che il mio braccio sia un metodo con main.
+Dice: prendi frutta.
+L'esecuzione che devo sovlgere e' prandere la frutta.
+Nel programma pcompleto deve esserci un'entita' che si chiama cestino di frutta - ma non sara' nel mio metodo, sara' fuori.
+
+Terza parte importantissima: ogni test lascia traccia - occorre un logger.
+Qualche cosa che veda che il test ha avuto luogo, ha fatto questi passaggi e ha avuto questo esito.
+
+Ci sono due metodi fondamentali:
+   - un metodo attivo, esplicito, inserisco delle azioni di log
+   - una tecnica analoga a un debugger
+
+Da un punto di vista SW un debugger e' ???
+Il debugger e' un ambiente di esecuzione di programmi.
+
+Cosa accade se faccio ./a.out?
+
+Un debugger fa le medesime cose ma non le delega a un processo indipendente; non cede a terzi l'eseczione ma la trattiene in se'.
+QUando dico inserisci un breakpoint cosa succede?
+
+Avremo sostituito l'istruzione originale del programma con un'istruzione che sincronamente causa un'eccezione.
+E' possibile sostituire liberamente al programma del codice.

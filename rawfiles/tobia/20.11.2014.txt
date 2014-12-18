@@ -1,0 +1,401 @@
+Attivita' coinvolte nei processi di ciclo di vita viste fino ad oggi:
+
++ amministrazione di progetto
++-- configurazione
++ gestione di progetto
++-- pianificazione di progetto
+- qualita', trattata come processo e come prodotto
+- documentazione
+// analisi, progettazione, verifica (non ancora visto)
++ sviluppo 
++-- tema di oggi
+
+il tema e' il piu' importante del processo di sviluppo.
+Il rapporto chaos dice che le causa maggiori di successo e fallimento sono:
++ mancato, insufficiente coinvolgimento del cliente.
+SI parla ossia della capacita' di capire i bisogni del cliente.
+
+Succede che si tende in alcuni paesi a immaginare che la competenza capacita' professionale migliore per avere rapporti col cliente sia commerciale.
+Accade che il commerciale sia chiamato a derivare i requisiti: errato.
+La parte facile di un lavoro difficile e' capire le cose che sono esplicite.
+La parte difficile e' capire le cose non scritte.
+
+Occorre imparare a muoversi in un territorio in cui la parte implicita e' dominante.
+
+I capitolati di progetto visti ne sono un ottimo esempio.
+
+Parliamo di quantita': non sappiamo ancora cos'e' un requisito, ma immaginate che sia una frase che dice una cosa da fare.
+Secondo voi, nei gruppi che fanno questi progetti, piccoli in rapporto a attivita' professionali reali, quanti requisiti vengono elencati?
+Unita', decine.
+A fine lavoro si arriva a ~100 requisiti.
+Accade dunque un fenomeno di atomzzazione: da una cosa che nella specifica appare estremamente limitata si arriva a 100, 150 requisiti.
+
+Sviluppo e' un processo primario: al suo interno c'e' un'attivita' chiamata A/R.
+La complessita' e' cosi' grande che l'ambito di competenza e' spesso chiamato Requirements Engineering.
+
+Uno dei frutti di questo insieme di competenze e' un'esplosione (controllata, non a grappolo) di requisiti.
+
+Allora:
+
+Che cos'e' un requisito?
+Secondo IEEE: Con requisito indico cio' che deve essere posseduto da una risposta (prodotto/servizio) per soddisfare un bisogno.
+
+CI sno due modi di vedere il requisito: dal lato del bisogno o della soluzione.
+
+Cominciamo ovviamente dal lato del bisogno.
+Quando transitiao dall'attivita' di A/R (che capisce il problema) a ??? ?? passiamo al punto di vista della soluzione.
+
+Nel momento in cui fisso questa comprensione mi devo chiedere com efaccio a garntire che dopo aver capito il requisito lato domanda lo possa conservare nella mia risposta.
+
+Ci sono due lati del requisito: 
+1. capire la domanda
+2. capire la risposta - capire e assicurarmi ossia che la mia soluzione possiede le cartteristiche che portano la risposta alla domanda di cui sopra.
+
+Quante volte avete risposto auna domanda di esame e vi siete accorti di non aver capito la domanda?
+Manca il metodo per leggere la domanda.
+
+Quando lavoriamo sulla soluzione dobbiamo cpaire che lavoriamo in parti, stadi di avanzamento, poicdhe' il progetto e' una pipeline parallela: se lavorassimo in un solo step enorme lavorerremmo male.
+
+Abbiamo d'altronde visto che pianifichiamo fino a che livello di dettaglio?
+Fino a che abbiamo sminuzzato le attivita' finche'
+a. possano essere capite dall'assegnatario
+b. prese in carico da un singolo individuo.
+
+La soluzione per un requisito e' dunque in capo a un singolo individuo?
+Difficile.
+
+Come faccio a non perdereil filo di cosa sto facendo?
+Mi occorre un a tecnica per tenere a mente che la cosa a cui sto lavorando nasce da un requisito.
+Ogni attivita' che svolgo deve essere TRACCIABILE a questi obbiettivi.
+
+Chi pianifica dunque secondo che criterio pianifica?
+a. ????? di gestione?
+b. Che il responsabile sia sempre in grado di legare quello che stiamo faenco al conseguimento di determinati requisiti.
+
+Esistono dunque:
+
+* Verifica
+* Validazione
+
+Cos'e' la validazione?
+Dobbiamo essere capaci, quando abbiamo finito, di dire "ecco: ho la risposta".
+Quand'e' che si dice ho finito?
+Nel caso di fallimento:
+` quand'e' finito il tempo
+` quand'e' finito li finanziamento
+
+Chi dice "ho finito"?
+Il fornitore.
+
+Deve saper dire che quello che ha fatto soddisfa tutti i requisiti trovati.
+Questa e' la validazione.
+
+C'e' una forma mnemonica per dirci cosa significa validazione:
+Did i build the right system?
+(vs. Did I build the system right?)
+=== Ho costruito il sistema corretto vs. correttamente
+
+Non deve essere una percezione.
+Ci sono tre criteri nell'engineering:
+
+` Sistematico
+` Disciplinato
+` Quantificabile
+
+Ili terzo criterio ci ricorda che occorre /fiducia quantificata/ nella risposta anziche' percezione.
+
+Nella validazione c'e' un metodo che e' sistematico, disciplinato e quantificabile per fare quello che mi attendevo.
+
+I piloti hanno una checklist prima di far partire un aereo.
+
+La checklist nasce da una best practice.
+
+La validazione si puo' fare per definizione UNA volta: a fine progetto quando consegniamo.
+Se ho tanti prodotto == tante validazioni.
+
+Perche' questa attivita' possa essere sostenibile occorre un aiuto molto potente: un altro processo che si chiama Verifica.
+
+Questo processo risponde alla domanda "did I build the system right"?
+
+Nella verifica l'attenzione e' legata al modo di lavorare: al metodo.
+Alle regole, norme procedure e agli strumenti.
+
+Nell'analogia del pilota costruire la checklist e' parte della verifica.
+La verifica fa in modo che tutte le attivita' assegnate abbiano la piu' piccola possibilita' di introdurre errori: devono vigere ... norme, strumenti, per impedire che gli errori vengano introdotti.
+
+La validazione e' sensata <=> la risposta copre completamente la domanda.
+Essere sicuri che la checklist sia sufficiente a coprire la domanda e' un compito che ha il suo svolgimento nella verifica.
+
+La verifica si concentra su come lavoriamo per vedere che le cose fatte siano tutte fatte secondo le regole vigenti per quelle attivita'.
+
+Per poter fare verifica non ci devono essere buchi nelle regole.
+La conseguenza di avere assenza di regole su certe attivita: non so se ho fatto bene o male.
+
+La verifica punta afar si ch eio lavori secondo regole, procedure strutturate su cui si possa fare un controllo per verificare che siano fatte come atteso e dunque, se fatte come atteso, non c'e' spazio per errori.
+
+Una delle conseguenze potenti di credere in questo principio e' che il verificatore non deve ripeter il lavoro fatto da chi ha fatto il lavoro.
+
+Sarebbe sciocco fare il lavoro due volte.
+
+Di piu': se ho qualcuno di cui non mi fido gli affido solo un altro? No. 
+Se uno dice bianco e l'altro nero ho sempre incertezza. Si segue la regola del 2n+1. Dovrei allora TRIPLICARE il lavoro!
+
+Faccio allora in modo che il verificatore siano state svoltes secondo le regole.
+
+Se la risposta e' si' il test e' superato.
+
+Rispetto a un pezzo di codice, una procedura, un metodo, come posso dire "dimmi come l'hai fatto e mi basta per sapere se e' giusto"?
+
+Non voglio rifare quanto e' gia' stato fatto dall'attivita' che voglio verificare: voglio essere sicuro di avere norme, regole, procedur e strumenti che mi dicono che l'output sara' giusto.
+Serviranno allora norme che mi dicono che per il pezzo di codice servono norme che mi docono che qualcuno l'ha controllato.
+
+Ma anche si verifica che risponda a un bisogno.
+Nella verifica l'enfasi potente e' su PERCHE" faccio le cose.
+
+Se non ci sono strumenti, regole si cre aun buco che permette soggettivita': consegno, e andra' bene? "Mah, speriamo."
+
+Analogia: la zanzariera e' un'infrastruttura, ma e' una norma che dice "abbassala" (o riparala quando e' rotta).
+
+Capito cio', occorre darci un approccio sistematico per tratttare i requisiti: il termine che si usa e' requiremente engineering.
+Dato il ruolo cosi' importante... ????
+
+Vediamo quali sono "le attivita' che stanno dentro questa attivita'".
+(Abuso di terminologia viene da che il 12207 dice che e' un'attivita', ma gli esperti dicono che e' un processo, un insieme di attivita'.)
+
+Attivita':
+
+- Analisi
+Il primo pezzo e' andare a
+
+--  identificare i bisogni - le cose che so o leggo che devo fare - e le fonti - luoghi dai quali scaturiscono possibili altri bisogni.
+
+Esempio: parliando del 9126 (cos'e' il 9126? Qualita' di prodotto!), a cosa si associa?
+Caratteristiche di qualita': parlando del 9126 dicemmo che da qui traiamo requisit anche se non sono nel capitolato.
+Quella e', a priori, una fonte di requisiti che fanno parte dell'etica ambientale.
+Altri esempi di fonti: il mercato.
+Se devo fare qualcosa per cui c'e' un'altra alternativa sul mercato... devo guardare come sono fatti.
+Fonte e' uqalsiasi luogo logico o fisico da cui scaturiscono bisogni da soddisfare.
+
+
+Dagli otto requisiti che sono scritti nel capitolato ne nascono latri n.
+
+Secondoa cosa dafare nell'analisi: 
+
+-- Classificazione dei requisiti.
+
+Non voglio un semplice "cestino di requisiti", come il cestino dei lego in cui tutti i pezzi sono disordinati.
+
+Voglio un insieme ordinato che da' senos lale cose che dobbiamo fare.
+Sara' importantissimo non mettere i requisiti dentro un "cestone".
+
+-- Modellazione concettuale 
+
+Il senso di un diagramma di caso d'uso e' prendere un punto di vista su cio' che il sistema deve fare.
+La simbologia e' semplice: dice che c'e' un attore o insieme di attori, una scatola con un confine tra il dentro e il fuodi ben tracciato.
+Che punto di vista si prende? Quello dell'attore, che e' qualunque cosa, umana o meccanica che agisce chiedendo, stimolando un'azione da parte del sistema.
+Ci mettiamo dunque nell acondizione piu' favorevole per impoersonare la fonte dei bisogni sul nostro sistema.
+O meglio: la fonte dei bisogni esterni.
+
+Quattro degli errori piu' grandi sui disagrammi di caso d'uso sono:
+1. Sbaglio le fonti; prendo il punto di vista sbagliato, dimentico o omettorequisiti.
+2 Penso che con il diagramma di caso d'uso stia implementando o facendo design dell'interno del sistema.
+3. vediamo altra volta
+4.  vediamo altra volta
+
+Non e' questo il caso: il diagramma di UC m iaiuta a identificare i needs, non le soluzioni.
+
+Questa e' la terza cosa: modellazione concettuale del sistema.
+
+Sistema e' un termine generico: l'oggetto sul quale appiccico dei needs.
+
+-- Assegnazione del requisiti a parti distinte del sistema
+in modo che le parti ricevano un insieme congruo, ragionato, coeso del sistema
+
+-- Negoziazione con il committente e i subfornitori
+
+Devo assicurarmi che i requisiti siano concordati con gli stakeholder.
+Non posso solo aver fatto questo insieme di cose io e sono contento.
+DEvo confrontarmi con le fonti - primariamente il committente, ma non solo.
+Laddove faccia delle cose che sono rivolte anche a degli utenti sara' utile confrontarmi con gli utenti.
+Questa cosa ha un doppio valore: serve a farsi dire yes, questo e' quello che devi fare, ma serve anche a ridurre le cose che devo fare.
+Negoziazione significa eservcitare unadiscussione elastica che faccia emergere gli obblighi irrinunciabili e quello che invece potrei non fare se mancase il tempo oppure perche' troppo rischioso o mancano capacita'.
+
+Questo suggerisce anche il fatto che i requisiti non sono tutti uguali, per esempio per importanza.
+Pensiamo all'esame scritto: tutti i questiti dell'esame scritto hanno lo stesso punteggio? No.
+
+Dentro un progetto cerco la difesa o il valore? Il valore.
+O la difesa dei valori, dice Casini.
+
+Alcuni requisiti sono importanti, altri accessori: a me non interessa spendere tempo su cosa che portano pochissimo valore.
+Mi interessa spendere tempo sulle cose che sono strategicamente obbligatorie.
+Questo e' il punto in cui negozio i requisiti.
+
+POi cosa faccio a specchi con l'analisi? Mi preparo ad avere gli strumenti per fare verifica e validazione;.
+Sto dicendo una cosa importantissima: mentre faccio A/R mi equipaggio, per metodo e strumenti, per fare bene verifica e validazione. 
+La base di metodo, di regola e strumenti la metto all'inizio.
+La metto in modo correlato con i requisiti.
+Poi cosa faccio?
+
+una delle attivita' a supporto dell'analisi dei requisiti e' la documentazione.
+Mi serve uno strumento che renda i rrequisiti discutivili, ovvero oggetto plausibile di discussione.
+Non posso raccontare a voce un requisito.
+
+Non mi basta e non voglio discutere i requisiti a voce.
+
+L'esperienza umana dice che se fate un racconto di una cosa, alla seconda volta abbellite.
+Il passaggio orale e' la cosa piu' soggettiva che ci sia.
+Occorre oggettivare., altrimento non si puo' pianificare e valutare.
+Occorre uno strumento che possa oggettivare i requisiti, cosi' l'abbiamo internamente come fornitoe e possiamo esporre al committente in maniera non soggettiva.
+
+In questo senso capite, spero, che documentare non significa scrivere un testo narrativo: un testo narrativo e' scritto in modo ricco di frasi incidentali, parentesi, richiami: trasporta nello scritto la soggettivita' del discorso parlto.
+
+I diagrammi - se si studia la notazione - non sono ambigui.
+
+Perche' i LdP sono prevalentemente sintetici: il piu' sintetico e' C, fra quelli visti.
+Sono sintetici perche' vogliono esprimere concetti costando meno ambiguita' lessicale possibile.
+
+Non vogliamo soggetivita' e ambiguita' lessicale.
+Linguaggio tecnico: privo di coloritura e totalmente non abigui.
+Si noti che per tgliere ambiguita' serve un GLOSSARIO.
+
+Pochissimo testo, diagrammi che sono l'essenza, e per le cose che scirvo, narrativie che devoon essere il piu' possbile tecniche e sintetiche, mi appoggio a un glossario, cosi' non c'e' possibilita' di sbagliare.
+
+Nel tesmpo devo gestire i prodotti dell'analisi dei requisiti.
+
+Tre termini per gestirli:
+1. Traccoa,emtp
+2. Impostanzione
+3. Gestione cambiamenti
+
+La prima cosa da capire e' che: i requisiti cambieranno nel corso del tempo.
+Cambieranno per aggiunta, estensione e rimozione.
+Mi occorre un insieme di regole, proceudre e strumenti per fare gestione dei cambiamenti.
+Se cambia un requisito scatta un processo di gestione del cambiamento.
+Dev'essere vlautato, approvato e assegnato: sitamo a ....   un'attivita' importantissima su cui nessuno ha titolo di fare cambiamenti se non con.... discussione ... autorizzazione.
+
+Nel tempo t fra 0 e T in cui lavoro sui requisiti fino a dire "ecco sono finiti" questo si chiamera': Requirements Baseline.
+Ma non li ho al tempo 0.
+
+Quella e' la ``gestione dei cambiamenti'', altrimenti si scatena il caos.
+
+
+Cosa significa invece fare ``tracciamento''?
+Tracciare significa seguire una traccia. 
+L'idea fondamentale e' che il requisito espresso come bisogno deve corrispondere a una irosta nella soluzione.
+Macroscopicamente la valutazione si fara' correlando all'indietro cio' che ho fatt o a cosa fa la cosa che ho fatto.
+
+IL tracciamento e' un'operazione che per ogni passo di avanzamento che faccio nel procegetto mi spiega perche' sto facendo una cosa - a quelae requisito risponde.
+La traduzione di questa cosa e' una cosa piuttosto impegnativa: immaginate che il piano delle attivita' che dovete svolgere a progetto sia sostanzialmente un grafo diretto e aciclcico.
+
+IL tracciamento e' l'arricchimento di questo grafo che dice eprceh' un arco e' li'.
+I nodi sono stati di avanzamento, gli archi sono attivita'.
+
+Q: perche' fai queste cose?
+A: Perche' vai dallo stato P allo stato Q.
+
+Essere in un grafo diretto, aciclico, tracciabile da' due conseuguenze:
+1. Responsabilita' (chi e' l'attore su quell'arco? deve portare il progetto in stato Q)
+2. Consapevolezza (viene dall'assignment di un'azione, ma so che contributo sto portando: "Grazie a me si va in Q. No, meglio cambiare lettera")
+
+Quando finisce l'analisi dei requisiti?
+Il momento in cui posso dire che e' finita e' quando ho una requirements baseline.
+
+Come posso sapere che ho una requirements baseline?
+
+// 66%, 1h30m
+
+Una baseline e'  .... milestone.
+
+Diamo un senso:
+
+baseline e' un aggregato di cose sotto configurazione associato a un punto di sviluppo strategico chiamato milestone.
+
+Cosa vuol dire?
+Per cominciare, la requirements baseline la fissero' per calendario: fino a quando ho tempo di scavare requisiti.
+
+Fisso subito il luogo di milestone.
+
+Diro' che ho una baseline quando ho convicimento sostanziato e quantificabile che ho i requisiti che importano, confrontandomi con chi e' stakeholder.
+
+IL punto di confine fra la fine dell'A/R e l'inizio della progettazoine e' quel punto.
+Non devo sovrapporre: iniziare a fare progettazione in assenza di requirements baseline e' a rischio, potrebbe essere usa e getta.
+
+E' un confine strategico che separa l'analisi dei bisogni a .... ??? 
+
+Il primo passo della progettazione e' l'allocazione delle risposte ai bisogni dentro parte del sistema.
+
+
+Ho l'elenco dei bisogni - strutturato, non il cestone dei lego.
+Cambio cappello, divento progettista: devo avvere un'idea di come il sistema sara' strutturato in parti a modo che ciascuna parte risolva uno di quei bisogni.
+
+E' ragionevole allora che ripartista i requisiti in mdo tale che parti distinte del sistema risposntano entrambie al medesimo requisito?
+No.
+
+Se voglio giocare con difesa a uomo dico che un difensore marca un attaccante - uno e uno solo
+
+Attenzione: sto facendo system design, parlo di sistema. Qui non voglio overlap.
+
+INvece quando parlo di individui e' impossibile che una singola azione soddisfi un requisito.
+
+
+Sulle azioni degli individui che saranno piccole e completamente comprensibili li' avro' certamente un insieme di azioni che concorre a soddisfare un requisito.
+
+In quella direzione l'obbiettivo e' frantumare in modo che sia piccolo, facilmente controllabile  e facilmente comprensibile.
+
+Quando spezzo il sistema in parti... faccio in mdo che ogni parte faccia un compito non sovrapposto a quello di un altro.
+
+
+Si pensi al famoso pattern MVC: M, V, C si occupano di tre compiti separati.
+
+Una corretta separazione permette di lavorare in parallelo.
+
+Le parti pero' sono grandi abbastanza perche' non possano essere gestite da un singolo in dvididui.
+
+Vale l'opposto: le azioni del singolo individuo non possono bastare a raggiungere un requisito.
+
+PIu' grandi e complesse sono le azioni piu' difficile sarebbe alteimnti fare verification.
+
+Il modello con cui i modelli agili gestiscono i cicli di vivta e' diverso: si concentrano con piccoli spezzoni di bisogni e tentano di far emergere le parti piu' importanti e salienti su cui si concentrno. 
+
+Sono modi diversissimi nei modi in cui producono la req baseline:
+  Nel modello sequenziale c'e' UNA req bas fissata allo stesso moment oepr tutto il sistema, non piu' negoziabile: condizione di massima sicurezza. L'analisi e' finita. 
+  Nell'altro estremo c'e' l'unione di tante piccole user story fissate in tempo distinto e che opportunamento incollati forniscono una ragionevole risposta al bisogno complessivo, ma che arrivano in tempi diversi e non sono necessariemtne sincronizzati.
+
+Due esempi per capire la differenza:
+
+-- All'epoca in cui il trasporto era fatto con i cavalli fissare i requirements baseline per un automobile era un'operazione molto complicata non fattibile col modello sequenziale perche' nessuno sapeva come fare un'automobile.
+-- Nel 2010 uso il modello sequenziale.
+
+Laddove il problema che viene esposto ha incertezze posso prendere il modello sequenziale per essere sicuro che la tempo t sia finita la discussione.
+SE il mio rapporto col committente e la natural del problema lo concede si puo' anzi usare un modello agile.
+
+-----
+
+Per avere un approccio organizzato che ci dica che cosa mettere come prodotti a questo tempo t che si chiama milestone associata alla requirements baseline, do' dei nomi a prodotti,che devono essere output delle attivita'.
+
+Quello che e' uscito prima del tempo 0 e' chiamato capitolato d'appalto.
+Lo sscrive il committente e dice "voglio questo".
+Non capitolato, no progetto.
+
+Puo' esserci un cliente surrogato, ovvero chi rappresenta il cliente, e.g. Steve Jobs che si sogna di notte l'iPhone.
+
+In A/R si fanno due cose:
+
+-- Studio di Fattibilita'
+   Si decide se il problema e' fattibile
+   Si decide in ogni organizzazione economicamente sana attraverso un documento che dice "si puo' fare", output di uno studio di fattibilita'.
+   Lo studio di fattibilita' non significa "sappiamo farlo", ma "vogliamo saperlo fare": "ha una soluzione" != "la possiamo trovare".
+Una volta che qualcun oha messo questo in pieid produce un documento:
+
+-- Analisi dei requisiti 
+   ..... 
+   da' sorgente al grafo diretto aciclico.
+   Sara' un documento tecnico non narrativo che conterra' come primario ingrediente diagrammi di casi d'uso et similia.
+   Quando abbiamo i documenti baseline di questa roba qui abbiamo la baseline, finisce l'A/R e inizia lo sviluppo.
+
+
+
+
+
+
+

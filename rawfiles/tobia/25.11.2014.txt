@@ -1,0 +1,231 @@
+ E" importante fare verifica.
+Abbiamo parlato nel passato del compito della verifica.
+Ora dobbiamo vedere come fare verifica su un documento.
+L'A/R e' un documento di importanza enorme, vivo e soggetto a modifiche.
+Dobbiamo imparare a vare verifica con un metodo ragionevole - il piu' semplice e' walkthrough, a pettine, ma e' un metodo oneroso e non troppo utile.
+La tecnica piu' ragionevoloe laddove non si possa automatizzare e' chiamata inspection - va nello specifico e identifica le cose da verificare e ci lavora.
+Nel caso specifico di un documenot A/R cerchiamo tre fondamentlai caratteristiche:
+
+* Chiarezza espressiva (testo) ==> vogliamo evitare ambiguita'.
+Le regole deve ono essere poste all'origine prima di stendere un documento in modo che il verificatore umano possa ire "questa espressione non e' conforme alle aspettative" (troppo lunga, mancano termini di glossario...(
+* Chiarezza strutturale: 
+classificazione e ordinamento dei requisiti
+non puo' esserci un rreq fuori classificazione o non numerato in modo appropriato.
+Sulla base di questo si puo' iniziare a strutturare un tracciamento.
+So di cosa parlo, di cosa tratto, posso costruire piu' facilmente matrici di azioni e requisiti soddisfati.
+* I req devono essere atomici e aggregati
+
+Ogni requisito deve essere individualmente soddisfatto e la tecnica di verifica deve essere specificata nel documento che dice i requisiti - spezzo fino ad avere requisiti su cui posso verficare.
+
+Aggregazione significa che nello spezzare ricordo che c'e' unrequisito "grande" da cui derivano altri requisiti, che messi insieme formano un requisito non atomico - aggregato.
+
+Il documento A/R vive per un lungo periodo, e' impensabile che un documento A/R si possa chiudere rapidamente poiche' c'e' bisogno interagire pesantemente con il docuinio applicativo, la tecnologia di riferimento, il committente o anche gli utenti.
+
+Se i requisit cambiano nel tempo, per raffinamento, spostamento di categoria, negoziato, per espressione, e' fondamentale una tecnica rigorosa che gestisce i cambiamenti.
+
+Nel prgoetto due requisit cambieranno piu' velocemente:
+ Documento di progetto (....) cambiera' in modo sperabilmente incrementale
+ Documento A/R che cambiera' a volte in modo non incrementale 
+vogliamo gestirne il cambiamento in modo rigoroso...
+
+per fare tracciabilita' occorre organizzare i requisit non in forma di documento ma di base dati.
+il documento e' un prodotto generato il piu' possibile automaticamente.
+gli informatici hanno il grande vantaggio che sanno come fare trasformazione da BD a modello documentale.
+
+In termini di ruolo in un progetto i requisiti sono fondamentali.
+
+[ schema ]
+
+Un requisito e' speculare rispetto alla validazioe, che e' l'ultima attivita' che svolgo prima di portare il prodotto a collaudo - conferma che i requisiti sono soddisfatti.
+
+POsso fare validazione solo se ho tutti i requisiti e posso fare ??? solo se tutti i req sono soddisfatti.
+
+====
+
+Quando abbiamo i requisiti li dobbiamo passare a qualcuno - il progettista che prende in carico il problema e sforna una soluzione.
+In questo passaggio deve esserci una piena e totale comprensione.
+Piu' il progettista comprende i requisiti quando questi si avvicinano a diventare baseline tanto megio e'.
+
+Abbiamo visto ragionendo sulle cause d isuccesso e fallimento l'importanza del coinvolgimento del committente in questa attivita'.
+
+Dev'essere un coinvolgimento utile - dev'essere avolare aggiunto.
+Ogni interazione col committente dev essere tale che il committe tabbia cpaito qualcosa in piu' su cosa vuole  o cosa gli faremo.
+
+Il committente - inizialmente non si parla di soluzioni, ma di problema.
+
+Il SEMAT e' un ostrumento olto interessante per capire come organizzare le proprioe milestone.
+
+Il SEMAT rispetto ai requisiti dice" sappiamo ceh esistono 6 stati di avanzameno relativi ai requisit.
+
+Se metto in ascissa l'asse temporale si rapporesentano conme 6 punti.
+
+La posizione dei punti rispetto alle scadenze di progetto determina il successo o fallimeto del progetto.
+
+* Il primo punto in cui si esce dal vuoto si chiama CONCEIVED.
+ Rapprese nta l asituazione nella quale il progetto /ha ragione di esistere/ - gli stakeholder (tra cui committente e fornitore) vedono che c'e' ragione di lavorare.
+Lo raggiungiamo quando abbiamo superato lo studio di fattbilita'.
+
+Abbiamo a questo punot una req baseline?
+Neanche lontanamente: per poterci avvicinare dobbiamo lavorare sui requisiti e fare passaggi di raffinamento.
+IL primo passaggio importante ci porta ad un recint intorno al problema
+questoe ' lo stato
+* BOUNDED
+Fonti chiare, problema delimitato, so cosa devo fare ma soprattutto cosa NN devo fare e NON interessa.
+Mi dice con precisione dov'e' il confine.
+Il asso in avanti e' quello in cui il contenuto del reinto e'
+* COHERENT
+on ho piu' ambiguita', ho capito cosa deo fre lato problema.
+Un insieme recintato e internamento coerente - assomiglia a un areq baseline.
+Cosa accade dopo?
+La baseline 'e al confine tra coherent e coherent++ = 
+* ACCEPTABLE
+
+I requisit fissati definiscono un sistema soddisfacente per gli stakeholder
+* ADDRESSED
+Son oal punto in cui soddisfo tutti i requisiti.
+E' un amilestone per la soluzione.
+
+Quando ho un prodotto che 'e stato verificato ed e' anche pronto per la validazione allora e' associato allo stato 
+
+* FULFILLED
+
+Posso dire questo quando ho in mano gli elementi della vlidazione, mai prima.
+
+Se mettessi sulla lavagna l'asse temporale avreste pochissime difficolta' a fissare lo stato conceived e fulfilled, perche' su queste due cose ci sono dei vincoli temporali imposti - e' eviente che per apssare l'esame il progetto deve essere validato etnro la fine dell'anno accademico.
+
+IL SEMAT e' uno sturmneto interessante per associare nomi e significati lle milestone di rpgetto.
+
+UN avanzamento e' sempre un avanzamento multiplo su piu' fronti che sono i fronti aperti di progetto.
+
+La strategia e' sosstanzaielmente fissare le milestone nel tempo e che significato hanno per me fornitore nei vincoli che il progetto mi fissa.
+
+=== PROGETTAZIONE === 
+
+La progettazione e' la seconda delle attivita' tecniche (la terza e' la programmazione) 
+La prog e' lo studmento di metdodo "con cui riusciamo a emanciparci da scimmie a uomini"
+
+Siamo abituati tragicamente a lavorare in modo che chiamiamo CORRECT BY CORRECTION.
+
+Questa cosa non e' molto intelligente, perche' se e' un procedimento che corregge e' molto piu' probabile che non sia incrementale - e' piu' facile che sia iterativo - fai, cancella riprova, cancella, riprova...
+
+Vogliamo totalmente liberarci della procedura a mosca cieca e diventare CORRECT BY CONSTRUCTION.
+
+Costruisco, progetto in mdo tale che quando scrivo so esattamente cosa faccio e ho la pu' alta confidence che ho fatto giusto.
+Se non ho fatto giusto - puo' succedere, siamo sempre fallibili - so dove cercare l'errore.
+
+Arrivare a questo approccio implica pensare.
+Fa parte delle attivita' umane che producno un ritorno di investimento masssiccio - pago prim aper stare mlto meglio dopo.
+Tendenzialmente lo preferisco rispetto all'idea del risparmio primo e bagno di sangue poi.
+
+Se volessimo dirlo in slogan quando progettiamo soddisfiamo quattro fondamentali criteri il primo e':
+
+*  trattiamo o gestiamo intelligentemente la complessita'.
+Progettare significa decomporre - top down - oppure comporre - bottom up.
+In ogni caso da pezzi faccio il utto. 
+Cesare diceva divide et impera.
+
+*  organizziamo la divisione
+progettando e evidentemente spezzando siamo capaci di suddividere le responabilita' in modo tale che tutti hanno qualcosa da fare ma la cosa da fare e' piccola abbastanza perche' ciascuno lo capisca.
+QUando parliamo di swe parliamo di una disciplina collaborativa.
+Tutto questo porta e si spiega con l'idea di essere collaborativi.
+Dobbiamo suddividere e organizzare.
+
+* efficienza
+se progetto ho speranza di esser epiu' efficiente - so cosa fare e so chi lo fa e quando.
+conseguentemente ho piu' controllo sui tempi morti e sugli sprechi
+ 
+* efficacia
+sapendo cosa faccio so orientarlo a soddisfare le aspettative - l'efficacia.
+
+Grazie alla prgettazione raggiungo quattro scopi che sono profondissimamente alla radic di questa disciplina.
+
+
+Fare SWE significa allora sapere dare:
+
+* Disciplina
+* Qualita' verificabile
+* Regole, infrastrutture, procedure
+* CApire il problema
+* Risolvere il problema
+
+C'e' un rapporto tra analisi e progettazione t.c.:
+
+L'analisi utilizza un APPROCCIO INVESTIGATIVO, non si fa scappare neanche una traccia e dal piccolo diventa grande.
+
+La progettazione all'opposto adotta un APPROCCIO DI SINTESI .
+
+Dall'analisi dell'analista il progettista tira fuori una soluzione efficace ed efficiente ossia quantitativamente migliore.
+
+Tramite la progettazione si torna a un punto singolare che non lascia intercetezze e il compito e' il recinto del programmatori.
+
+Il programmatore allora non deve fare altro.
+Se fa altro: come facciamo a dire che abbiamo la soluzione piu' efficiente.
+
+Poiche' nelle collettivita' il danno prodotto si moltiplica, va limitato.
+Il programmatore se ha un dubbio su  cosa fare deve chiedere *al progettista*.
+
+Speriamo in progettisti che non lascino dubbio.
+
+Dijkstra non ha mai scritto neanche una linea di codice - e' stato un pensatore arguto e cattivo.
+Nell'82 ricevette un premio importante - il premio Turing.
+
+Anedottica: Vardanega ha capito la macchina di Turing quest'estate, leggendo un libro non informatico.
+
+Dijkstra e' il primo a pensare a correttezza scientifica.
+
+The task of making a thing satisfying our needs is split into
+* stating the properties of a thing by  virtue of which it would satisfy our needs
+* making a thi g that is *guaranteed* to have the sateated properties.
+
+    1982
+
+
+Se faccio le cose secondo questa disciplina diventa cosi' evidente il beneficio che non posso fare diversamente.
+
+Capito questo - cosa significa "fare progettazione"?
+
+Abbiamo macroscoicamente capito che progettare sigfnifica dividere e/o ricomporre.
+
+C'e' una parola unica, clamorosament abusata: "architettura".
+
+Progettare e' fondamentalmente /adottare/ un'architettura.
+Dico adottare e non creare per una ragione molto semplice: se l'architettura viene da uno "scaffale" affidabile ha piu' probabilita' di essere buona ppurche' sia scelta quella coretta per il nostro problema.
+
+HG WElls:
+
+"To you literature like painting is an end, to me literature like architecture is a means, is has a use".
+
+Wells dice al suo collega Henry James che la letteratura, come la pittura, e' un fine in se stesso.
+Per me ha un uso.
+
+Devo progettare una cosa che sia utile funzionalmente.
+
+Crozza quando fa l'architetto Fuffas pensa alla propria soddisfazione, non alla funzoine.
+
+Da quando nell'ambieto dell'informatica si parla di architettura?
+
+Fino agli anni 80 si parlava di archiettua solo tra ingegneri hardware parlando del sistema fisico.
+
+ISA instruction set architecture === l'insieme delle caratteristiche esposte al programmatore, le API del processore.
+
+Architettura di reti, ecc...
+
+Viene associata a tutt'oggi a un significato fisico.
+
+Nel 1992 Perry e Wolf propongono:
+
+* Elements, form rationale == software architecture
+* Element == component | connector
+
+Boehm 1995 (lo statistico): 
+
+A software system architecture comprises
+
+* A collection of software and system components connections and constraints
+* A collection of system stakeholders need statements
+* A rationale whih demonstrates thtat the compoments, connection and constrantsin define a system that if implemented, would satisfy the collection of system stakeholders' need statements.
+
+
+
+
+
