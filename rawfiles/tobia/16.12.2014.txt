@@ -1,0 +1,173 @@
+Raccomandazioni specifiche su come si scrivono i documenti e sulla tracciabilita'.
+Le tecniche di tracciamento che sono richieste... valgono sempre.
+
+La tesi di laurea /va scritta/ e mostra chi ha capito come scriver un documento tecnico.
+
+Il committente ha gia' deciso una serie di obblighi e deadline - obblighi temporali molto rigidi.
+Ma il progetto avanzera' con ritmo non necessariamente coerente.
+
+La ragione ovvia e' che per il gruppo per maturare una progettazione ragionevole occorrera'...?
+E" probabile che la competenza e il tempo a disposizione non collimino col calendario fissato.
+
+Si e' parlato della nozione di ciclo di vita.
+Un ciclo di vita vero inizia dalla concezione, finisce col ritiro e consta perlopiu' di manutenzione.
+
+Noi si vede un segmento di ciclo di vita.
+
+Il modello di sviluppo e' a scelta del fornitore (noi, quando supereremo la RR).
+
+Da una parte il committente si rapporta preferendo un certo apporoccio, dall'alttrail committente ha stabilito delle scadenze fisse.
+
+Nel ragionare sull'impegno si cita The Mythical Man Month.
+
+In realta' confondiamo spesso l'idea del mese persone come un concetto matematico scalabile, elastico, /lineare/.
+
+Il mese persona non e' lineare.
+
+Se alloco due mesi del tempo di X vorrei idealmnete fossero due mesi produttivi.
+
+* Vi sono compiti/impegni non comprimibili.
+* Vi sono compiti/impegni non partizionabili.
+  Nel caso piu' semplice, il dialogo con il proponente non e' partizionabile.
+* Comunicazione e interazione
+* ???
+
+Aggiungere persone a un progetto in ritardo e' un rischio.
+Perche'?
+* Aggiunge complessita' nell'esecuzione di compiti che richiedono comunicazione e coordinamento
+* Aggiunge inefficienza nell'esecuzione di compiti non partizionabili
+
+Assumiamo che il fornitore abbia vluto un modello sequenziale.
+Vi e' comunque una variabilita'.
+Si ha RPmin e RPmax.
+Se ambisco ad avere  consenso dal committente consenso s uuna specifica finale... RPmax.
+[ WTF? ]
+
+il progetto didattico prevede una singola RR, Rp, RQ e RA.
+Esiste pero' un calendario che collettivamente presenta al piu' cinque opportunita'.
+Occorre mappare 4 cose su 8 istanti t.
+Nel modello sequenziale e' semplice.
+
+Nel modello incrementale e' piu' complesso.
+Il modello incrementale aggiunge cose a una baseline.
+SE io - fornitore - adotto un modello incrementale.
+Un modello incrementale e' interessante per due motivi: 
+
+1. Mi concentro a progettare le cose che sono piu' facili da capire e le piu' evidenti.
+Posso poi aggiungere su quella base man mano che capisco il resto.
+2. Quanti piu' incrementi faccio quanto piu' mi convinco che la base e' buona.
+
+Si va dunque lla prima RA /possibile/, non si "vince" alla prima RA in assoluto.
+
+Ancora piu' difficile e' il modello evolutivo.
+Il modello aiuta noi e il committente a dire "e' buona o cattiva" - a quel punto si lavora su una seconda versione eventualmente asfaltando la prima.
+
+I modelli per componenti e per riuso sono contenuti nel modello incrementale e evolutivo.
+IL modello agile ha un andamento molto legato a un committente che non sa esattamente cosa vuole e ha bisogno di un fornitore che lo aiuti a capire cosa vuole.
+I capitolati sono molto diversi rispetto a questa cosa - non e' ragionevole che per tutti sia utile un modello agile.
+Il modello e' agile /verso il proponente/ ma non verso di me - non mi interessa /capire meglio/ i requisiti.
+
+Vediamo che nel modello sequenziale rischi e funzionalita' visibili sono /ortogonali/.
+Lo scopo e' /abbattere i rischi/ rimandnado l'emersione del valore/funzionalita'.
+
+Il proponente e' interessato alle funzionalita', non ai rischi - non gli interessa l'aspetto metodologico.
+IL dilemma e' scegliere un metodo di sviluppo che riesca a soddisfare le pressioni di 
+1. Mantenere il committente interessato
+2. Usare il committente per misurare il termometro dei rischi.
+
+E" una scelta strategica che si fa ASAP.
+
+Il secondo ambito di complessita' e' la progettazione.
+
+Esattamente come siamo scarsi di esperienza in programmazione sono scarsi di esperienza in progettazione.
+
+Quali sono le caratteristiche che interessano quando progetto?
+
+La prima e piu' importante e' cercare una progettazione che sia al contempo fattibile e verifcabili.
+Sono caratteristiche cosi' macroscopiche che e' quasi ridondante.
+In realta' e' facile progettare cose non fattibili (es. tecnologie incompatibili scoperte solo alla fine).
+
+[cose su verificabilita']
+
+La soluzione e' l'esperienza: si fa dal piccolo e si va al grande.
+
+Esiste solo una soluzione possibile?
+
+Il punto del progettista e' trovarne una e avere chiaro in mente che le alternative non sono buone abbastanza.
+
+Occorre motivare perche' la scelta e' buona: chi e' chiamato a discuterne puo' appoggiarcisi.
+
+Esistono tecniche che rendono questa consapevolezza piu' facile.
+
+[ cose ]
+
+Occorre massimo controllo di accoppiamento e coesione.
+
+Dicesi coesione un aggregato le cui parti hanno tutte una ragione positiva di essere.
+Non ho coesione se in un aggregato c'e' qualcuno che non sa perche' c'e'.
+
+E' facilissimo applicare un ragionamento di coesione sulle classi.
+
+Se un panificio vendesse bulloni avrebbe un'interfaccia non coesa.
+Chi compra bulloni difficilmente compra anche il pane.
+
+Coeso == ragione di essere li' /insieme/.
+
+Allora e' anche mantenibile ==> il tracciato delle cose che facciamo diventa molto piu'...
+
+Cosi' l'accoppiamento: una variazione su una parte esterna a me causa conseguenze.
+Da evitare, insano.
+
+Come accade: dati non incapsulati.
+Esposizione di cose interne.
+
+Quando progetto voglio delle parti che abbiano proprieta' che so a priori essere vere / vere per costruzione.
+
+Uso parti non perche' sono disponibili ma perche' hanno qualita' note.
+
+Come avere una tecnica economica per associare proprieta' note a priori a parti forse diverse fra loro?
+
+ASTRAENDO. 
+
+Tracciamento in avanti porta a una informazione di qualita' che e' sufficienza o completezza.
+
+===> non ho dimenticato niente.
+
+Io posso avere piu' requisiti software di quanto ho requisiti utente.
+
+L'importante e' che la soluzione tracci all'indietro questa cosa.
+
+occupandomi di necessita' e occupandomi di sufficienza.... 
+
+Sufficienza, completezza, atomicita'.
+
+Atomicita' vuool dire che non e' possibili dividere oltre (senza perdere senso / utilita').
+
+MI fermo quando ho decoposto abbastanza.
+
+Decomporre e' un criterio economico: piu' verificabile, piu' tracciabile.
+
+COncorrenza e distruzione sono fattori rilevanti alla progettazione.
+
+Sappiamo progettare pe concorrenza e distribuzione?
+
+La concorrenza e' utile - quando? -.
+
+Quando c'e' una soluzione che ammette esecuzione parallela.
+
+HO mal di testa.
+
+Tanto.
+
+Devo saperlo a priori.
+
+E' utile?
+
+Andare in parallelo - ho sempre mal id testa - rappresenta l'evidenza che la soluzione che sto immaginando l'ho disaccoppiata.
+
+Se il modo in cui ripartisco deve accordarsi ogni ciclo di clock - e' una cosa ragionevole? Non tanto.
+
+La distribuzione e' utile perche'... modello client server.
+
+
+

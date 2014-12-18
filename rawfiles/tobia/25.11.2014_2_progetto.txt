@@ -1,0 +1,17 @@
+IL progetto didattico e' un esercizio di relazione disciplinata tra cliente-committente === docente per la parte di regole, proponente per contenuti --- regole di intertazione strutturata efficiente ed efficace.
+Affinche' si divenga piu' capaci di farlo per davvero nella vita reale.
+Non si fa chiavi in mano.
+
+Vi viene imposto un sistema di controllo di avanzamento - vengono fissati momenti sul'asse deltempo con funzioni di controllo.
+Nel mezzo farete quel che credete.
+In quella parte di lavoro e' la vostra pianificazione che dovra' emergere per valore o disvalore.
+Per presentarvi a revisioni di avanzamento si dovranno prodeurre cosa di forma e contenuto obbligatorio.
+
+la revisione dei requisiti == ciascun gruppo presentare' la sua visione del poblema da risolvere.
+deve convincere il committente a dire compro questo prodotto.
+
+le attivita' andranno avanti per arrivare a un certo punto a fare un'accettazione.
+
+...
+
+Si comincia con una revisione di avanzamento centrata completamente sui requisiti.

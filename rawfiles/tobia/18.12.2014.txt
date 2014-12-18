@@ -1,0 +1,96 @@
+ La prima considerazione quando si usa la concrrenza e' l'efficienza.
+Come si misura l'efficienza sulla concorrenza e' il bilancio.
+L'efficienza c'e' quando il costo dell'entita' che uso (il thread) sia piu' bassso del vnataggio che da' il thread.
+Avete la percezione di quanto costa e.g. un thread?
+Un thread e' un flusso di controllo.
+Avra' come minimo uno stack da essere allocato.
+Esiste una lista di thread pronti per lo scheduling.
+... 
+va creata.
+Nel caso specifico di Java un thread e' anche un oggetto, e quindi allochiamo anche in heap l'oggetto.
+Se il thread fa solo a++ non e' efficiente, il costo e' molto piu' grande delle cose che fa.
+Nel caso estremo poiche' ogni thread consuma memoria si rischia di esaurire tutta la memoria.
+
+
+La seconda considerazione e' l'atomicita'.
+Mi fa paura il modo in cui competono... si ha una data race.
+Una race condition come si manifesta?
+Si manifesta perche' l'esito dell'aggiornamento su una variabile condivisa dipende dall'ordinamento dei processi.
+
+La terza caratteristica - la consistenza e integrita' vuol dire che le cose che vogliamo siano svolte sono svolte.
+A volte succede che noi ci immaginiamo che un thread abbia chiamato start, ma in realta' la start(0 era dentro un ramo else {} che non viene eseguito.
+
+[ quarta omessa ] 
+
+La quinta e' la predicibilita' - so che cosa succede.
+A volte questa e' difficile da raggiungere anche in sequenziale, con la concorrenza diventa ancora piu' rilevante.
+
+Una delle caratteristiche piu' evidenti del modo in cui si impara aprogrammare sbgliato e' che facciamo programmazione ottimistica.
+Non abbiamo nessuna percezione che molte delle cose che facciamo - specie quelle atte nei confronti dell'esterno e.g. dati, flussi - potrebbero andare male.
+Se faccio una programmazione strettamente ottimistica faccio operazioni fallibili pensando che vadano bene.
+
+Devo avere una programmazione molto cauta e mai ottimistica.
+Devo capire tutti i punti in cui sono esposto a una vulnerabilita'.
+
+La distinzione macroscopica e' che un'eccezione e' un evento che avviene al di fuori del programma.
+Quando si scrive da tastiera si ha un buffer, quando e' pieno viene eseguita un'interruzione.
+
+Stessa cosa col DMA: esiste il DMA perche' i trasferimenti da memoria RAM sono lenti...
+
+Le eccezioni sono conseguenza diretta - a differenza delle interruzioni - di cosa sta facendo il programma.
+
+Un try / catch e' un fallimento di una precondizione o postcondizione o qualche forma di invariante.
+
+Alcune azioni che fa per esempio java sono azioni fallibili - potrebbero non avere successo.
+
+Queste sono tipicamente dovute a fattori esterni e non c'e' verifica che tenga - se l'utente e' una scimmia non ci si puo' fare niente.
+
+Per tutte le azionieche dipendono .... programmo in base al possibile fallimento.
+
+Non lascero' mai al programmatore /come/ trattare i fallimenti - questa e' una responsabilita' di *progettazione*.
+
+La Torre di Pisa ha qualche elemento architetturale visibile che mosttra che e' stata costruita in momenti diversi?
+La parte superiore ha baricentro e inclinazione diversa - e' "a banana".
+
+Guardando un'architettura si capisce se e' unitaria e coerente oppure no.
+
+Chi e' stato a Catania? Catania ha avuto un'eruzione vulcanica dell'Etna alla fine del 1600 che l'ha completamente sepolta.
+Catania e' abituata a convivere con strati di storia.
+Alla fine del 700 le citta' vengono riprogettate perche' abbiano dei grandi vialoni e vengono sostituite le piccole case isolate con ??? 
+Dietro una facciata settecentesca c'e' un tempio romano.
+
+Nella progettazione perseguiamo l'integrazione: ciascun elemento persegue una sua funzione.
+
+Non posso ovvero avere tanti progettisti a meno che non siano tutti completamente d'accordo sui principi.
+La progettazione e' vincolata ad avere un progettista quando il sistema e' ancora top.
+Quando decompongo posso avere piu' progettisti per la parte down.
+
+C'e' un passaggio di maturita' di chi sviluppa sistemi software.
+E' palese che c'e' una distinzione di competenze responabilita' e visione tra il progettista e il programmatore.
+Non deleghiamo responsabilita' al programmatore; attua cio' che il progetto, l'architettura decide.
+Questo ha bisogno di essere tradotto anche in uno stile di programmazione.
+La programmazione e' nata molto prima della progettazione e i linguaggi di programmazione riflettono questo tipo di nascita - lasciano enorme l'iberta'.
+Bisogna educare il nostro uso di linguaggi di programmazione con regole.
+
+ENforce intentions: programmo facendo in mdo che quando uso il linguaggio, i suoi costtutti etc rappresentamno pianamente le intenzioni della progettazione.
+
+SRende piu' facile il tracciamento tra progettazione e programmazione.
+Faendo questa cosa sto realizzando l'intento di progettazione.
+
+Per dire che una classe non ammette specializzazioni?
+SI puo' dire?
+Faccio un diagramma delle classi che mostra che una certa classe e' il bottom di una gerarchia di specializzazione.
+Java ad esempio ha il simbolo sintattico final.
+
+Nella programmazione devo usare in modo visibile e tracciabile quello che la progettazione ha immaginato e voluto.
+
+Legata alla tecnica dell'ottimismo c'e' la cosiddetta *programmazione difensiva*.
+Sempre pensare al possibile errore che quella costruzione potrebbe indurre.
+Non voglio dire che posso scrivere che fa schifo e poi ci metto il try catch.
+Scrivo il codice migliore possibile ma so che possono venire dall'esterno degli errori.
+
+Il trattamento dei numeri in un calcolatore, specie in virgola mobile, e' *sempre* fonte di errori, una quantita' mostruosa e clamorosa.
+
+======================
+
+
