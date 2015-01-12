@@ -230,3 +230,67 @@ I requisiti hanno diversa utilità strategica:
 \end{itemize}
 
 I requisiti non devono essere in conflitto tra loro.
+
+\subsection{Attività di analisi}
+L'attività di analisi si svolge in diverse fasi:
+\begin{enumerate}
+  \item Studiare e definire il problema da risolvere: identificare il prodotto
+        da commissionare (cliente), capire cosa deve essere realizzato (cliente
+        e fornitore) e definire gli accordi contrattuali (cliente e fornitore).
+  \item Verificare le implicazione di conto e di qualità: la soddisfazione del
+        cliente è relativa ai requisiti.
+  \item Accertare la soddisfacibilità dei requisiti rispetto ai vincoli di
+        processo.
+  \item I requisiti devono essere tutti e soli quelli necessari e sufficienti:
+        nessun bisogno trascurato (\strong{chiusura}), nessuna caratteristica
+        superflua (\strong{sinteticità}).
+  % TODO wat?? che significa?
+  \item Una priorità relativa può essere assegnata ai requisiti confermati.
+\end{enumerate}
+
+% TODO: probabilmente i seguenti contenuti vanno distribuiti nelle varie
+% sezioni del documento.
+\subsection{Estratti da IEEE 830-1998}
+Un corretto SRS limita il \frgnword{range} di soluzioni progettuali valide,
+ma non ne specifica alcuna.
+
+Un SRS dovrebbe essere:
+\begin{itemize}
+  \item Corretto: ogni requisito indicato verrà soddisfatto dal prodotto;
+  \item Non ambiguo: ogni requisito ha un'unica interpretazione. Questo implica
+        che ogni caratteristica del prodotto finale sia descritta da un unico
+        singolo termine dal significato non ambiguo e indipendente dal contesto;
+  \item Completo: un SRS è completo se e solo se include i seguenti elementi:
+    \begin{itemize}
+      \item Tutti i requisiti significativi;
+      \item Definizioni delle risposte del software a ogni possibile classe di
+            input in ogni possibile situazione, sia valido che non valido;
+      \item Didascalie complete per figure, tabelle e diagrammi, e definizioni
+      di tutti i termini e unità di misura utilizzate.
+    \end{itemize}
+  \item Consistente: consistenza con altri documenti di progetto;
+  \item Ordinato per importanza e/o stabilità: ogni requisito deve essere
+        identificato in modo da rendere chiare le differenze in termini di
+        importanza e stabilità;
+  \item Verificabile: un SRS è verificabile se ogni requisito in esso è
+        verificabile. Un requisito è verificabile se e solo se esiste una
+        procedura dal costo finito (possibilmente automatizzata) che permetta di
+        verificare che il prodotto soddisfi il requisito (requisiti non
+        verificabili spesso includono diciture come "funziona bene" oppure "
+        solitamente dovrebbe succedere");
+  \item Modificabile: la struttura e lo stile del documento sono tali che ogni
+        modifica può essere fatta facilmente, completamente e consistentemente
+        mantenendo la struttura intatta. Tipicamente si realizza organizzando i
+        contenuti in \frgnword{table of content}, con \frgnword{cross-
+        referencing} esplicito e evitando ridondanza;
+  \item Tracciabilità: un SRS è tracciabile se l'origine di ogni requisito è
+        chiara. Vi sono due tipi di tracciabilità:
+        \begin{itemize}
+          \item \frgnword{backward traceability}, verso stadi precedenti
+                dello sviluppo. Si verifica se ogni requisito identifica
+                esplicitamente la fonte;
+          \item \frgnword{forward traceability}, verso stadi successivi di
+                sviluppo. Si verifica se ogni requisito ha un nome che lo
+                identifica univocamente.
+        \end{itemize}
+\end{itemize}
