@@ -1,29 +1,53 @@
-\section{Ingegneria dei requisiti}
-I requisiti di un sistema sono descrizioni delle funzionalità di un sistema, i servizi che fornisce e i vincoli sulle sue operazioni. In particolare, secondo il glossario IEEE, un requisito è:
+\section{Ingegneria dei requisiti} I requisiti di un sistema sono descrizioni
+delle funzionalità di un sistema, i servizi che fornisce e i vincoli sulle sue
+operazioni. In particolare, secondo il glossario IEEE, un requisito è:
 
 \begin{enumerate}
-	\item Una condizione (\frgnword{capability}) necessaria a un utente per risolvere un problema o raggiungere un obbiettivo (visione dal lato del bisogno);
-	\item Una condizione (\frgnword{capability}) che deve essere soddisfatta o posseduta da un sistema per adempiere a un obbligo (contratto, standard, specifica, documento formale) (visione dal lato della soluzione);
-	\item Una descrizione documentata di una condizione (\frgnword{capability}) come in 1. e 2.
+	\item Una condizione (\frgnword{capability}) necessaria a un utente per
+	      risolvere un problema o raggiungere un obbiettivo (visione dal lato del
+	      bisogno);
+	\item Una condizione (\frgnword{capability}) che deve essere soddisfatta o
+	      posseduta da un sistema per adempiere a un obbligo (contratto, standard,
+	      specifica, documento formale) (visione dal lato della soluzione);
+	\item Una descrizione documentata di una condizione (\frgnword{capability})
+	      come in 1. e 2.
 \end{enumerate}
 
-\todo{slide 3/42 si riferisce alla verifica e alla validazione. inserirla nelle sezioni relative?}
+\todo{slide 3/42 si riferisce alla verifica e alla validazione. inserirla nelle
+sezioni relative?}
 
 \todo{slide 4..6/42 ??}
 
-L'attività durante il quale si delineano, analizzano, documentano e verificano i servizi, le funzionalità e i vincoli di un sistema è chiamato \strong{ingegneria dei requisiti}. L'ingegneria dei requisiti è parte integrante dell'ingegneria di sistema e attività chiave del processo di sviluppo, e richiede competenze specializzate. Rappresenta l'insieme di attività necessarie al trattamento sistematico dei requisiti.
+L'attività durante il quale si delineano, analizzano, documentano e verificano i
+servizi, le funzionalità e i vincoli di un sistema è chiamato \strong{ingegneria
+dei requisiti}. L'ingegneria dei requisiti è parte integrante dell'ingegneria di
+sistema e attività chiave del processo di sviluppo, e richiede competenze
+specializzate. Rappresenta l'insieme di attività necessarie al trattamento
+sistematico dei requisiti.
 
 \paragraph{Attività}
 \begin{itemize}
 	\item Analisi
 		\begin{itemize}
-			\item Analisi dei bisogni (identificare cosa so o leggo che devo fare) e delle fonti (luoghi dal quale scaturiscono altri bisogni)
-			\item Classificazione dei requisiti: non si vuole avere un insieme disorganizzato di requisiti, ma organizzarli in modo strutturato e ordinato.
-			\item Modellazione concettuale del sistema: diagramma Casi d'Uso, che rappresenta il punto di vista dell'attore (qualsiasi entità esterna al sistema che interagisce con esso). Definisce i bisogni esterni del sistema.
+			\item Analisi dei bisogni (identificare cosa so o leggo che devo fare) e
+			      delle fonti (luoghi dal quale scaturiscono altri bisogni)
+			\item Classificazione dei requisiti: non si vuole avere un insieme
+			      disorganizzato di requisiti, ma organizzarli in modo strutturato e
+			      ordinato.
+			\item Modellazione concettuale del sistema: diagramma Casi d'Uso, che
+			      rappresenta il punto di vista dell'attore (qualsiasi entità esterna
+			      al sistema che interagisce con esso). Definisce i bisogni esterni del
+			      sistema.
 			\item Assegnazione dei requisiti a parti distinte del sistema
-			\item Negoziazione con il committente e con i sotto-fornitori: i requisiti devono essere concordati e negoziati con gli \frgnword{stakeholder}, in modo che vengano fissati quelli irrinunciabili e individuati quelli secondari che, in mancanza di risorse, potranno essere scartati. Il confronto con le fonti (committente, utenti, ecc.) è fondamentale.
+			\item Negoziazione con il committente e con i sotto-fornitori: i requisiti
+			      devono essere concordati e negoziati con gli \frgnword{stakeholder},
+			      in modo che vengano fissati quelli irrinunciabili e individuati
+			      quelli secondari che, in mancanza di risorse, potranno essere
+			      scartati. Il confronto con le fonti (committente, utenti, ecc.) è
+			      fondamentale.
 		\end{itemize}
-	Durante l'attività di analisi dei requisiti è necessario equipaggiarsi, per metodo e per strumenti, per fare verifica e validazione.
+	Durante l'attività di analisi dei requisiti è necessario equipaggiarsi, per
+	metodo e per strumenti, per fare verifica e validazione.
 	\item Specifica di verifica e validazione
 		\begin{itemize}
 			\item Predisposizione di revisione interna/esterna
@@ -31,65 +55,103 @@ L'attività durante il quale si delineano, analizzano, documentano e verificano 
 		\end{itemize}
 	\item Analisi dei bisogni e delle fonti
 		\begin{itemize}
-			\item Propedeutica a identificazione, analisi, specifica e classificazione dei requisiti
+			\item Propedeutica a identificazione, analisi, specifica e classificazione
+			      dei requisiti
 		\end{itemize}
 	\item Modellazione concettuale del sistema
 		\begin{itemize}
-			\item Partizionamento in componenti a scopo di allocazione dei requisiti (come nel diagramma dei casi d'uso)
+			\item Partizionamento in componenti a scopo di allocazione dei requisiti
+			      (come nel diagramma dei casi d'uso)
 			\item Non è progettazione della soluzione
 		\end{itemize}
 	\item Attribuzione dei requisiti a `parti'
 \end{itemize}
 
-L'analisi dei requisiti è conclusa dalla definizione di una \strong{\frgnword{requirements baseline}}. Una baseline è un aggregato di \frgnword{configuration item} associato a un punto di sviluppo strategico, chiamato \frgnword{milestone}. Si raggiunge una \frgnword{requirements baseline} quando vengono definiti tutti i requisiti che importano. La definizione della \frgnword{requisiti baseline} costituisce il punto di fine dell'analisi dei requisiti e di inizio della fase di progettazione.
+L'analisi dei requisiti è conclusa dalla definizione di una \strong{\frgnword{
+requirements baseline}}. Una baseline è un aggregato di \frgnword{configuration
+item} associato a un punto di sviluppo strategico, chiamato
+\frgnword{milestone}. Si raggiunge una \frgnword{requirements baseline} quando
+vengono definiti tutti i requisiti che importano. La definizione della
+\frgnword{requisiti baseline} costituisce il punto di fine dell'analisi dei
+requisiti e di inizio della fase di progettazione.
 
 \paragraph{Processi coinvolti}
 \begin{itemize}
-	\item Documentazione: serve uno strumento che renda i requisiti oggettivi, discutibili (oggetto plausibile di discussione) e non ambigui (uso di diagrammi, evitando il linguaggio naturale). La poca narrazione associata ai diagrammi deve essere di supporto, tecnica e sintetica, e appoggiarsi a un glossario per eliminare l'ambiguità dei termini.
+	\item Documentazione: serve uno strumento che renda i requisiti oggettivi,
+	      discutibili (oggetto plausibile di discussione) e non ambigui (uso di
+	      diagrammi, evitando il linguaggio naturale). La poca narrazione
+	      associata ai diagrammi deve essere di supporto, tecnica e sintetica, e
+	      appoggiarsi a un glossario per eliminare l'ambiguità dei termini.
 		\begin{itemize}
 			\item Studio di fattibilità
 			\item Analisi dei requisiti
 		\end{itemize}
-	\item Gestione e manutenzione dei prodotti: i requisiti cambiano nel tempo per aggiunta, rimozione e estensione. Serve un insieme di regole, procedure e strumenti per gestire questi cambiamenti.
+	\item Gestione e manutenzione dei prodotti: i requisiti cambiano nel tempo per
+	      aggiunta, rimozione e estensione. Serve un insieme di regole, procedure
+	      e strumenti per gestire questi cambiamenti.
 		\begin{itemize}
-			\item Tracciamento dei requisiti: permette di sapere, per ogni passo di avanzamento nel progetto, a quale requisito risponde. Rappresentando il piano di attività come un grafo direzionato e aciclico, il tracciamento comunica il motivo di ciascun arco.
+			\item Tracciamento dei requisiti: permette di sapere, per ogni passo di
+			      avanzamento nel progetto, a quale requisito risponde. Rappresentando
+			      il piano di attività come un grafo direzionato e aciclico, il
+			      tracciamento comunica il motivo di ciascun arco.
 			\item Impostazione e gestione della configurazione
 			\item Gestione dei cambiamenti
 		\end{itemize}
 \end{itemize}
 
 \subsection{Studio di fattibilità}
-Lo studio di fattibilità precede l'analisi dei requisiti, e si occupa di valutare la fattibilità del progetto in termini di rischi, costi e benefici, e decidere se sia conveniente procedere con il lavoro.
+Lo studio di fattibilità precede l'analisi dei requisiti, e si occupa di
+valutare la fattibilità del progetto in termini di rischi, costi e benefici, e
+decidere se sia conveniente procedere con il lavoro.
 \begin{itemize}
-	\item Fattibilità tecnico-organizzative: valutare se si hanno le competenze e gli strumenti necessari, le soluzioni algoritmiche e architetturali e le piattaforme idonee per l'esecuzione;
-	\item Rapporto costi/benefici: valutare il rapporto tra il costo di produzione e la redditività dell'investimento, nei confronti del mercato attuale e futuro;
+	\item Fattibilità tecnico-organizzative: valutare se si hanno le competenze e
+	      gli strumenti necessari, le soluzioni algoritmiche e architetturali e le
+	      piattaforme idonee per l'esecuzione;
+	\item Rapporto costi/benefici: valutare il rapporto tra il costo di produzione
+	      e la redditività dell'investimento, nei confronti del mercato attuale e
+	      futuro;
 	\item Individuazione dei rischi: capire le complessità e le incertezze;
 	\item Valutazione delle scadenze temporali;
 	\item Valutazione delle alternative
 		\begin{itemize}
-			\item Scelte architetturali: sistema centralizzato o distribuito, modello client-server, ecc.
+			\item Scelte architetturali: sistema centralizzato o distribuito, modello
+			      client-server, ecc.
 			\item Strategie realizzative: riuso o sviluppo ex-novo
 			\item Strategie operative
 		\end{itemize}
 \end{itemize}
 
-Lo studio di fattibilità è un'attività preliminare che non può impiegare troppo tempo; è quindi un processo rapido, i cui risultati però non vengono scartati, ma costituiscono una base di partenza per l'analisi dei requisiti.
+Lo studio di fattibilità è un'attività preliminare che non può impiegare troppo
+tempo; è quindi un processo rapido, i cui risultati però non vengono scartati,
+ma costituiscono una base di partenza per l'analisi dei requisiti.
 
 \subsection{Tecniche di analisi}
 \begin{itemize}
 	\item Analisi dei bisogni e delle fonti
 		\begin{itemize}
-			\item Studio del dominio, con osservazione dei comportamenti dell'utente finale e dell'ambiente d'uso;
-			\item Interazione con il cliente: instaurare un rapporto con il cliente non invadente, intelligente e strutturato, definito intervista. Le interviste costituiscono un dialogo da cui esce un resoconto approvato da entrambe le parti;
+			\item Studio del dominio, con osservazione dei comportamenti dell'utente
+			      finale e dell'ambiente d'uso;
+			\item Interazione con il cliente: instaurare un rapporto con il cliente
+			      non invadente, intelligente e strutturato, definito intervista. Le
+			      interviste costituiscono un dialogo da cui esce un resoconto
+			      approvato da entrambe le parti;
 			\item Discussioni creative (brainstorming), coinvolgono tre figure
 				\begin{itemize}
 					\item Un gruppo di persone che discuta il problema
-					\item Un `facilitatore', che aiuti la discussione a convergere in un tempo finito, che fissi un tempo e aiuti a valutare il risultato della discussione. Il facilitatore non può essere \frgnword{biased} e non è coinvolto direttamente nella discussione
-					\item Una persona che tenga le minute della discussione, che ne registri i punti salienti
+					\item Un `facilitatore', che aiuti la discussione a convergere in un
+					      tempo finito, che fissi un tempo e aiuti a valutare il risultato
+					      della discussione. Il facilitatore non può essere
+					      \frgnword{biased} e non è coinvolto direttamente nella
+					      discussione
+					\item Una persona che tenga le minute della discussione, che ne
+					      registri i punti salienti
 				\end{itemize}
-			\item Prototipazione: può essere interna, a vantaggio del fornitore, o esterna, per arricchire il rapporto con il cliente; può essere usa-e-getta o incrementale;
+			\item Prototipazione: può essere interna, a vantaggio del fornitore, o
+			      esterna, per arricchire il rapporto con il cliente; può essere
+			      usa-e-getta o incrementale;
 		\end{itemize}
-	\item Dominio, campo di applicazione del prodotto: a quali bisogni risponde, e quali problematiche coinvolge;
+	\item Dominio, campo di applicazione del prodotto: a quali bisogni risponde, e
+	      quali problematiche coinvolge;
 	\item Acquisizione delle competenze
 		\begin{itemize}
 			\item Documentazione preesistente
@@ -105,12 +167,23 @@ Lo studio di fattibilità è un'attività preliminare che non può impiegare tro
 \end{itemize}
 
 \subsection{Classificazione dei requisiti}
-E' fondamentale organizzare i requisiti in maniera strutturata e organizzata. Suddividere i requisiti in diversi livelli di dettaglio è utile per comunicare informazioni sul sistema a differenti tipologie di lettori.
+E' fondamentale organizzare i requisiti in maniera strutturata e organizzata.
+Suddividere i requisiti in diversi livelli di dettaglio è utile per comunicare
+informazioni sul sistema a differenti tipologie di lettori.
 
-Si può individuare una distinzione tra \strong{requisiti utente} e \strong{requisiti di sistema}:
+Si può individuare una distinzione tra \strong{requisiti utente} e
+\strong{requisiti di sistema}:
 \begin{itemize}
-	\item Requisiti utente: affermazioni, in forma di linguaggio naturale e diagrammi, di quali servizi il sistema dovrebbe offrire all'utente, e i vincoli secondo il quale dovrebbe operare;
-\item Requisiti di sistema: descrizioni dettagliate delle funzioni, servizi e vincoli operativi del sistema. Costituiscono una documentazione esatta di cosa deve essere implementato.
+	\item Requisiti utente: affermazioni, in forma di linguaggio naturale e
+	      diagrammi, di quali servizi il sistema dovrebbe offrire all'utente, e i
+	      vincoli secondo il quale dovrebbe operare;
+\item Requisiti di sistema: descrizioni dettagliate delle funzioni, servizi e
+      vincoli operativi del sistema. Costituiscono una documentazione esatta di
+      cosa deve essere implementato.
 \end{itemize}
 
-I requisiti descrivono \strong{attributi di prodotto} o \strong{attributi di processo}. Gli attributi di prodotto definiscono le caratteristiche del sistema; rispondono alla domanda `cosa devo fare?'. Gli attributi di processo pongono vincoli sui processi impiegati nel progetto (linguaggio di programmazione da usare, strumento, metodo, ecc.); rispondono alla domanda `come devo farlo?'.
+I requisiti descrivono \strong{attributi di prodotto} o \strong{attributi di
+processo}. Gli attributi di prodotto definiscono le caratteristiche del sistema;
+rispondono alla domanda `cosa devo fare?'. Gli attributi di processo pongono
+vincoli sui processi impiegati nel progetto (linguaggio di programmazione da
+usare, strumento, metodo, ecc.); rispondono alla domanda `come devo farlo?'.
