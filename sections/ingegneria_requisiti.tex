@@ -187,3 +187,46 @@ processo}. Gli attributi di prodotto definiscono le caratteristiche del sistema;
 rispondono alla domanda `cosa devo fare?'. Gli attributi di processo pongono
 vincoli sui processi impiegati nel progetto (linguaggio di programmazione da
 usare, strumento, metodo, ecc.); rispondono alla domanda `come devo farlo?'.
+
+Gli attributi di prodotto esprimono
+\begin{itemize}
+  \item requisiti funzionali, che determinano le capacità di calcolo richieste
+  al sistema (\frgnword{capabilities});
+  \item requisiti prestazionali;
+  \item requisiti qualitativi;
+\end{itemize}
+
+% TODO espandere.
+Gli attributi di processo esprimono ulteriori requisiti extra-funzionali, che
+riducono i gradi di libertà disponibili nella definizione della soluzione.
+
+I requisiti devono essere verificabili: chi impone un requisito deve avere idea
+di come accertarne il soddisfacimento; chi è chiamato a soddisfare un requisito
+deve saperne valutare costo e complessità di verifica.
+
+\begin{figure}[h!]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \strong{Tipologia di requisito} & \strong{Modalità di verifica} \\
+    \hline
+    Requisiti funzionali & test, dimostrazione formale, revisione \\
+    \hline
+    Requisiti prestazionali & misurazione \\
+    \hline
+    Requisiti qualitativi & verifica \emph{ad hoc} \\
+    \hline
+    Requisiti dichiarativi & revisione \\
+    \hline
+  \end{tabular}
+\end{figure}
+
+I requisiti hanno diversa utilità strategica:
+\begin{itemize}
+  \item Obbligatori: irrinunciabili per un qualsiasi \emph{stakeholder};
+  \item Desiderabili: non strettamente necessari ma a valore aggiunto
+        riconoscibile;
+  \item Opzionali: relativamente utili oppure contrattabili in seguito;
+\end{itemize}
+
+I requisiti non devono essere in conflitto tra loro.
