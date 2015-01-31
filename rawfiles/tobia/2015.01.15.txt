@@ -1,0 +1,274 @@
+I test non vanno bene per valutare l'uso della memoria.
+E' troppo tardi.
+
+Idem per il tempo di risposta.
+
+In alcuni domini applicativi mi occorre dire che .... real time.
+
+
+Analisi di interferenza vuol dire mostrare l'assenza di effetti tra parti separati del sistema.
+
+Un SO che fa paginazione combatte l'interferenza facendo si chie quando alloca un page frame a una nuova page azzera tutto.
+La page potrebbe leggere quello che c'era prima.
+
+Paging on demand: quando un processo di SO inizia l'esecuzione ha il suo spazio di memoria virtuale, entra un nuovo processo, ha tantee pagine quanta la sua memoria virtuale.
+
+Tutta la memoria virtuale del processo non sara' mai caricata in ram.
+Verra' caricata quando si fa un accesso tipicamente  in scrittura al dato.
+
+Se la memoria puo' essere occupata da altri i contenuti possono dare fastidio.
+
+10. Analisi di codice oggetto
+
+Tecnica obbligatoriae.g. nei sistemi di avionica: non ci fidiamo neanche del compilatore.
+Assicurare che il codice oggetto da eseguire sia una traduzione corretta del codice sorgente corrispondente.
+Viene fatta ancora manualmente.
+
+Si voglion tracciare i requisiti *fino al codice oggetto*.
+
+============
+
+Costo correzione.
+
+Da quando le automobili sono piene di elettronica il numero di ritiri e' grande, e molto costoso.
+
+          +
+          +
+          +
+          +
+          +
+        + +
+        + +
+      + + +
+    + + + +
+  + + + + +
++ + + + + +
+______________
+R D C U A M
+
+Vediamo che l'analisi statica e' piu' potente: costa meno.
+
+Una correzione per test costa molto: occorre modificare codice, documenti e fare test di regressione.
+
+Ci si danno norme di progetto appropriate cosi' che i programmi siano verificabili.
+
+Si vuole anche codice sorgenti senza ambiguita'.
+Vogliamo in particolare evitare side effect, interferenza, ...
+
+=======
+
+Poiche' la verifica e' un'attivita' che si protrae per quasi tutta la durata del progetto... 
+...si rende a basso costo.
+Pertanto voglio fare in modo che il modo in cui organizzo il mio sistema lo renda facilmente verificabile.
+
+====
+
+Parliamo di test:
+
+il test e' familiare, ma cerchiamo di dargli unquadro di riferimento un pochino piu' metodologico rispetto a "ho fatto un po' di prove".
+
+Nell'ottica di avere costi contenuti e tempo finito occorre che i test fatti siano in numero finito.
+Gia' qui arto male: il numero di test che posso fare e' largamente insufficiente rispetto ai test che dovrei fare.
+
+Ho un metodo che moltiplica due numeri reali: a*b
+Vogliamo vedere se fa correttamente il suo mestiere: non posso testare infinito^2 coppie.
+
+Devo fare in modo che l'insieme finito di casi testati - i cd casi di test - sia di grande valore dimostrativo.
+Provando poco deriviamo molta informazione.
+
+Poiche' questa cosa e' fondamentale non possiamo aspettare la fine della programmazione per sapere quanto faremo di test.
+In molte aziende sotto le alpi si pianifica il piano di progetto, e si dice
+"faremo verifiche dopo e documenteremo dopo".
+
+Trivialmente non va bene.
+
+Dentro lo swebok si vede che l'area di test e' vasta e copmlicata in termini di quante cose occorrerebbe sapere fare bene.
+
+Ci concentreremo su test strutturali e test fuzionali.
+
+Prima di parlare di queste cse facciamo un po' di glossario, cosi' usiamo i termini in modo piu' coinsapevole.
+
+Quando noi vediamo u nsoftware che no nfunzione stiamo aosservando una cosa che in italiano si chiama malfunzionamento e in inglese si chiama failure.
+Quindi il termine failure significa che non viene erogato il servizio atteso.
+Quindi e' una deroga.
+uNa deroga fatale, non correggibile a un'attesa.
+
+Conseguentemente si combattono le failure.
+No, e' successa.
+Si toglie la causa.
+
+
+Come si fa a deforestare le failure? Si arrestra nella catena causale.
+Si dice che unsistema puo' produrre un failure se e' al suo interno in uno stato erroneo.
+
+Error e' uno stato del sistema che puo' indurre un failure.
+
+E' un concetto facile dda ienunciare ma non immediato da cpire.
+Il sw e' un oggetto fondamentalmente deterministico prduce un esito sbagliato o nessun esito solo se attivato un con certo input produce risposta sbagliata.
+Devo evitare stati erronei.
+
+Combatto gli stati erronei: o li impedisc: faccio in modo che non ci siano stati erronei oppure se c'e' stato erroneo la curo.
+Circoscrivo il virus - il contagio.
+Da dove nasce un errore?
+Da un fault.
+Il fault che purtroppo in italiano traduciamo con lo stesso sostantivo di failure - guasto - il fault 'e quello che una volta che arriva puo' causare questa catena.
+
+Un fault nasce da:
+
+Come capisco il problema
+Come progetto la soluzione
+Nel modo in cui programmo (male) una soluzione corretta
+
+Il fault puo' arrivare in molti momenti.
+Arriva nel capire, nel progettare, nel realizzare.
+Quello che combatto fondamentalmente sono i fault.
+Combattiamo i fault per evitare di vedere i failure; non sempre e' possibile.
+I genitori sanno, quando hanno bimbi che finche' stanno a casa e non si ammalano
+Il primo giorno li mandano in asilo e tornano impestati di qualche malattia.
+
+Per capire la concatenazione vediamo:
+Come arrivo ad un failure?
+PERCHE' ho innescato un fault, rimane nel sistema, produce uno stato erroneo, lo stato erroneo viene attivato e quello che ottengo e' una devianza dal comportamento atteso.
+
+Poiche' i sistemi sw sono gerarchicamente annidati
+vorra' dire che la concatenazione, che si chiama catena causale, fa si' che un failure venga visto da fuori come un fault.
+
+Esempio semplice: se avete capito che dobbiamo fare sempre software a  parti piccole, e' evidente che il main chiama una procedura che ne chiama un'altra che ne chiama un'altra.
+Le verifiche le facciamo prevalentemente bottom up.
+Quando una roba che e' al quinto livello di chiamata e' malfatta vuol dire che essendo malfatta ha un fault - fault di concetto, di progettazione o di programmazione.
+Se murphy vigila produce ... un errore.
+...
+Si manifesta al quarto livello di annidamento come una cosa fatta male.
+Diciamo che abbiamo un fault al quarto livello.
+Avete visto un'eccezione in Java?
+E' la manifestazione di una cosa che va male in basso, non la correggo, va male ancora piu' in alto, eccetera finco a 10 pagine di traccia.
+
+Questa situazione che all'interno non e' pi' gestibile se all'interno non e' piu' gestibile se non ha piu' prodotto un failure.
+Si fa in modo che... il componente non venga usato prima di essere controllato.
+Faccio un'operazione che si chiama fault tolerance.
+Ma non faro' mai failure toleramce: la failure ormai e' fatta.
+
+Quando il tappo cade nel lavandino non inseguite il tappo, chiudete immediatamente il buco.
+Questa operazione si chiama fault tolerance: va a impedire che il fault si manifesti.
+
+O sono sicuro che cio' che uso e' fault free (difficilmente) oppure incapsulo in cose che fanno dei controlli per imepdisre che si manifesti...
+Il modo in cui trattiamo la parte di catch e' poco efficace.
+Noi vogliamo fare un'operazione non autoptica.
+Le cose di cui parlare quando si parla di test e':
+
+* devono essere eben specificiati gli obbiettivi delle prove
+* ... i vincoli
+* devono essere ben pianificati
+* devono essere timely
+
+Timely significa puntuali.
+
+I test costano un sacco di sforzo e arrivano tardi.
+Voglaimo renderli di conseguenza automatizzabili e automatizzati.
+Poiche' abbiamo imparato nella lezione precedente che mi occorrono uno stub, un driver... quindi fare test raddoppia, triplica lo sforzo di programmazione.
+L'obbliettivo di un pianificatore vorrebbe essere che spendiate nel fare test non piu' di quanto allocato.
+Ma vorremmo anche ottenere il massimo risultato.
+
+Puntiamo alla minima quantit'a di test sufficiente.
+usando tutto il tempo che abbiamo allocato.
+
+Abbiamo due problemi di quantificazione a priori: dobbiamo dire fin quando necessario rispetto all'sito del test e per tutto il tempo del pianificato.
+E abbiamo pianificato tempo addietro.
+
+Entra in gioco il principio dei ritorni decrescente, law of dimishing returns.
+Come ragionamo? Diciamo che se i lrendimento cioe' il prodotto di un'attivita' la mattiamo su un'ordinata cioe' sull y e lo sforzo impiegato lo mettiamo sull'ascissa, cioe' sull'x, se non ci fosse qusto principio l'andamento della funzione di x in y sarebbe o lineare o ancor meglio esponenziale: TUTTO cio' che faccio produce valore.
+
+Succede che a u ncerto punto attuo sforzo che non produce un ritorno bastevole.
+A quel punto la curva inizia ad andare asintotica o, peggio, deflette su se stessa e cala.
+
+Mi fermo allora appena raggiungo il massimo.
+
+Murphologicamente la curva farebbe un piccolo avvallamento per illudermi e magari poi ritorna su.
+
+Non e' facile avere una sentinella per dire "questo e' il punto dove smettere".
+Abbiamo incertezze che possiamo solo attenuare ma sono intrinseche al problema.
+
+Come si fa a ragionare su questo problema?
+Si inizia a dare un nome alle cose e a mettere nel quadro gli aspetti che sono rilevanti.
+Ogni prova deve avere un obbiettivo chiaro e comletamente noto e quantificabile per costo e beneficio: ogni prova devo sapere perche' la facci.
+Quanto mi costa? Tre ore.
+Chiede un responsabile: puoi farne a meno?
+No. Se non provo questo non posso andare avanti encapsulando questo in quello che usera'.
+Le risposte a quante e quali prove le mette chi scrive documentazione nel piano di qualifica.
+
+E' lui che deve dire in input la pianificazione.
+
+Succede che il PdQ precede logicamente il PdP.
+
+Non posso ragionevolmente lavorare all'opposto, ossia che pianifico e il residuo lo lascio per questa roba qui.
+
+Mettiamoci allora nell'ottica di chi deve pensare queste prove.
+
+L'atteggiamento utile e' l'esatto poosto di esser indulgenti.
+essere indulgente quando faccio test e' guardare con mezzo occhio.
+
+Facciamo test con l'intendimento di scovare dei difetti.
+E' come essere pagati a cottimo.
+Ci sono figure professionali pagate per ogni contratto stipulato.
+Ogni volta che smarcano uno yes.
+
+Immaginate che il principio sia vengo pagato a stipendio fisso per ogni errore (e' ancora un errore, non un fault) che il nostro test scova e' un bonus.
+
+******
+Il test e' utile sse dice che c'e' un problema.
+******
+
+Un test e' utile solo se produce unerrore.
+
+
+......
+cose
+......
+.....
+
+Il poter dire che ho corretto un errore viene dal fatto che il test e' ripetibile: eseguendo il medesimo test su un'unita' corretta deve ... ? 
+
+Faro' mai dei test su cose che so essere corrette?
+
+No: e' tempo sprecato.
+Non e' utile fare test il cui contributo e' nullo.
+
+---
+
+Th di Howden, DIjstra, Weyuker.
+
+Non ci sono tecniche generali che dato un programma dicano se e' corretto o non corretto.
+
+
+===========
+
+Inciso.
+Turing era una persona assolutamente insopportabile, un loner.
+[[ Il film e' sbagliato sulla conclusione: 
+   quella roba che lui chiamava MdT 
+   non e' il computer.
+   Noi usiamo la macchina di Von Neumann.
+   ]] 
+
+=============
+
+
+******
+Principi di Bertrand Meyer 
+******
+
+Le attivita' di prova che devo svolgere quando faccio il verificatore-che-usa-test.
+Sono ~~ le stesse che faccio quando programmo: 
+
+speficica, codifica, compilazione, esecuzione, analisi
+
+Chi scrive test e' assoggettato alla stessa disciplina di chi fa programmazione normale.
+
+Questo mi basta?
+Devo rendere il test ripetibile.
+Devo quindi inizializzare il sistema allo stato attesao per fare il test e devo registrare le uscite (logger).
+I log deve essere machine readable.
+
+La specifica includera' quindi l'attesa.
+tutta 'sta roba qua devo costruirla in modo tale che quando eseguo un test fa questo: installa lo stato iniziale, prende l'uitnita' d atestare, registra e confronta l'output con l'oracolo e dice yes/no.
+

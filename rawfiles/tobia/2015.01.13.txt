@@ -1,0 +1,264 @@
+Sapere quanto occorre fare per la verifica ha un impatto importante nella pianoficazione
+Come criterio macroscopico sappiate che qualsiasi progetto ragionevolmente ben fatto la quota di tempo dedicata a fare verifica e' almeno 1/3 del totale.
+L'analisi staica e' importante ma scarsamente utlizzata in Italia, mentre oltreoceano e' piuyu' usata in pratica.
+Il test potremo farlo soltanto quando il cosice esiste/esegue.
+Ma noi non vogiamo fare test e scoprire che l coddice e' /pensato/ male in the first place.
+Vogliamo allora fare verifica.
+
+Stiamo trasformando un approccio by correction in un approccio by construction.
+
+La cultura relativa all'analisi statica nasce nel mondo dei domini applicativi che incrociano safety e security.
+
+La connoazionie safety vuol dire che il sistema quando funziona non fa danni.
+
+Esempi di software in cui il requisito e' presente: avionica.
+I dati statistici sulla safety di automobili guidate da sole il rispetto dei segnali e' 100% as opposed to gli umani.
+security significa sono protett da intrusioni: i dati sono privati, ecc.
+I sistemi software che hanno caratteristiche di quest otipo sono i primi nella storia ad avere enorme attenzione all'analisi statica.
+
+E' troppo oneroso, costoso in quei sistemi scoprire dopo che c'e' un problema.
+Si parla di requisiti non funzionali.
+C'e' un dibattito sul fatto che il termine non funzionale suoni negativo.
+Sono requisiti che hanno a che fare non con il cosa faccio ma con il come lo faccio.
+Sono tutte caratteristiche verificabiloi in modo dimostrabile.
+Dico dimostrabilmente perche' sottendo, sottolineo che voglio una dimostrazione piu' forte di una evidenza.
+Voglio qualche argomento formale, algebrico.
+Sto spostando l'enfasi da una osservazione a un ragionamento assimilabile a un teorema.
+Queste caratteristiche dimostrabilmente verificabili hanno a che fare con come il software e' progettato, componentizzato, usato,
+Garantisco che no nci sara' modo per l'utente di fare cose che non voglio.
+Metto il recinto in una bounding box.
+
+Comincio a smitizzare il potere delle tecnologie - sono fattori accidentali.
+Le tecnologie in se', incluse quelle di programmazione sono tutti strumenti che oggi ci sono e domsni non ci saranno piu'.
+Devo anzi porre vincoli forti per fare in modo che il modo in cui programmero' sara' faclimente verificabile.
+
+I linguaggi usati fino ad oggi sono linguaggi che lasciano certe liberta'.
+La reazione umana a moklti vincoli quando si programma sono reazioni fortemente negative.
+
+Il tempo che serve per apprendere l'uso corretto di quel linguaggi... cogenti (e.g. C++, permissivi, senza vincoli) e' grande.
+
+Tra le tecniche di verifica c'e' il tracciamento.
+Rompere la catena d tracciabilita' impedisce di fare un'affermazione dimostrabile chew cio' che stiamo facendo e' c&c.
+Il tracciamento si agevola tramite strunmenti automatici.
+
+Uno dei motivi per cui voglio che i requisiti siano rappresentati come basi dati eche' cvglio verificare automaticamente la consistenza della matrice dei requisit.
+
+Vogliamo avere un tracciamento verso i singoli file.
+
+Vogmialo ... una notazione precisa nei commenti.
+
+Seoncda tecnica di verifica statica sono le revisioni.
+
+Le revisioni sono anche qualche cosa che un fornitor puo' anche
+applicare a se stesso.
+
+Le revisioni impongono cose (utili).
+
+Le revisioni aiutano perche' impongono una disciplina nota a priori e
+caratteristiche che ci devono essere.  Dieci tecniche non tutte da
+suare usate in nodo pionieristico per esempio nei sistemi che si
+chiamano di avionica.
+
+Se ci fosse fra di noi un esona natan el medioevo avrebbe uns reazione
+sorpresa guardando un aereo che vola.  Non sara' mai il test per
+verificare che il sofwre dell'aereo non spenga i motori a caso.  La
+ragione e' che so che non faro' mai bbastana testa da essere
+esaustivo.
+
+facciamo breevemente una carrellata in ordine di quello che si puo'
+fare per prima.
+
+1. Analisi di flusso di controllo
+
+Il Program Counter e'... il flusso sono i contenuti del program
+counter.  Il flusso di controllo origina dal main
+
+Se ho un programma concorrente o distribuito ho > 1 fulissi di
+controllo.
+
+Facendo l'analisi del flusso seguo, senza eseguire, i luoghi dove
+andra' il mio programma.
+
+Vogliamo verificare che termini, che non abbia codice non
+raggiungibile.
+
+Ci sono stili di programmazione che mi aiutano in questo senso?
+
+Se scrivo programma con la ricorsione, diretta o indiretta, aiuta?  Se
+chiamo procedure tramite indirizzi aiuta? No.  Se programmo per
+eccezioni mi aiuto? No.
+
+Noi vorremmo che quando sottomettono un codice al compilatore non ci
+sia rischio neppure di un warning.  Non vogliamo fare fare debugging
+al compilatore, vogliamo lavorare by construction.
+
+Il codcie non raggiungibile e' quel pezzo di software... il mio
+programma...  ??
+
+In ambienti nei quali non soltnto la presenza di codice non
+utilizzabile perche' mai verificato e mai raggiungibile da un
+controllo di flusso normale...  succede anche che poiche' un aereo
+viaggia piuttosto alto girino particelle cariche possano produrre
+effetti che si chiamano flip.  Certi bit che sono a zero in memoria se
+arrivano queste particelle cariche diventano 1.  Il PC se soggetto a
+questa cosa va in posti random.  Uno statement che segue un loop
+infinito o un if con condizione sempre vera e' causa di codice non
+raggiungibile.
+
+E' molto facile fare errori di questo tipo.
+
+Questi pezzi di codice compilano? Si'.
+
+Questa cosa qui inizialmente si fa a mano. I diagrammi di flusso
+aiutano molto.
+
+2. Analisi di flusso dei dati.
+
+In un programma i dati viaggiano in due direzioni.  a. con statement
+tipo a chiama b b. i dati viaggiano anche perche' condivisi. a scrive
+poi b passa e legge.
+
+Poiche' i programmai operano su dati e per esempio i flussi di
+controllo tra cui i branch e i loop sono influenzati dai valori dei
+dati il comportamento al punto 1 cioe' flusso di controllo puo' essere
+flportemeten ifnluenzato da flusso dati.
+
+Fra i problemi piu' imortanti d evidnti che si contriano quando non
+applichiamo questa tecnica e' l'accesso a variabili non inizializzate.
+
+Una variabile non precedentemente inizializzata valga anything.
+
+Non ha senso che io abbia una lettura di un valore prima che sia stata
+inizializzata da qualcuno.
+E' un errore logico.
+Molto spesso si verifica anche avere variabili di tipo write only.
+Denunciano mancanza di logica
+
+Se otessi (e posso) rappresentare il flusso di un dato dalla sua
+sorgente al suo sink vorrei che questo dato attraversasse solo i punti
+che io desidero e venisse modificato solo nei momenti in cui dico io.
+
+Se faccio analisi di flusso so cosa accade al dtato.
+
+Fatto questo le variabili accedute tramite alias sono una ctativa
+notizia: mi dicono che fare questo diagramma e' molto complicato.
+Non e' piu' grave leggere o scrivere, sono entrambi gravi.
+
+Cosa c'entra questo con il ragionamento sull'encapsulation?
+C'entra molto.
+
+Voglio evitare che sui dati lavorano attori non desiderati.
+
+Per ogni dato so chi e' il possessore.
+
+So che quella roba li' agisce.. soltanto chiamando il metodo read so
+che viene letto.
+
+So che i dati viaggiano secondo una logicache corrisponde a quello che
+volevo: siamo in un'ottica by construction.
+
+3. Analisi del flusso di informazione
+
+Mette insieme la prima e la seconda tecnica: usa un termine piu'
+generale del dato e del controllo e vuole rappresentare il fatto che
+un programma e' fondamentalmente il percorso che si ha giocando a
+flipper con ua pallina (una main) o tante palline simultanee (tanti
+main).
+
+La pallina va in posti, raggiunge posti e infine raggiunge il suo
+bacino.
+
+Questa cosa avviene secondo un principio di gravita'.
+
+Tipicamente vado prima in alto e poi scendo verso il basso.
+C'e' una cascata progressiva che stabilisce le dipendenze fra le cose
+che avverrano.
+
+Queste dipendenze devono essere dipendenze causali.
+Mai casuali.
+
+Rispetto all'analogia del flipper (a pallina singola) la pallina
+rappresenta il flusso di controllo.
+Tutti i contatti che la pallina fa rappresentano il flusso di dati.
+
+Se sappiamo fare 3. sappiamo fare
+
+4. Esecuzione simbolica
+
+Fondamentalmente il programma modifica lo stato tramite
+un'assegnamento.
+
+Se io capisco questo so anche dire che il mio modulo che faceva m(a) =
+b lo posso leggere a rovescio: b = m(a) e m(a) sara' una
+concatenazione ordinata di assegnamenti.
+
+M iaccorgero' che ho delle variabili che concorrono all'assegnamento
+finale e non dovrebbero o che sono completamente inutili.
+
+5. Verifica formale del codice 
+
+La verifica formale e' una verifica che chiameremo algebric.
+Quali sono gli ingredienti?
+PRE, POST e R.
+Le precondizioni dicon ocosa dev'essere vero prima di fare una cosa.
+Le postcondizioni dicono cosa dev'essere vero dopo che ho fatto quella
+cosa.
+
+Con la pre e con la post posso completamente oscurare cio' che accade.
+
+Le invarianti servono a rafforzare pre e post.
+
+In generale vengono insegnate achi programma sistemi di quel tipo
+perche' averle rende possibile un ragionemanto algerico formale.
+
+Voi avete gia' incontrato pre e post condizioni nei casi d'uso.
+Son la stessa cosa? 
+Ni/Si: nei casi d'uso non sono strettamente correlate col codice ma
+aiutano come base per le pre post del codice.
+
+Le pre, post condizione sono elementi di progettazione software:
+servono a stabilire la correttezza in forma algebrica.
+
+E" utile fare un po' di esercizio in questo tempo sulle parti piu'
+toste.
+
+6. Analisi di limite
+
+L'aritmetica in un calcolatore e' sempre imprecisa.
+Quando si trattano numeri, particolarmente numeri con l'aritmetica a
+virgola mobile fare attenzione che le operazioni che stiamo facendo...
+Errori id arrotondamento, overflow, underflow.
+
+Anche range checking, rispetto di limiti di array.
+Se uso un loinguaggio permissivo e dimentico di mettere una sentinella
+ho un problema.
+
+Quando uso liste faccio malissimo alla cache.
+La lista si muove anywhere, la cache campa sul principio di localita'.
+La lista rompe le prestazioni.
+Mi espone al rischio di rottura di catena.
+Al netto di calcolo numerico devo sottoporle a vincoli peprche' no
+nvoglio rischiare che usandole accada qualcunoque cosa. 
+
+Usiamo lo stack?
+
+Negli anni '80 quando si facevano i colloqui di assunzione fra le
+domande tecniche si chiedeva la differenza fra procedure rientranti e
+non rientranti.
+
+Una procedura rientrante consente nel medesimo istante t0 altre
+chiamate a se stessa.
+
+Lo stack consente a chiunque di chiamare qualunque cosa - fondamentale
+in un programma concorrente.
+
+Questo beneficio fondamentale che porta lo stack ha dei costi?
+
+Lo stack cresce *contro* l'heap.
+
+Quant'e' la massima profondita' e dimensione dello stack che voglio?
+Lo stack e' profondo ~~ quanto le chimate annidate che faccio * parametri.
+
+
+
+
