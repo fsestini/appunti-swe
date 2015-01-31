@@ -1,0 +1,444 @@
+Ultima parte modulo A: prima di finire l'argomento un avviso.
+
+1. Siti di scambio;
+2. Deposito in cassetta scala A una qualunque memoria;
+Mercoledi' pomeriggio se ne va
+
+Un failure e' un malfunzionamento, una deviazione dal comportamento atteso.
+Il costo di rimozione di un fault che si manifesta tardi cresce in modo esponenziale piu' andiamo avanti.
+Cresce in modo molto importante dal momento in cui il fault e' iniettato nel sistema.
+I test sono utili perche' agiscono sul codice ma sono tardivi.
+
+Fare/preparare un test e' un'operazione complicata.
+
+Ci sono dei termini significavici perche' usati dalla comunita' delle persone che fanno swe.
+
+1. Test Case: Un contenitore. Una tripla <ingresso, uscita, ambiente>.
+L'ambiente include l'oggetto della prova.
+Per ogni test ci deve essere un test case.
+A fronte di un test case ho:
+
+3. Procedura di prova: l'insieme di istruzioni auspicabilmente eseguibili da un robot per eseguire, registrare (su un log), analizzare e confrontare con l'attesa l'uscita.
+
+Tanti test case insieme fanno una:
+
+2. Test Suite.
+Una collezione di test case.
+in generale serviranno tante diverse collezioni di test case perche' abbiamo imparato/iniziato a intuire che vogliamo andare dal piccolo al grande nell'albero del software.
+I test case si aggregano secondo questo albero.
+La parte di verifica dell'uscita - chi decide cos'e' l'esito, l'uscita (attesa) di un test?
+Lo decide una cosa che si chiama L'Oracolo: un decisore noto prima.
+Da qualche parte devo trovare questo oracolo, questo decisore.
+L'oracolo dove si trova?
+Tanto per cominciare l'origine naturale e' nelle specifiche.
+
+Quanto piu' un test e' difficile rispetto all'oracolo tanto piu' e' uncattivo test: ha troppe cose dentro.
+
+ho generalmente davanti a me una cosa che si chiama un reference.
+
+Quando un test va male si scatena una catena di azioni che hanno un costo... er individuazione e investigazione del problema.
+C'e' un problema, qualcuno se ne deve occupare... 
+
+Poi succede unfenomeno molto importante che 'e' come facciamo ad attuare le corrrezoini richieste da chi ha investigato il problema rilevato con untest.
+Attuiamo procedure che fanno .. .change management.
+Mai e poi mai chi ha individuato un problema e' autorizzato a correggerlo implicitamente.
+
+Ci vuole una tecnica ordinata.
+Solo una tecnica ordinata e' consapevole di quanto le cose sono costate e puo' applicare la volta successiva tecniche migliorative che possano.. .PDCA.
+
+Esecuzione delle attivita' di prova.
+
+Quando espeicifoc una soluzione al problema questa attivita' che sto facendo sono attivit'a che ptulano, richiedono una verifica, che dovra' essere eseguita nel ramo ascendente, col vincolo che quando voglio tutte quetste attivita' in discesa e salita devo stare attendo nella verifica e nel finanzialmente.
+
+La pianificazione la faccio in avanti o all'indietro?
+
+Perche'?
+
+Perche' ci sono vincoli inamovilbili.
+
+Tutto cio' che posso fare lo faccio scalando indietro rispetto a quel limite invalicabile.
+
+Quindi, questo tornare indietro dalla fine deve lasciare spazio alle verifiche.
+Comprimere lo spazio dedicato alle verifiche non arrivero' mai a fare un collaudo, accettazione con la sufficiente confidenza.
+
+Questa parte ascendente produce dei blocchi di pianificazione.
+
+Questo va fatto qui, questo va fatto li'.
+
+Conseguentemente ogni errore che si verifica puo' causare turbolenze sulla pianificazione.
+
+Per poter avere almeno un pochino di percezione il dato fondamentale e' che se abbiamo in mente questo albero di pezzi che costituiscono ciscun programma abbiamo capito che e' ragionevole procedere in modo incrementale.
+
+Incrementale, abbiamo visto, sta in opposizione al termine iterativo.
+
+Quando faccio modifica incrementale aggiungo solo una componente che so essere corretta.
+Invece l'incremento va a modificare le componenti che sono state possibilmente gia' verificate e quindi si possono produrre degli errori.
+
+L'iterazione potenzialmente asfalta, azzera.
+L'incremento aggiunge su una base sana.
+
+Abbiamo imparato nel modo in cui progettiamo
+Ora dobbiamo impararlo nel modo in cui verifichiamo.
+
+ogni pezzo di verifica deve aggiungere certezze ma non toglierle. 
+
+Risalendo il ramo ascendente, passando da un grado all'altro stiamo incrementando la confidenza quantitativa che il nostro sistema e' fatto bene.
+
+strategia di integrazione
+
+Cosa significa assemblare le parti in modo incrementale?
+Significa mettere insieme a cose verificate altre cose gia' verificate.
+La precondizione e' che quando assemblo il ramo ascendente metto insieme cose che so che funzionano.
+
+Se ho un pezzetino di roba che so che funziona e aggiungo un pezzo costa sto facendo?
+So che il [ezzp che aggungo e' gia' verificato nel test di unita'.
+Quando metto insieme queste due cose sto facendo integrazione.
+
+L'idea e' che questa cosa qui non debba essere controllata dall'essere umano ma sia un meccanismo garantito da una qualche automazione.
+
+===> nel repository in cui ho l'ineiem di cose verificate devono essere cose integrabili.
+Se sono cose non integrabili non posso avanzare.
+E' per questo che il ramo discendente e' determinato in larga misura da cio' che devo fare nel ramo ascendente.
+
+Va pianificato in mdo tale che la codifica, programmazione abbia reso disponibili queste cose per fare i test nell'ordine appropriato.
+
+Poi magari quando integro mi accorgo che c'e' un problema, e me ne accorgo dopo troppo tempo.
+Devo allora pensare in che modo la progettazione, realizzazione... implicano il modo di mettere insieme le cose.
+Allora pianificare di conseguenza la codifica.
+
+CONSIGLIO
+Se la nostra architetturasoftware e' fatta macroscopicamente di blocchetti di cose in cui le parti di questo blocchetto si relazionano in modo produttore/consumatore l'ordine di integrazione e di verifica e di assemblaggio piu' naturale e' un ordine che mette a posto i produttori prima di passare ai consumatori.
+
+
+Gli stub li uso per le unita' quando cio' che voglio testare o non ha un main oppure non ha il pattern sul quale agisce.
+
+E' sempre desiderabile fino al punto di essere una necessita' che quando integro possa tornare uno stadio precedente e stabile.
+L'assemblaggio deve essere reservibile.
+
+
+
+Un'integrazione bottom up funziona solo se ho un rapporto col committente/proponente che non richiede di mostrare cose visibili.
+Se invece con il progponente sono in una onsidizione nsiogena che il proponbente mi si fida solo se vede allora devo organizzarmi in modo tale che io possa mostrare delle cose.
+
+Bisogna allora iniettare una strutturazione di integrazioe top down.
+
+Si fanno con l'ausilio di architetture che separano bene le parti che le rendano disaccoppiate ma complementari sono molto idonee a consentire lo sviluppo e integrazione paralella.
+
+E dunque per alcune cose si fa integrazione, assemblaggio bottom up, per altre si fa integrazioe, assemblaggio top down rivolte al proponente, committente.
+
+Andiamo a cercare di capire come faccio a ridurre al minimo necessario la quantita' di test case che mi servono.
+
+Se uno ha scritto una procedura la quale prende in ingresso due parametri float per potere testare esaustivamente questa procedura dovrebbe pessimisticamente passare a questa procedura tutti i possibili input = R^2 = inf^2.
+
+Cosa faccio? Un ragionamento che usa un termine algebrico che si chiama classe di equivalenza.
+Raggruppo in astratto valori che ai fini di test sono indistinguibili.
+
+Se ragioni per classi di equivalenza evidentemente non devo piu' fare test con input che cooprono tutto lo spazio dei valori ma solo un campione per classe e quindi una riduzione molto grande.
+
+Questo non induca a fare protopitipi con 478 paraemtri.
+
+In che modo ragioni sulla clase di equivalenza?
+
+immaginate che per ogni par esista un intervallo di valori, dominio dei valori in gresso.
+IChi lo decide? il tipo del parametro.
+
+Dopo di chie cosa decide la mia logica di procedura?
+Che ci sono valori legali e illegali: fondamentalmente qunado fisso la mia funzione logica sto stcarando alcune parti di questo dominio.
+
+Mettiamoci nel caso i ncui i valori illegali siano quelli < un certo estremo interiore e > un certo estremo superiore.
+Stiamo e.g. trattanto l'indice in un vettore in C.
+Allora quella roba dice che i valori di questo indice sono certamente piu' grandi dello spazio del mio vettore.
+Da L iun giu' sono illegali, da U in su sono illegali, in mezzo sono legali.
+Ho segmentato il dominio in tre intervalli.
+
+Sono passato da uno spazio ampio a piacere a uno spazio che ha di fatto tre insiemi grandi - valori ilegali inferiori, ilegali superiori, legali intermedi e due insiemi piccoli che sono gli estremi - i confini.
+QUante classi di equivalenza ho?
+5!
+
+cde == insiemi rappresentabili da un singolo valore che ne descriva le carattereistiche.
+
+Negli interi posso avere un confine... oppure un inieme di valor iche rappresentano ~~ tutti ~~ il confine e.g. nei reali.
+
+Abbiamo detto che i numeri reali sono sparsi nella rappresentazione della macchina.
+Su quei numeri e' erroneo, sagliato, fonte di problema usare operazioni di uguaglianza: c'e' sempre undelta di errore.
+Per dire sono dentro o fuori dla limite se il dominio e' fatto da interi e' facile dirlo.
+Se parlo di reali o roba su cui l'ugualienza non applica no nposso cosi' facilmente
+Ce;unosaziuo grigio in cui a seconda del delta lo accetto.
+
+Quanti TC faccio?
+prendo un campione per ogni classe di equivalenza.
+Con questa tecnica ragionando sulle coes che posso fare su quel dominio ottengo una variazione sensibilisima dei vlaori di ingresso.
+
+===> sto riducendo ampiamente la quantit'a di test case che metto nella test suite.
+
+Quando uso valor isui quali l'uguaglianza non sia definita in un modo certo ho un problema molto grande: deicdere cose e' illegale e cosa e' legale.
+
+Se uno mi mettesse sul piatto in termin idi quantita' di lavoro necessario test di unita', test di integrazione e test di sistema, cosa costerebbe di piu'.
+
+Se  -e in parte e' vero: in unqualcunque progetto canonicamente fatto, ben strutturato e' vero che i test di unita' costano di piu'.
+
+Se costare di piu' significa spingere la pianificazione all'indetro vicino all'inizio quale sara' il caso normale???
+
+...
+
+Puo' succedere che il punto dove inizio a are test di unita' per farne abbastanza venga scavalcato dalla discesa del ramo discendente in ritardo.
+Cosa fa il responsaile di progetto in questa situazione?
+
+Se uno vuole dipingere un'icona del responsabile del progetto lo deve dipingere come un tagliatore.
+
+Il rdp taglia un po' di test di unita'.
+
+Ma attenzione perche' per quanto tagliare sia un istinto naturale cosi' facendo si taglia uno strumento che rivela la stragrande maggioranza dei faut nella programmazione
+
+Se il tagliatire di test taglia test di unita' sta amputando la capacita' del ramo ascendente di togliere fault nella programmazione se non nella progettazione o analisi.
+
+Scatta allora un dilemma: 
+1. Ma taglio le cose che costano di piu'
+2. No, costa ma ha un grande valore di ritorno largamento compensatorio
+
+
+===> Chi taglia i test di unita' e' un asino.
+
+E' ugualemtne asino chi fa i test di unita' a mano.
+E' come se si esponesse al taglio.
+
+I test si dividono macroscopicamente in due insiemi.
+
+Uno e' quello dei test del risultato, test a scatola chiusa, in inglese black box.\guardano se quello che produci corrisponde alle attese.
+La tripla che forma un test case e' tipicamente un test funzionale.
+
+Il 50% dei fault rilevati dai test di unita' viene da un test che e' chiamato white box, scatola aperta perche' qguarda la logica del programma e non la sua uscita.
+
+Anni sono passati da che nel 69 ci ha detto dijkstra che i test sono ultili solo se rilevano un problema.
+
+oggi l'utilita' di un test si misura non solo nel numero di difetti rilevati fino a portare a un asintoto.
+
+Vogliamo farlo con un altro indicatore che si chiama copertura.
+
+La copertura e' una caratteristica o qualita' della bonta' del test.
+
+===
+
+Ai fini del test le cose da cui devo ottenere copertura o coverage sono statement coverage e branch coverage.
+
+L'idea e' che un buon test vede, si assicura che tutti gli statement che ci sono so cos'hanno fatto perche' le ho incontrate e l'altro che riguarda i cammini, i rami.
+
+Idealmente cos a orrei da una campagna di test?
+Vorrei poter dire che su tutto il codice che sto consegnando ho ottenuto statement coverage e branch coverage del 100%.
+
+Cosa significa ottenere statement coverage al 100%?
+Io ho eseguito tramite uno o piu' test tutti gli statement dell'unita' di quel componente.
+Ci sono strumenti che fanno questa cosa in automatico.
+
+Possiamo documentare uno statement coverage del 50%: e' una buona cosa?
+No.
+Meta' del codice che ho scritto non l'ho mai incontrato in un test.
+ma perche' mai non l'ho mai incontrato?
+
+in sede di RR qualche gruppo si e' vantato di avere coverage del 50%: meh.
+
+Importante e' anche la coverage dei rami alternativi.
+Per ogni if...then... else i cammini si moltiplicano per due.
+Quando inserisco un while i cammini crescono per il numero di interazioni di quel while.
+
+
+...
+...
+
+...
+
+
+...
+
+esemio 25/45
+
+Attenzione, allora: statement coverage serve a dire che *tutti gli statement sono raggiungibili*.
+(ottenibile anche con l'analisi statica).
+
+100% branch coverage => 100% statement coverage?
+Ni.
+
+I test che producono branch coverage alto... ? 
+
+Chi ha fatto esperienza con un debugger sa che per vedere se la logica che sto provando a implementare fa il suo mestiere no nvado in profondita' ma mi fermo a guardare le decisioni in relazione a stato e valori.
+
+I branch sono espressione di logica del programma e devo saerpere che fanno la cosa giusta.
+
+Ma quando ho questi punti di decisione ci sara' un'influenza nel modo in cui esprimo queste condizioni di decisione?
+Se guardata la sintassi in bnf del ... prpgrazzioma ... un if e' retto da un valore booleano, ma il valore in cui questo booleano e' determinato puo' essere complesso a piacere.
+Laddove si fa sofftware soggetto a vincoli forti di verifica si introduce una terminologia ancora piu' fine.
+slide 26/43
+Questa cosa qua che vedete cerchiata fra un if e un then e' chiamata nel so complesso decisione.
+E si dice in quel dociminio aopplicativo che una decisione e' una composizione di condizioni che sono semplici espressioni booleani.
+Perche' allora strutturo in questo modo qua?
+perche' la logicoa di un programma non si manifesta soltano nell'sucita vera o falsa di una decisione ma in come le parti che si chiamano condizioni influenza np questa uscita.
+
+Quando e' l'ultima volta che avete fatto una tablela di verita'?
+
+Il branch coverage vorrebbe coprire la tabella di verita' di ongi decisione.
+Ogni singola condizione immessa nella decisione ha un'influenza sua propria nel ramo che prende.
+
+E perche' e' importante?
+Perche' se io scrivo per esempio questa cosa (scrivo a=b e poi lo metto in and) ... cose ... cose ... tutto l'aggregato varra' vero o falso.
+
+La logica del programma e' influenzata da quanto valgono a, b, c: una copertura vera di 'sta roba qua dipende da ... tutt i ... cvalori.
+
+ALLORA:
+
+non devo scrivere condizioni complesse nelle decisioni!
+
+Vedi DSO-178B
+
+
+Si e' arrivati a ridurre la copertura... fare tanti test quanto e' necessario per mostrare che una variabile influenza l'output da sola.
+
+Guardo per che combinazioni di vero e falso per una singola condizione influenzo la decisione.
+Prendo e faccio test per ciascuna ... bla.
+
+Riduco l'esigenza ma capisco che questo fischio di espressione qui anziche' eesere trattabile con due test la tratto con 4, 8 test.
+
+E quind icome faccio?
+O faccio 4 test o scrivo norme di progetto che rendano un'espressione tipo questa particolaremtne sgradita.
+
+Con l'argomento che la copertura di quella decisione e' troppo onerosa; mette in gioco troppe condizioni.
+Si dice in generale che e' meglio prevenire che curare e quindi mi vaccino.
+
+Il test funzionale e' untest black box
+Il test black box e' quello che guarda soltanto l'uscita
+
+Non possiamo fidarci solo del test funzionale: il test funzionale, specialmente se operiamo su classi di equivalenza non del tutto accurate possono essere largmanete insufficienti.
+
+Uno dovrebbe dire (ma non si dice) che le classi di equivalenza dovrebbero essere fatte in forma non di blackbox ma whitebox, basandosi sulla logica interna.
+
+E' questo che fa l'analisi statica, infatti.
+
+Cerco la copertura specialmente sui test di unita'.
+Poi quando integro sto mettendo insieme cose che hanno gia' copertura molto elevata.
+
+Qual'e' l'obbiettivo di un test di integrazione?
+Smascherare se due cose che ho determinato essere localmente corrette stanno bene insieme, fanno il loro compito.
+Se non l ofanno di chi e' colpa?
+
+La correttezza locale di A e B determina la loro corretta integrazione?
+No (altrimenti no nservirebbe il test di integrazione)
+Il test di integrazione smashera errori di progettazione delle interfacce.
+Fa emergere che le parti separate individualmente pensate fanno cio' che ... loro... ma il loro assemblaggio dice che non stanno insieme come previsto.
+
+Le interfacce sono funzionali ma sono anche logiche, temporali, del prima e del dopo.
+
+Lo stare insieme e' cio' che si verifica tramite integrazione.
+
+Non posso saltare naeanche i test di integrazione.
+
+Nel caso pessimo un'integrazione che fallisce potrebbe rivelare anche che ho fatto insufficienti test sulle parte che sto integrando.
+
+Uno si dovrebbe chiedere quanti test di integrazione devo avere?
+La risposta e' fatta di due parti, fondamentalmente
+
+1.
+
+slide 36
+...
+
+Ci puo' essere una relazione chiata C1 -> c2, C1- >C3, C1 -> C5 e ci puo' essere una razionalizzazione dei dati in cui C1 non passa dati ma C2 passa dati direttamente o indirettamente a C3 e C4.
+
+Quindi quando ho progettato una roba del genere in quqlche modo mi esce abbastazna chiaro come la intregrero'.
+Perche'? 
+
+Perche' devo mettere isneimee cose che hanno dipendenze determinate da questa relazione architeetturale.
+
+In questa strutturazione che mostra questa cascata chi ha piu' dipendenze e chi ne ha di meno?
+
+C1 sta in cima perche 'non ha dipendenze/
+C4 sta in bass operche' ha piu' dipendenze.
+
+In che modo integro rispett oallel cose dette, dov'e' piu' sano e conveniente integrare?
+
+Partiamo da C1!
+Guardando C1 che non ha diepndenze con alcuno ho un riferimento stabile.
+Poi aggungo fra le cose che C1 raggiunge quelle che gli e' piu' vicina e ha meno dipendenze altre.
+
+Finisco che le ho tutte.
+
+Cosa vuol dire questa roba qua?
+
+Quando ho cose del genere e' buono o cattivo?
+Quanto mi costa?
+
+C4 soffre molto in questa architettura.
+C4 e' molto dipendenze .
+
+Questo lega in modo abbastanza percepibile criteri architetturali con costi di verifica.
+Un'architettura e' buona se induce bassi costi di verifica.
+Questo lo si fa se ... sufficientmeente coese, sufficientemente disaccoppiate.
+
+La coesino e e' essere sufficienti in se stessi.
+Dove la troviamo la coesione? C1
+
+(C1 pero' deve chiamare C2..4 e non e' neanche tantissimo coeso.)
+
+Capite ora che il ramo discendente e' causato dal ramo ascendente.
+
+
+Quanto mettiamo tutte le cose insieme facciamo il test di sistema.
+
+Cosa vuoel coprire il test di sistema?
+
+I casi d'uso dei requisiti.
+
+Un test di sistema e' completo quando ha verificato tutti i requisiti che si legano tramite test.
+
+La verifica, con qualsiasi tecnica la faccia, statica, dinamica... devo puntare al 100% requirements coverage.
+
+Non posso in questo caso scendere sotto.
+Se dicessi che ho r c del 50% sto dicendo che ho un sistema che al piu' fa il 50% delle cose che deve fare.
+
+Fra i test citati quello che fa piu paura e il test di regressione.
+
+Dovrebbe essere chiamato test di non regressione, li cui compito e' dimostrare che una modifica non ha causato effetti negativi collaterali.
+
+Spesso accade un fenomeno visto molte volte che dice che nella fretta di fare una correzione, specie nelle parti basse, correggo le cose senza la piena conseguenza delle conseuenze che pa correzione puo' avere al di fuori di me.
+
+Se ho modificato ...
+
+
+C'e' solo un modo di ridurre a 0 l'ampiezza dei test di non regressione: avere completo isolameno.
+Ma non e' possibile.
+
+Come si pija il perimetro dei test di regressione: architettutralmente: guarndao le dipendenze.
+
+L'architettura che ha tante dienpndenze fa male anche ai test di non regresione.
+Piu' soo le dipendenze giaceti pu' devo guardarmi intor o.
+
+
+Quando sarete in questa condizione sara' molto tragico non sapere quali test esattamente immettere nei test di regressione.
+
+Ci deve essere una qualche regola, facilmente decidibile, che dica "ecco, questi sono i test che devi fare", tutta determinata dall'architettura.
+
+Una campagna di test, l'esecuzione di tutte le suite di test che ho pensato nel ramo ascendente produce un fattore di copertura che vogliamo essere il piu' vicini possibili al 100%.
+
+Per ogni cosa che e' sotto il 100% devo garantire che /.... non sto detraneod valore al committente.
+
+=======================
+
+
+RR: ogni gruppo presenta con presentazione che tutti i mebri de lgruppo partecipano a presentare il valore di cio' che ha prodotto.
+
+Presentazione:
+
+1. Le diapositive devono essere pochissimo dense.
+Supporto scritto, visivo a cio' che voi esporrete a lingua, a voce.
+Conta negativamente quando chi espone recita cio' che e' scritto.
+
+2. Quando si presenta si guarda il proprio pubblico.
+
+3. Se mettete immagini - e ora capte perche' le immagini sono importanti - devono essere tutte leggibili.
+
+4. presentazioni a tempo. 
+Come si fa ad avere percezione del progresso sia per chi presenta che per chi riceve la presentazione?
+Se io che presento non voglio indurre chi mi ascolta a dire basta fermati concludi cosa gli devo dare come indizio?
+Un indicatore di progresso.
+
+
+
+

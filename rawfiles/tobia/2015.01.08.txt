@@ -1,0 +1,223 @@
+RP e RQ prevedono data di consegna ~5 giorni lavorativi prima.
+RA prevede consegna 1 giorno prima.
+
+In tutte le lezioni rimanenti tratteremo verifica e validazione.
+
+Facciamo una carrellata generale per acquisire un po' di informazioni e nozioni su qual'e' il modo di guardare le esigenze e competenze necessarie.
+
+E' necessario che la prova sia ripetibile ...
+Per lo stesso input e stesso stato di ingresso dobbiamo transire sempre allo stesso stato.
+
+IL ramo ascendente della V si chiamano... in basso ci sono test di unita', al centro test di integrazione in alto test di sistema.
+
+L'oggetto del test di sistema e' *tutto il sistema*, che posson oanche essere > 1 programmi.
+
+IN una vecchia lezione abbiamo detto che un programma... 
+Una procedura...
+Un programma puo' avere due main? No.
+Quindi il programma e' un main.
+IL main e' il luogo dal quale emana il controllo del flusso di programma.
+Un *** e' un programma? Solo se c'e' un flusso.
+Un sistema che abbia concorrenza interna difficilmente e' un programma nel senso stretto, ancora piu' difficile se ha una parte client e una parte server.
+
+QUando diciamo test di integrazione cosa integriamo?
+Poiche' li test di integrazione sta a meta' della V, ... ? 
+Progettazione architetturale, circa ameta' del ramoi discendente.
+Quella roba li' la chiamiamo tipicamente componenti.
+In basso c'e' la terza unita', la parte piu' poiccola che e' ragionevole testare.
+In un linguaggio di programmazione qualsivgolia non si dice mai "unita" inteso come elemento unitario.
+Una procedura e' ad esempio una parte costituente di un programma.
+SE immaginiamo il programma come un grafo che abbia come radice un main questo tipicamente si chiama grafo di controllo di flussol.
+Control flow graph.
+Le foglie nel control flow graph possono essere singole procedure in un linguaggio che ha solo procedure, ma in un linguaggi ocome Java che ha classi con dentro dei metodi immediatamente perdamo questa corrispondenza intuitiva; dobbiamo unare una terminologia piu' neutra generale.
+Chiamiamo unita' il piu' piccolo pezzo di un programma che e' ragionevole testare da solo - nell'ottica di partere  dalle foglie.
+
+La chiamamo "unita'" perche' la ttestiamo come roba singola.
+
+E' possibile che un'unita' cosi' definita... 
+In ogni linguaggio di programmazione strutturato esistono parti chiamate moduli.
+In Java l'unita' piu' piccola e' una classe.
+In Java e' obbligatorio che una classe sia totalmente costituita.
+
+Detto in maniera soltanto generale la parte piu' piccola e' chiamata modulo, il test si fa su un'unita' che e' un aggregato il piu' piccolo possibile di moduli e quando una unita' e' buona abbastanza costruiamo aggregati di unita' chiamati componenti che sono noti nella progettazione architetturale.
+
+Questo test che quindi faremo dalle foglie verso la radice serve ad aggregare in radice delle cose che sappiamo essere buone perche' non vogliamo integrare del software che non sappiamo se funziona.
+
+Sempre integriamo roba che sappiamo fare quello che deve fare.
+
+Assumo di avere 
+U { M1, M2, M3 }
+M1 -> M2
+M1 -> M3
+
+Se io ragiono dalle foglie sto costruendo U secondo un principio che chiameremo bottom up, dalle foglie verso la radice.
+
+Se invece mi interessa costruire l'unita' a partire dalla radice sto seguendo un principio che e' di tipo top down.
+Evidentemente, se parto top la logica del funzionamento di U sta tutta dentro M1.
+SE M1 chiama M2 lo fa secondo la logica dell'unita' U.
+La logica di M2 e' tutta dentro M1; cio' che fa U complessivamente e' deciso da M1.
+Questo significa operare in modo top down.
+Parto aderendo alla logica complessiva di cio' che la logica fa. 
+
+Bottom up vs top down?
+
+Noi stiamo testando U guardando a M1, M2, M3 separatamente.
+
+Dovendo scegliere se essere top down o bottom up in questo test di unita' il ragionemento e' da qualche parte inizio a fare test sui moduli; l'idea e' che testo prima la base della logica principale. 
+
+La logica in questa unita' U la logica e' tutta dentro M1.
+La logica top di U e' in M1.
+
+Facendo un ragionemento bottom up costruisco certezze progressive che quando un giorno la logica dell'unita' U sara' attuata fara' il suo mestiere.
+
+Al contrario con top down dico che M1 funziona SE M2 e M3 fanno il loro mestiere.
+
+Allora entrano in gioco driver e stub.
+
+M1 pilota U.
+Allora un test di unita' in stile top down consiste in prendere M1 vero e sostituire M2, M3 con M2' e M3' semplificati che so fare la cosa giusta - degli *stub*.
+uno stub e' un sostituito della cosa che devo guardare o delle parti che servono al funzionamento che rsetituiscono sempre risposta giusta.
+
+Se sotituisco M2 e M3 con degli stub ottengo che la logica dell'unita' tutta inscritta in M1 possa essere testata senza rischi di inquinamento da parte di M2 e M3.
+
+Immaginate e.g. che M2 sia un accesso a una base dati dove c'e' una query, M1 dice dammi la quarta voce della quinta tabella.
+Uno stub di M2 restituisce direttamente la tupla voluta.
+
+Non mi interessa che faccia il mestiere completo che fa M2, M3, mi basta che per il comportamento che sto valutando il comportamento della voglia sia corretto.
+
+Significa che ho M1 che chimera' uno stub S1 al posto d iM2 e uno stub S3 al posto d iM3.
+
+Allora sostituisco S2 con M2 e se ci sono errori e' colpa di M2.
+
+Allora sostituisco ancora S3 con M3 e se ci sono errori e' colpa di M3.
+
+Sto rendendo chiaro, certo il colpevole.
+
+Questa e' una tecnica top down perche' guidata dalla logica di M1.
+Com'e' fatto un test di unita' di tipo bottom up?
+
+E' fatto togliendo attenzione a M1 e rimpiazzandolo con un pilota che fa cio' che vorrei che U facesse.
+
+M1 in un test sulle foglie rimpiazza un driver.
+Il rimpiazzo non e' un rimpiazzo passive che dice ritorno pippo, ma dice "adesso apri gli occhi e chiama M2, sleep, apri gli occhi e chiama M3".
+E' colui he incorpora la logica ttesa semplificata e fa le chiamate sulle foglie.
+Di nuovo, una foglia alla volta, poiche' la ;ogica e' sempre la stessa - vogliamo identificare la fonte del problema.
+
+Dunque driver che chima soltanto M2, driver che chiama soltanto M3, poi se i test passano sostituisco il driver col vero M1 e vedo se l'unita' si comporta come atteso.
+
+Non e' nettamente meglio top down o bottom up, bisogna ragionare.
+
+la questione e' che devo programmare per rendere facile la verifica, non programmare e poi chiedermi come verifico.
+Devo mettere un mucchio di vincoli progettuali su come sara' il codice.
+
+Quando avro' meso a posto le unita' le devo integrare.
+
+La continuous integration e' questo meccanismo per cui una unita' viene resa disponibile a una build che produce un pezzo piu' grande del sistema.
+
+A questo punto diventa ancora piu' importante mettere in build un'unita' che so che funziona completamente. 
+Altrimenti e' un bel caos capire per colpa di chi il sistema parziale non funziona.
+Ho bisogno di procedere secondo questa logica per cui faccio i test di unita' e l'unita' testata con successo diventa disponibile per la build.
+
+Bisogna allora fare si' che le prime due unita' ad essere pronte siano due unita' adiacenti in modo da poterne testare l'integrazione subito, insieme eventualmente a un grande stub (o driver).
+
+...
+...
+
+
+Vedete insomma che la pianificazione e' un'operazione che tipicamente ricostruisce scadenze all'indietro.
+Parto dagli obbiettivi e poi ricorstruisco una logica che mi consenta di arrivare a quegli obbiettivi rispettando incoli
+
+TL;DR: la pianificazione si fa a rovescio.
+
+Chi deve pensare questi test?
+
+I test vanno fatti piu' in parallelo possibile.
+
+...
+
+
+
+Se metto insieme un sistema fatto di tre strati e voglio fare una build parziale vuol dire che uno strato sara' rimpiazzato da una un driver o da uno stub.
+
+Il test di sistema precede il collaudo (aka test di accettazione).
+Il tet di sistema verifica che tutti i requisiti software siano soddisfatti.
+Immaginiamo ~ 1 test per ogni requisito.
+
+C'e' la regressione da tenere in conto.
+
+regressione:
+
+    1 Azione di arretrare, di ritirarsi, di retrocedere SIN arretramento
+
+    2 geol. Lento ritiro delle acque marine da aree precedentemente occupate
+
+    3 fig. Involuzione, decadenza: periodo di r. economica; perdita di virulenza: l'epidemia è in fase di r.
+
+    4 psicoan. Ritorno a fasi precedenti dello sviluppo psichico: r. all'infanzia
+
+    • sec. XVI
+
+La regressione ci dice che qualcosa e' andato male e mettere a posto qualcosa che he e' andato male puo' causare danni al resto.
+
+Immaginate di avere messo insieme delle cose - eun test di unita' con tanti moduli o un test di integrazione con tante unita'.
+
+Un test fallisce?
+Se abbiamo seguito una buona disciplina l'ultima cosa aggiunta e' il colpevole.
+La correggiamo e poi non basta ritestare solo il test che e' andato male.
+Bisogna ritestare l'intero sistema per evitare side effect.
+
+Il test di (non) regressione e' un obbligo.
+
+pertanto non voglio architettura molto accoppiate / con molte relazini molti a molti.
+Con una architettura molta acoppiata la regressione uccide.
+Ogni podifica fa ripetere tutti i test.
+
+Abbiamo allora QUATTRO tipi di test.
+
+Stimando il costo qual'e' il piu' costoso?
+
+Il test di unita' e' quello che fa fare piu' lavoro (tante unita')
+Tanto osta il test di unita', meno costa il test di regressione, quarto il test di sistema, infine quarto il test di integrazione guardando che le parti stiano bene inssieme.
+
+Non bastano i test: si fanno su una roba che esegue che avremo dunque tardi nel progetto.
+
+Analisi statica e' quello che posso fare senza esecuzione.
+
+Su un documento in quanto tale mai faro' test; faro' verisicge che sno analkisi statica.
+
+In certe situazioni AS e' infinitamente piu' utile del test.
+Nasce in anticipo.
+
+I metodi si diuvidono in due categorie.
+1. Un categoria la potremmo chiamare algebrica: metodi formali.
+Hanno la potenza ma anche la complessita' dell'algebra.
+
+2. Desk check: metodi di lettura
+2a: Walkthrough - lettura a pettine 
+Faccio quando non sto cosa sto cercando.
+2b: Inspection - ricerca di particolari caratteristiche o errori tipici
+ 
+Cerchero' il piu' possibile di passare da una tecnica di tipo waltkrgtough a una di tipo inspection, automatizzando dopo verifica il processo che fa certe cose e lavorando per inspection sulle altre.
+
+Quanto piu' l'inspection e' mirata tanto piu' si puo' fare con un robpt.
+
+Abbiamo a un certo punto parlato di qualita' di prodotto facendo riferimento a ISO 9126.
+
+I ccapitolati non portano esplicite richieste di qualita'.
+E" ragionevole fare tanto test sulla qualita'?
+
+Funzionalita'... ? 
+
+
+Affidabilita'
+
+L'affibiliaita e' quella cosa per cui la funzionaltia che voglio c'e' quando la voglio.
+Ancora una volta l'analisi statica e' utile per accertarci che ci siano delle buone caratteristiche.
+
+Manutenibilita'
+e' un criterio che si presta tnatissimo a una valutazione tramite analisi statica.
+
+Portabilita' 
+same
+
+
