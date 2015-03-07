@@ -1,6 +1,8 @@
-\section{Ingegneria dei requisiti} I requisiti di un sistema sono descrizioni
-delle funzionalità di un sistema, i servizi che fornisce e i vincoli sulle sue
-operazioni. In particolare, secondo il glossario IEEE, un requisito è:
+\section{Ingegneria dei requisiti}
+
+I requisiti di un sistema sono descrizioni delle funzionalità di un sistema, i
+servizi che fornisce e i vincoli sulle sue operazioni. In particolare, secondo
+il glossario IEEE, un requisito è:
 
 \begin{enumerate}
   \item Una condizione (\frgnword{capability}) necessaria a un utente per
@@ -26,6 +28,7 @@ specializzate. Rappresenta l'insieme di attività necessarie al trattamento
 sistematico dei requisiti.
 
 \paragraph{Attività}
+
 \begin{itemize}
   \item Analisi
     \begin{itemize}
@@ -46,8 +49,10 @@ sistematico dei requisiti.
             scartati. Il confronto con le fonti (committente, utenti, ecc.) è
             fondamentale.
     \end{itemize}
-  Durante l'attività di analisi dei requisiti è necessario equipaggiarsi, per
-  metodo e per strumenti, per fare verifica e validazione.
+
+    Durante l'attività di analisi dei requisiti è necessario equipaggiarsi, per
+    metodo e per strumenti, per fare verifica e validazione.
+
   \item Specifica di verifica e validazione
     \begin{itemize}
       \item Predisposizione di revisione interna/esterna
@@ -76,19 +81,23 @@ vengono definiti tutti i requisiti che importano. La definizione della
 requisiti e di inizio della fase di progettazione.
 
 \paragraph{Processi coinvolti}
+
 \begin{itemize}
   \item Documentazione: serve uno strumento che renda i requisiti oggettivi,
         discutibili (oggetto plausibile di discussione) e non ambigui (uso di
         diagrammi, evitando il linguaggio naturale). La poca narrazione
         associata ai diagrammi deve essere di supporto, tecnica e sintetica, e
         appoggiarsi a un glossario per eliminare l'ambiguità dei termini.
+
     \begin{itemize}
       \item Studio di fattibilità
       \item Analisi dei requisiti
     \end{itemize}
+
   \item Gestione e manutenzione dei prodotti: i requisiti cambiano nel tempo per
         aggiunta, rimozione e estensione. Serve un insieme di regole, procedure
         e strumenti per gestire questi cambiamenti.
+
     \begin{itemize}
       \item Tracciamento dei requisiti: permette di sapere, per ogni passo di
             avanzamento nel progetto, a quale requisito risponde. Rappresentando
@@ -97,12 +106,15 @@ requisiti e di inizio della fase di progettazione.
       \item Impostazione e gestione della configurazione
       \item Gestione dei cambiamenti
     \end{itemize}
+
 \end{itemize}
 
 \subsection{Studio di fattibilità}
+
 Lo studio di fattibilità precede l'analisi dei requisiti, e si occupa di
 valutare la fattibilità del progetto in termini di rischi, costi e benefici, e
 decidere se sia conveniente procedere con il lavoro.
+
 \begin{itemize}
   \item Fattibilità tecnico-organizzative: valutare se si hanno le competenze e
         gli strumenti necessari, le soluzioni algoritmiche e architetturali e le
@@ -113,12 +125,14 @@ decidere se sia conveniente procedere con il lavoro.
   \item Individuazione dei rischi: capire le complessità e le incertezze;
   \item Valutazione delle scadenze temporali;
   \item Valutazione delle alternative
+
     \begin{itemize}
       \item Scelte architetturali: sistema centralizzato o distribuito, modello
             client-server, ecc.
       \item Strategie realizzative: riuso o sviluppo ex-novo
       \item Strategie operative
     \end{itemize}
+
 \end{itemize}
 
 Lo studio di fattibilità è un'attività preliminare che non può impiegare troppo
@@ -126,8 +140,10 @@ tempo; è quindi un processo rapido, i cui risultati però non vengono scartati,
 ma costituiscono una base di partenza per l'analisi dei requisiti.
 
 \subsection{Tecniche di analisi}
+
 \begin{itemize}
   \item Analisi dei bisogni e delle fonti
+
     \begin{itemize}
       \item Studio del dominio, con osservazione dei comportamenti dell'utente
             finale e dell'ambiente d'uso;
@@ -136,6 +152,7 @@ ma costituiscono una base di partenza per l'analisi dei requisiti.
             interviste costituiscono un dialogo da cui esce un resoconto
             approvato da entrambe le parti;
       \item Discussioni creative (brainstorming), coinvolgono tre figure
+
         \begin{itemize}
           \item Un gruppo di persone che discuta il problema
           \item Un `facilitatore', che aiuti la discussione a convergere in un
@@ -146,40 +163,48 @@ ma costituiscono una base di partenza per l'analisi dei requisiti.
           \item Una persona che tenga le minute della discussione, che ne
                 registri i punti salienti
         \end{itemize}
+
       \item Prototipazione: può essere interna, a vantaggio del fornitore, o
             esterna, per arricchire il rapporto con il cliente; può essere
             usa-e-getta o incrementale;
     \end{itemize}
+
   \item Dominio, campo di applicazione del prodotto: a quali bisogni risponde, e
         quali problematiche coinvolge;
   \item Acquisizione delle competenze
+
     \begin{itemize}
       \item Documentazione preesistente
       \item Interviste agli utenti potenziali
       \item Studio delle soluzioni esistenti
     \end{itemize}
+
   \item Glossario
+
     \begin{itemize}
       \item Raccoglie e definisce i termini chiave del dominio
       \item Da sottoporre alla verifica e approvazione del committente
       \item Consolidato mediante uso nelle interviste
     \end{itemize}
+
 \end{itemize}
 
 \subsection{Classificazione dei requisiti}
+
 E' fondamentale organizzare i requisiti in maniera strutturata e organizzata.
 Suddividere i requisiti in diversi livelli di dettaglio è utile per comunicare
 informazioni sul sistema a differenti tipologie di lettori.
 
 Si può individuare una distinzione tra \strong{requisiti utente} e
 \strong{requisiti di sistema}:
+
 \begin{itemize}
   \item Requisiti utente: affermazioni, in forma di linguaggio naturale e
         diagrammi, di quali servizi il sistema dovrebbe offrire all'utente, e i
         vincoli secondo il quale dovrebbe operare;
-\item Requisiti di sistema: descrizioni dettagliate delle funzioni, servizi e
-      vincoli operativi del sistema. Costituiscono una documentazione esatta di
-      cosa deve essere implementato.
+  \item Requisiti di sistema: descrizioni dettagliate delle funzioni, servizi e
+        vincoli operativi del sistema. Costituiscono una documentazione esatta di
+        cosa deve essere implementato.
 \end{itemize}
 
 I requisiti descrivono \strong{attributi di prodotto} o \strong{attributi di
@@ -189,9 +214,10 @@ vincoli sui processi impiegati nel progetto (linguaggio di programmazione da
 usare, strumento, metodo, ecc.); rispondono alla domanda `come devo farlo?'.
 
 Gli attributi di prodotto esprimono
+
 \begin{itemize}
   \item requisiti funzionali, che determinano le capacità di calcolo richieste
-  al sistema (\frgnword{capabilities});
+        al sistema (\frgnword{capabilities});
   \item requisiti prestazionali;
   \item requisiti qualitativi;
 \end{itemize}
@@ -222,6 +248,7 @@ deve saperne valutare costo e complessità di verifica.
 \end{figure}
 
 I requisiti hanno diversa utilità strategica:
+
 \begin{itemize}
   \item Obbligatori: irrinunciabili per un qualsiasi \emph{stakeholder};
   \item Desiderabili: non strettamente necessari ma a valore aggiunto
@@ -232,7 +259,9 @@ I requisiti hanno diversa utilità strategica:
 I requisiti non devono essere in conflitto tra loro.
 
 \subsection{Attività di analisi}
+
 L'attività di analisi si svolge in diverse fasi:
+
 \begin{enumerate}
   \item Studiare e definire il problema da risolvere: identificare il prodotto
         da commissionare (cliente), capire cosa deve essere realizzato (cliente
@@ -251,16 +280,19 @@ L'attività di analisi si svolge in diverse fasi:
 % TODO: probabilmente i seguenti contenuti vanno distribuiti nelle varie
 % sezioni del documento.
 \subsection{Estratti da IEEE 830-1998}
+
 Un corretto SRS limita il \frgnword{range} di soluzioni progettuali valide,
 ma non ne specifica alcuna.
 
 Un SRS dovrebbe essere:
+
 \begin{itemize}
   \item Corretto: ogni requisito indicato verrà soddisfatto dal prodotto;
   \item Non ambiguo: ogni requisito ha un'unica interpretazione. Questo implica
         che ogni caratteristica del prodotto finale sia descritta da un unico
         singolo termine dal significato non ambiguo e indipendente dal contesto;
   \item Completo: un SRS è completo se e solo se include i seguenti elementi:
+
     \begin{itemize}
       \item Tutti i requisiti significativi;
       \item Definizioni delle risposte del software a ogni possibile classe di
@@ -268,6 +300,7 @@ Un SRS dovrebbe essere:
       \item Didascalie complete per figure, tabelle e diagrammi, e definizioni
       di tutti i termini e unità di misura utilizzate.
     \end{itemize}
+
   \item Consistente: consistenza con altri documenti di progetto;
   \item Ordinato per importanza e/o stabilità: ogni requisito deve essere
         identificato in modo da rendere chiare le differenze in termini di
@@ -285,6 +318,7 @@ Un SRS dovrebbe essere:
         referencing} esplicito e evitando ridondanza;
   \item Tracciabilità: un SRS è tracciabile se l'origine di ogni requisito è
         chiara. Vi sono due tipi di tracciabilità:
+
         \begin{itemize}
           \item \frgnword{backward traceability}, verso stadi precedenti
                 dello sviluppo. Si verifica se ogni requisito identifica
@@ -293,15 +327,18 @@ Un SRS dovrebbe essere:
                 sviluppo. Si verifica se ogni requisito ha un nome che lo
                 identifica univocamente.
         \end{itemize}
+
 \end{itemize}
 
 \subsection{Verifica dei requisiti}
+
 La verifica viene eseguita su un documento organizzato, tramite
 \frgnword{\strong{walkthrough}} o \strong{ispezione}. Viene usata una matrice
 delle dipendenze per il tracciamento.
 
 E' importante, ai fini della verifica, che la SRS (\frgnword{Software
 Requirements Specification}) possieda le seguenti caratteristiche:
+
 \begin{itemize}
   \item Chiarezza espositiva, evitando il più possibile il linguaggio naturale a
         favore di schemi e diagrammi;

@@ -1,17 +1,40 @@
 \section{Ciclo di vita del software}
-Il ciclo di vita di un prodotto software può essere visto come una macchina a stati, dove ogni stato rappresenta un preciso grado di maturazione del prodotto, e dove ogni transizione tra stati richiede l'esecuzione di attività, raggruppate in processi. Ogni prodotto software, lungo il suo ciclo di vita, attraversa gli stati di concepimento, sviluppo, utilizzo e ritiro.
 
-Stati e transizioni hanno precise pre- e postcondizioni, determinate da vincoli, regole e strategie dedicate. La durata temporale entro uno stato di ciclo di vita o in una transizione tra essi viene detta \strong{fase}. Le fasi mostrano l'avanzamento del progetto in funzione del tempo trascorso.
+Il ciclo di vita di un prodotto software può essere visto come una macchina a
+stati, dove ogni stato rappresenta un preciso grado di maturazione del prodotto,
+e dove ogni transizione tra stati richiede l'esecuzione di attività, raggruppate
+in processi. Ogni prodotto software, lungo il suo ciclo di vita, attraversa gli
+stati di concepimento, sviluppo, utilizzo e ritiro.
+
+Stati e transizioni hanno precise pre- e postcondizioni, determinate da vincoli,
+regole e strategie dedicate. La durata temporale entro uno stato di ciclo di
+vita o in una transizione tra essi viene detta \strong{fase}. Le fasi mostrano
+l'avanzamento del progetto in funzione del tempo trascorso.
 
 \subsection{Modelli di ciclo di vita}
-I modelli di ciclo di vita del software enfatizzano i processi chiave da attuare e le relazioni e interdipendenze logiche e temporali tra di essi. Il modello di ciclo di vita adottato pone vincoli su pianificazione e gestione del progetto. Esso è indipendente da metodi e strumenti di sviluppo, e precede la loro selezione. L'ingegnere del software deve essere a conoscenza del ciclo di vita da adottare in modo da stimare costi, tempi, vincoli e benefici fin dall'inizio.
+
+I modelli di ciclo di vita del software enfatizzano i processi chiave da attuare
+e le relazioni e interdipendenze logiche e temporali tra di essi. Il modello di
+ciclo di vita adottato pone vincoli su pianificazione e gestione del progetto.
+Esso è indipendente da metodi e strumenti di sviluppo, e precede la loro
+selezione. L'ingegnere del software deve essere a conoscenza del ciclo di vita
+da adottare in modo da stimare costi, tempi, vincoli e benefici fin dall'inizio.
 
 \subsubsection{Modello sequenziale (\frgnword{Waterfall model})}
-Il modello a cascata (o \frgnword{Waterfall model}) è un modello sequenziale nel quale il processo di realizzazione del software è strutturato in una sequenza strettamente lineare di passi, in cui il ritorno a fasi precedenti non è permesso. Al completamento di ogni passo è prodotta della documentazione, che permette al cliente di analizzare lo stato di avanzamento e approvarlo (\frgnword{document-driven model}). La fase successiva non può iniziare fintanto che quella precedente non è conclusa e approvata.
 
-Questo modello ha origine nell'industria manufatturiera, dove i cambiamenti in corso d'opera hanno costi proibitivi e sono difficilmente attuabili.
+Il modello a cascata (o \frgnword{Waterfall model}) è un modello sequenziale nel
+quale il processo di realizzazione del software è strutturato in una sequenza
+strettamente lineare di passi, in cui il ritorno a fasi precedenti non è
+permesso. Al completamento di ogni passo è prodotta della documentazione, che
+permette al cliente di analizzare lo stato di avanzamento e approvarlo
+(\frgnword{document-driven model}). La fase successiva non può iniziare fintanto
+che quella precedente non è conclusa e approvata.
+
+Questo modello ha origine nell'industria manufatturiera, dove i cambiamenti in
+corso d'opera hanno costi proibitivi e sono difficilmente attuabili.
 
 Ogni passo del modello a cascata è definito in termini di
+
 \begin{itemize}
 	\item Attività e prodotti in \frgnword{input} e \frgnword{output} attesi;
 	\item Struttura e contenuto della documentazione;
@@ -19,44 +42,96 @@ Ogni passo del modello a cascata è definito in termini di
 	\item Scadenze per la consegna della documentazione;
 \end{itemize}
 
-Il modello a cascata porta con se dei vantaggi: le pre- e postcondizioni sono ben note e rispettate per definizione, rendendolo facilmente valutabile nei costi e nelle risorse necessarie. Inoltre, per la sua semplicità, è sempre possibile sapere con precisione in che stato di avanzamento si trova il progetto ad un certo istante.
+Il modello a cascata porta con se dei vantaggi: le pre- e postcondizioni sono
+ben note e rispettate per definizione, rendendolo facilmente valutabile nei
+costi e nelle risorse necessarie. Inoltre, per la sua semplicità, è sempre
+possibile sapere con precisione in che stato di avanzamento si trova il progetto
+ad un certo istante.
 
-Per contro, questo modello può risultare troppo inflessibile. Inoltre, non producendo prototipi agli stadi intermedi, il cliente riceve il prodotto solo alla fine del processo di sviluppo. È possibile limitare i difetti attuando alcune correzioni che rendano il modello più flessibile, come l'impiego di prototipi usa-e-getta. 
+Per contro, questo modello può risultare troppo inflessibile. Inoltre, non
+producendo prototipi agli stadi intermedi, il cliente riceve il prodotto solo
+alla fine del processo di sviluppo. È possibile limitare i difetti attuando
+alcune correzioni che rendano il modello più flessibile, come l'impiego di
+prototipi usa-e-getta.
 
-Una scarsa conoscenza delle tecnologie da utilizzare da parte degli \frgnword{stakeholder} potrebbe causare un sostanziale cambiamento dei requisiti in corso d'opera e richiedere l'iterazione. Per questo motivo, è consigliabile impiegare il modello a cascata solo nel caso in cui i requisiti siano ben noti fin dall'inizio e difficilmente modificabili durante lo sviluppo. In casi particolari è possibile permettere iterazioni rieseguendo fasi precedenti, pur snaturando il modello.
+Una scarsa conoscenza delle tecnologie da utilizzare da parte degli
+\frgnword{stakeholder} potrebbe causare un sostanziale cambiamento dei requisiti
+in corso d'opera e richiedere l'iterazione. Per questo motivo, è consigliabile
+impiegare il modello a cascata solo nel caso in cui i requisiti siano ben noti
+fin dall'inizio e difficilmente modificabili durante lo sviluppo. In casi
+particolari è possibile permettere iterazioni rieseguendo fasi precedenti, pur
+snaturando il modello.
 
 %\subsubsection{Modello iterativo}
 
 \subsubsection{Modello incrementale}
-Il modello incrementale basa lo sviluppo software su multipli e successivi rilasci, dove ogni rilascio implementa una funzionalità aggiuntiva. I requisiti sono classificati e ordinati in base alla loro importanza strategica; i primi incrementi puntano a realizzare i più importanti.
 
-% There can be iterations, but only after architectural analysis and design, are over; these phases are done once and never repeated during the entire life cycle. It is essential to set the main requirements and the system architecture completely during the initial stages in order to plan increments.
+Il modello incrementale basa lo sviluppo software su multipli e successivi
+rilasci, dove ogni rilascio implementa una funzionalità aggiuntiva. I requisiti
+sono classificati e ordinati in base alla loro importanza strategica; i primi
+incrementi puntano a realizzare i più importanti.
 
-Il modello incrementale ha il vantaggio di sviluppare le funzionalità essenziali durante le prime fasi, che sono disponibili molto presto. Tali funzionalità sono di aiuto nella pianificazione degli incrementi successivi e, poichè passano attraverso multiple fasi di verifica, aumentano la loro stabilità ad ogni passo.
+% There can be iterations, but only after architectural analysis and design, are
+% over; these phases are done once and never repeated during the entire life
+% cycle. It is essential to set the main requirements and the system
+% architecture completely during the initial stages in order to plan increments.
 
-In un approccio \frgnword{plan-driven}, gli incrementi sono identificati in anticipo; se viene impiegato un approccio agile, gli incrementi dipendono dalle priorità del cliente e dal suo \frgnword{feedback}.
+Il modello incrementale ha il vantaggio di sviluppare le funzionalità essenziali
+durante le prime fasi, che sono disponibili molto presto. Tali funzionalità sono
+di aiuto nella pianificazione degli incrementi successivi e, poichè passano
+attraverso multiple fasi di verifica, aumentano la loro stabilità ad ogni passo.
+
+In un approccio \frgnword{plan-driven}, gli incrementi sono identificati in
+anticipo; se viene impiegato un approccio agile, gli incrementi dipendono dalle
+priorità del cliente e dal suo \frgnword{feedback}.
 
 % The incremental model requires an excellent design.
 
 \subsubsection{Modello evolutivo}
-Il modello evolutivo è un modello iterativo che aiuta a rispondere a bisogni non prevedibili dall'inizio. Implica l'attraversamento di stessi stadi più volte durante il ciclo di vita, e richiede spesso il rilascio e il mantenimento di più versioni del prodotto nello stesso momento, coprendo meglio il mercato ma aumentando i costi. È il modello più appropriato in situazioni dove specifiche di sistema dettagliate non sono disponibili.
 
-L'approccio evolutivo tende a sviluppare in tempi brevi una prima implementazione del software, a partire da specifiche astratte, e modificarlo basandosi sul grado di approvazione del cliente.
+Il modello evolutivo è un modello iterativo che aiuta a rispondere a bisogni non
+prevedibili dall'inizio. Implica l'attraversamento di stessi stadi più volte
+durante il ciclo di vita, e richiede spesso il rilascio e il mantenimento di più
+versioni del prodotto nello stesso momento, coprendo meglio il mercato ma
+aumentando i costi. È il modello più appropriato in situazioni dove specifiche
+di sistema dettagliate non sono disponibili.
 
-The model divides the software life cycle into smaller incremental waterfall cycles at the end of which users are able to access to the product and provide \strong{feedback}. Each version inherits the best features from the earlier, and it's refined based upon feedbacks.
+L'approccio evolutivo tende a sviluppare in tempi brevi una prima
+implementazione del software, a partire da specifiche astratte, e modificarlo
+basandosi sul grado di approvazione del cliente.
 
-Il modello suddivide il ciclo di vita del software in piccoli cicli a cascata incrementali. All fine di ogni sotto-ciclo, gli utenti possono accedere al prodotto, testarne le funzionalità e fornire dei \frgnword{feedback}. Ogni versione del prodotto eredita dalla precedente le \frgnword{feature} migliori, raffinandole in base ai \frgnword{feedback}. \todo{maybe ripetizione di "feedback". alternativa?}
+The model divides the software life cycle into smaller incremental waterfall
+cycles at the end of which users are able to access to the product and provide
+\strong{feedback}. Each version inherits the best features from the earlier, and
+it's refined based upon feedbacks.
+
+Il modello suddivide il ciclo di vita del software in piccoli cicli a cascata
+incrementali. All fine di ogni sotto-ciclo, gli utenti possono accedere al
+prodotto, testarne le funzionalità e fornire dei \frgnword{feedback}. Ogni
+versione del prodotto eredita dalla precedente le \frgnword{feature} migliori,
+raffinandole in base ai \frgnword{feedback}. \todo{maybe ripetizione di
+"feedback". alternativa?}
 
 \subsubsection{Modello a spirale}
-Il modello a spirale, proposto da Barry W. Boehm nel 1988, si focalizza sulla pianificazione e l'analisi dei rischi (modello \frgnword{risk-driven}. Un \strong{rischio} è un'incertezza sul progetto rispetto a una qualsiasi transizione nel ciclo di vita. Il modello rappresenta il processo come una spirale piuttosto che una sequenza di attività: ogni ciclo nella spirale equivale al completamento di una fase del processo software.
+
+Il modello a spirale, proposto da Barry W. Boehm nel 1988, si focalizza sulla
+pianificazione e l'analisi dei rischi (modello \frgnword{risk-driven}. Un
+\strong{rischio} è un'incertezza sul progetto rispetto a una qualsiasi
+transizione nel ciclo di vita. Il modello rappresenta il processo come una
+spirale piuttosto che una sequenza di attività: ogni ciclo nella spirale
+equivale al completamento di una fase del processo software.
 
 \todo{Questa parte potrebbe fare cagare}
-Il modello a spirale richiede una forte interazione tra il fornitore e il cliente.
+
+Il modello a spirale richiede una forte interazione tra il fornitore e il
+cliente.
+
 \begin{figure}[h!]
 	\centering
 	\begin{tabular}{|l|l|}
-		\hline	
-		Acquirente & Definizione degli obbiettivi e dei vincoli sulla fase di pianificazione \\
+		\hline
+    Acquirente & Definizione degli obbiettivi e dei vincoli sulla fase di
+    pianificazione \\
 		\hline \\
 		Fornitore & Sviluppo e validazione \\
 		\hline \\
@@ -65,52 +140,106 @@ Il modello a spirale richiede una forte interazione tra il fornitore e il client
 	\end{tabular}
 \end{figure}
 
-Ogni ciclo della spirale è diviso in quattro settori, attraversati iterativamente. Più grande è la spirale, più risorse sono state spese, più rischi sono stati gestiti.
+Ogni ciclo della spirale è diviso in quattro settori, attraversati
+iterativamente. Più grande è la spirale, più risorse sono state spese, più
+rischi sono stati gestiti.
+
 \begin{enumerate}
-	\item Impostazione dei obbiettivi: vengono definiti obbiettivi specifici per quella fase di progetto, e identificati rischi e vincoli sul processo e sul prodotto;
-	\item Valutazione e riduzione dei rischi: ogni rischio è analizzato, e vengono presi provvedimenti atti a ridurlo;
-	\item Sviluppo e validazione: dopo aver valutato i rischi, viene selezionato un modello di sviluppo;
-	\item Pianificazione: viene deciso se è necessario fermarsi o continuare con un ulteriore ciclo;
+  \item Impostazione dei obbiettivi: vengono definiti obbiettivi specifici per
+    quella fase di progetto, e identificati rischi e vincoli sul processo e sul
+    prodotto;
+  \item Valutazione e riduzione dei rischi: ogni rischio è analizzato, e vengono
+    presi provvedimenti atti a ridurlo;
+  \item Sviluppo e validazione: dopo aver valutato i rischi, viene selezionato
+    un modello di sviluppo;
+  \item Pianificazione: viene deciso se è necessario fermarsi o continuare con
+    un ulteriore ciclo;
 \end{enumerate}
-%Ideally, the model converges to a linear sequential one.
+
+% Ideally, the model converges to a linear sequential one.
 
 \subsubsection{Modello a componenti}
-Questo modello riconsidera il problema basandosi su risorse che possono essere riusate per risolverlo. Sostanzialmente, crea il prodotto finito assemblando componenti software già esistenti, aggiungendo un minimo sviluppo per integrare con ciò che manca.
+
+Questo modello riconsidera il problema basandosi su risorse che possono essere
+riusate per risolverlo. Sostanzialmente, crea il prodotto finito assemblando
+componenti software già esistenti, aggiungendo un minimo sviluppo per integrare
+con ciò che manca.
 
 \todo{Non c'è molto da dire, ma si potrebbe espandere}
 
 \subsubsection{Modelli agili}
-Nei primi anni '90, vi era una visione diffusa secondo la quale il modo migliore per ottenere un buon prodotto software fosse attraverso fasi di analisi, sviluppo e documentazione accurate e formali. Quando questo approccio, pesante e \frgnword{plan-driven}, viene applicato per lo sviluppo di sistemi di piccole/medie dimensioni, l'\frgnword{overhead} è tale da dominare il processo di sviluppo. L'insoddisfazione per questo tipo di approccio ha portato alla creazione dei cosiddetti metodi 'agili'.
 
-I metodi agili permettono al team di sviluppo di concentrarsi sul software piuttosto che sulla sua progettazione e documentazione. Sono ideali quando i requisiti di progetto cambiano frequentemente durante il ciclo di vita, e sono pensati per fornire rapidamente software funzionante e testabile agli acquirenti.
+Nei primi anni '90, vi era una visione diffusa secondo la quale il modo migliore
+per ottenere un buon prodotto software fosse attraverso fasi di analisi,
+sviluppo e documentazione accurate e formali. Quando questo approccio, pesante e
+\frgnword{plan-driven}, viene applicato per lo sviluppo di sistemi di
+piccole/medie dimensioni, l'\frgnword{overhead} è tale da dominare il processo
+di sviluppo. L'insoddisfazione per questo tipo di approccio ha portato alla
+creazione dei cosiddetti metodi 'agili'.
+
+I metodi agili permettono al team di sviluppo di concentrarsi sul software
+piuttosto che sulla sua progettazione e documentazione. Sono ideali quando i
+requisiti di progetto cambiano frequentemente durante il ciclo di vita, e sono
+pensati per fornire rapidamente software funzionante e testabile agli
+acquirenti.
 
 I metodi agili si basano su quattro principi fondamentali:
+
 \begin{enumerate}
 	\item Gli individui e le interazioni vengono prima di processi e strumenti;
-	\item È più importante un software funzionante che una documentazione dettagliata;
-	\item Privilegiare la collaborazione diretta con il cliente rispetto alla negoziazione contrattuale;
+  \item È più importante un software funzionante che una documentazione
+    dettagliata;
+  \item Privilegiare la collaborazione diretta con il cliente rispetto alla
+    negoziazione contrattuale;
 	\item Responding to change over following a plan
-	\item È più importante saper rispondere velocemente ai cambiamenti che seguire ciecamente il piano di sviluppo;
+  \item È più importante saper rispondere velocemente ai cambiamenti che seguire
+    ciecamente il piano di sviluppo;
 \end{enumerate}
 
-Il concetto di \strong{\frgnword{user story}} è centrale nei modello agili: essa cattura un bisogno dell'utente, che il prodotto deve soddisfare. È sostanzialmente un documento costituito da una o più frasi dell'utente riguardo al bisogno, e la strategia da usare per verificare che sia effettivamente soddisfatto.
+Il concetto di \strong{\frgnword{user story}} è centrale nei modello agili: essa
+cattura un bisogno dell'utente, che il prodotto deve soddisfare. È
+sostanzialmente un documento costituito da una o più frasi dell'utente riguardo
+al bisogno, e la strategia da usare per verificare che sia effettivamente
+soddisfatto.
 
 \paragraph{Scrum}
-Scrum definisce un generico modello agile focalizzato sulla gestione di un modello di sviluppo iterativo.
+
+Scrum definisce un generico modello agile focalizzato sulla gestione di un
+modello di sviluppo iterativo.
+
 \todo{Definizione ampiamente migliorabile}
 
-Le fasi centrali di Scrum sono i cicli di \strong{\frgnword{sprint}}. Uno \frgnword{sprint} (o iterazione) è un'unità di pianificazione nel quale il lavoro da svolgersi viene valutato, e sono selezionate le \frgnword{feature} da implementare. Al termine di uno \frgnword{sprint}, la funzionalità implementata viene consegnata agli \frgnword{stakeholder} e il progresso effettuato viene usato come punto di partenza per lo \frgnword{sprint} successivo. Gli \frgnword{sprint} hanno una lunghezza fissa di tipicamente 2--4 settimane.
+Le fasi centrali di Scrum sono i cicli di \strong{\frgnword{sprint}}. Uno
+\frgnword{sprint} (o iterazione) è un'unità di pianificazione nel quale il
+lavoro da svolgersi viene valutato, e sono selezionate le \frgnword{feature} da
+implementare. Al termine di uno \frgnword{sprint}, la funzionalità implementata
+viene consegnata agli \frgnword{stakeholder} e il progresso effettuato viene
+usato come punto di partenza per lo \frgnword{sprint} successivo. Gli
+\frgnword{sprint} hanno una lunghezza fissa di tipicamente 2--4 settimane.
 
-Il punto di partenza nella pianificazione di uno \frgnword{sprint} è il \frgnword{product backlog}, una lista ordinata di requisiti per il prodotto in forma di \frgnword{feature}, \frgnword{bug fixes} e qualiasi altra cosa debba essere sviluppata per ottenere un prodotto consegnabile. Il cliente è strettamente coinvolto nel processo di pianificazione, e più introdurre nuovi requisiti o questioni all'inizio di ogni sprint.
+Il punto di partenza nella pianificazione di uno \frgnword{sprint} è il
+\frgnword{product backlog}, una lista ordinata di requisiti per il prodotto in
+forma di \frgnword{feature}, \frgnword{bug fixes} e qualiasi altra cosa debba
+essere sviluppata per ottenere un prodotto consegnabile. Il cliente è
+strettamente coinvolto nel processo di pianificazione, e più introdurre nuovi
+requisiti o questioni all'inizio di ogni sprint.
 
-In \frgnword{Scrum} vi è la figura dello \frgnword{Scrum master}: esso ha la responsabilità di facilitare e gestire i \frgnword{meeting}, tracciare il \frgnword{backlog}, misurare il progresso e comunicare con i clienti e il \frgnword{management}. È responsabile di tutto il processo di \frgnword{Scrum}. Ad ogni modo, in \frgnword{Scrum} tutto il team ha potere decisionale.
+In \frgnword{Scrum} vi è la figura dello \frgnword{Scrum master}: esso ha la
+responsabilità di facilitare e gestire i \frgnword{meeting}, tracciare il
+\frgnword{backlog}, misurare il progresso e comunicare con i clienti e il
+\frgnword{management}. È responsabile di tutto il processo di \frgnword{Scrum}.
+Ad ogni modo, in \frgnword{Scrum} tutto il team ha potere decisionale.
 
 \subsection{Standard di processo}
-Gli standard di ciclo di vita possono essere generali o settoriali. Essi rappresentano:
+
+Gli standard di ciclo di vita possono essere generali o settoriali. Essi
+rappresentano:
 
 \begin{itemize}
-	\item \strong{modelli di azione} quando usati per definire e imporre particolari procedure;
-	\item \strong{modelli di valutazione} quando usati come valutazione e confronto verso \frgnword{best practices}.
+  \item \strong{modelli di azione} quando usati per definire e imporre
+    particolari procedure;
+  \item \strong{modelli di valutazione} quando usati come valutazione e
+    confronto verso \frgnword{best practices}.
 \end{itemize}
 
 Lo standard più usato in Ingegneria del Software è l'ISO/IEC 12207:1995.
