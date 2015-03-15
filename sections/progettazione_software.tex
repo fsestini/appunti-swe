@@ -59,4 +59,42 @@ Una buona architettura facilita il successo del prodotto software:
   \item Lo studio dell'architettura fornisce una descrizione della qualità del
     sistema;
   \item Le architetture sono modelli trasferibili e riusabili;
+
+\subsubsection{Qualità architetturali}
+
+Le seguenti qualità sono da ricercare in un'architettura software:
+
+\begin{itemize}
+  \item Sufficienza: capacità di soddisfare tutti i requisiti
+  \item Comprensibilità: comprensibile agli \foreignword{stakeholder}
+  \item Modularità: suddivisione in parti chiare e distinte
+  \item Robustezza: capacità di sopportare ingressi diversi (corretti, errati,
+        tanti, pochi), dall'utente e dall'ambiente
+  \item Flessibilità: permette modifiche a costo contenuto al variare dei
+        requisiti
+  \item Riusabilità: le sue parti possono essere utilmente impiegate in altre
+        applicazioni
+  \item Efficienza
+  \item Affidabilità: funziona bene quando utilizzata
+  \item Disponibilità: necessita di tempo ridotto o nullo per manutenzione fuori
+        linea
+  \item Sicurezza rispetto alle intrusioni (\foreignword{security})
+  \item Sicurezza rispetto a malfunzionamenti (\foreignword{safety})
+  \item Semplicità: ogni parte contiene il necessario e nulla di superfluo
+    \begin{itemize}
+      \item Principio del `rasoio di Occam'
+    \end{itemize}
+  \item Incapsulazione (\foreignword{information hiding})
+    \begin{itemize}
+      \item diminuisce l'accoppiamento
+      \item cresce la manutenibilità
+      \item aumentano le opportunità di riuso
+    \end{itemize}
+  \item Coesione: le parti che stanno insieme hanno gli stessi obiettivi
+    \begin{itemize}
+      \item funzionalità simili devono stare nella stessa componente
+      \item pone un limite inferiore alla decomposizione
+      \item migliora il disaccoppiamento e la comprensiblità del sistema
+    \end{itemize}
+  \item Basso accoppiamento
 \end{itemize}
