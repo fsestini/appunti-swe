@@ -1,0 +1,218 @@
+\section{Progettazione software}
+
+Per perseguire la correttezza per costruzione, si progetta \strong{prima}
+di produrre.
+
+È necessario progettare per
+
+\begin{itemize}
+  \item governare la complessità del prodotto
+  \item organizzare e ripartire le responsabilità di realizzazione
+  \item produrre in economia (efficienza) e garantire controllo di qualità
+        (efficacia)
+\end{itemize}
+
+Mentre l'analisi segue un processo \strong{investigativo}, la progettazione
+segue un approccio \strong{sintetico} nel quale da vincoli, obbiettivi e
+requisiti si ricava una soluzione soddisfacente per tutti gli
+\foreignword{stakeholder}.
+
+%TODO: da verificare
+%La progettazione architetturale è il primo \foreignord{stage} nel processo di
+%progettazione software.
+
+\subsection{Architettura software}
+
+L'attività di progettazione fissa l'\strong{architettura} software del prodotto,
+definita come
+
+\begin{itemize}
+  \item decomposizione del sistema in componenti; prima visione logica
+        (concettuale), poi di dettaglio (realizzativa)
+  \item organizzazione dei diversi componenti, che ne definisce ruoli,
+        responsabilità e interazioni
+  \item interfaccie necessarie all'interazione tra le componenti, tra loro e con
+        l'ambiente
+  \item paradigmi di composizione delle componenti, come definizione di regole,
+        criteri, limiti e vincoli
+\end{itemize}
+
+% TODO espandere
+L'architettura software è importante perchè influisce sulle caratteristiche non
+funzionali del sistema (mantenibilità, \foreignword{performance}, ecc.)
+
+Una buona architettura facilita il successo del prodotto software:
+
+\begin{itemize}
+  \item impiega componenti con specifica chiara e coesa
+  \item realizzabili con risorse date e costi fissati
+  \item ha una struttura che facilita eventuali cambiamenti futuri
+\end{itemize}
+
+\subsubsection{Perchè l'architettura è importante}
+
+\begin{itemize}
+  \item L'architettura impone vincoli sull'implementazione;
+  \item L'architettura detta la struttura organizzativa: poichè l'architettura
+    decompone il sistema al livello di astrazione più alto, tipicamente
+    costituisce la base per il \foreignword{work breakdown structure};
+  \item Lo studio dell'architettura fornisce una descrizione della qualità del
+    sistema;
+  \item Le architetture sono modelli trasferibili e riusabili;
+
+\subsubsection{Qualità architetturali}
+
+Le seguenti qualità sono da ricercare in un'architettura software:
+
+\begin{itemize}
+  \item Sufficienza: capacità di soddisfare tutti i requisiti
+  \item Comprensibilità: comprensibile agli \foreignword{stakeholder}
+  \item Modularità: suddivisione in parti chiare e distinte
+  \item Robustezza: capacità di sopportare ingressi diversi (corretti, errati,
+        tanti, pochi), dall'utente e dall'ambiente
+  \item Flessibilità: permette modifiche a costo contenuto al variare dei
+        requisiti
+  \item Riusabilità: le sue parti possono essere utilmente impiegate in altre
+        applicazioni
+  \item Efficienza
+  \item Affidabilità: funziona bene quando utilizzata
+  \item Disponibilità: necessita di tempo ridotto o nullo per manutenzione fuori
+        linea
+  \item Sicurezza rispetto alle intrusioni (\foreignword{security})
+  \item Sicurezza rispetto a malfunzionamenti (\foreignword{safety})
+  \item Semplicità: ogni parte contiene il necessario e nulla di superfluo
+    \begin{itemize}
+      \item Principio del `rasoio di Occam'
+    \end{itemize}
+  \item Incapsulazione (\foreignword{information hiding})
+    \begin{itemize}
+      \item diminuisce l'accoppiamento
+      \item cresce la manutenibilità
+      \item aumentano le opportunità di riuso
+    \end{itemize}
+  \item Coesione: le parti che stanno insieme hanno gli stessi obiettivi
+    \begin{itemize}
+      \item funzionalità simili devono stare nella stessa componente
+      \item pone un limite inferiore alla decomposizione
+      \item migliora il disaccoppiamento e la comprensiblità del sistema
+    \end{itemize}
+  \item Basso accoppiamento
+\end{itemize}
+
+\paragraph{Accoppiamento}
+
+L'accoppiamento è una proprietà esterna dei componenti che indica quanto essi si
+usano tra loro. Vi sono due metriche utili alla misurazione dell'accoppiamento:
+
+\begin{itemize}
+  \item \foreignword{Structural \strong{fan-in}}: quanto il componente è
+        utilizzato. È indice di utilità e va \strong{massimizzato};
+  \item \foreignword{Structural \strong{fan-out}}: quando il componente
+        dipende da altre componenti. È indice di dipendenza e va
+        \strong{minimizzato}.
+\end{itemize}
+
+Una buona progettazione presenta componenti con \emph{fan-in} elevato e
+\emph{fan-out} basso.
+
+\subsubsection{Decomposizione architetturale}
+
+La decomposizione dell'architettura può seguire due approcci:
+
+\begin{itemize}
+  \item Top-down: decomposizione di problemi in sotto-problemi
+  \item Bottom-up: composizione di soluzioni da basso, stile \foreignword{object
+        oriented}
+\end{itemize}
+
+Solitamente si segue un approccio intermedio.
+
+\subsubsection{Progettazione per riuso}
+
+Il riuso impiega prodotti già esistenti, minimizzando il costo realizzativo e di
+verifica, ma porta con sè alcuni problemi:
+
+\begin{itemize}
+  \item Progettare \emph{per} il riuso è difficile: bisogna anticipare i bisogni
+        futuri
+  \item Progettare \emph{con} il riuso non è immediato: bisogna minimizzare le
+        modifiche alle componenti riusate per non perderne il valore
+\end{itemize}
+
+Il riuso è puro costo nel breve periodo, ma offre risparmio nel medio e lungo
+termine.
+
+\subsection{Framework}
+
+Un \foreignword{framework} è un insieme integrato di componenti software
+prefabbricate.
+
+\begin{itemize}
+  \item Sono bottom-up, perchè fatti di codice già sviluppato. La progettazione
+        avviene a partire da una base fornita dal framework, e prosegue verso
+        l'alto per composizione;
+  % TODO: espandere
+  \item Sono top-down, perchè impongono uno stile architetturale
+\end{itemize}
+
+Utili come base facilmente riusabile di diverse applicazioni entro un dato
+dominio (es. Spring, Swing, Entity Framework, ecc.)
+
+\subsection{Design pattern}
+
+I design pattern offrono soluzioni progettuali a problemi ricorrenti. Sono
+l'equivalente architetturale degli algoritmi.
+
+A livello di sistema, servono dei \strong{pattern architetturali}.
+
+\subsubsection{Pattern architetturali}
+
+I pattern architetturali costituiscono soluzioni fattorizzate per problemi di
+progettazione ricorrenti. Un pattern architetturale è determinato da:
+
+\begin{itemize}
+  \item Una descrizione del tipo di elementi di dell'architettura
+  \item Una configurazione topologica degli elementi, che ne indica le
+    interrelazioni;
+  \item Un insieme di vincoli semantici;
+  \item Un insieme di meccanismi di interazione, che determina come gli elementi
+    interagiscono fra loro attraverso la topologia consentita.
+
+Un pattern architetturale non è un'architettura, ma fornisce comunque un'utile
+visione d'insieme del sistema. Impone vincoli utili sull'architettura e, di
+conseguenza, sul sistema.
+
+Un aspetto fondamentale dei pattern architetturali è che esibiscono attributi di
+qualità noti, e rappresentano soluzioni a problemi di diverse categorie.
+
+La soluzione che fornisce un pattern architetturale deve
+
+\begin{itemize}
+  \item riflettere il contesto; la soluzione deve soddisfare il bisogno, non
+        viceversa;
+  \item essere credibile: provata altrove
+\end{itemize}
+
+Alcuni esempi di pattern architetturale sono il modello client-server o quello
+event-driven, o l'architettura di relazione MVC.
+
+%TODO: Espandere
+
+\subsection{Ricetta generale}
+
+In generale, durante la progettazione è importante
+
+\begin{itemize}
+  \item Dominare la complessità del sistema, organizzando il sistema in
+        componenti di complessità trattabile, riducendo la difficoltà di
+        comprensione e permettendo di affidarne la realizzazione al lavoro
+        individuale
+  \item Riconoscere le componenti terminali, che non richiedono ulteriore
+        decomposizione
+    \begin{itemize}
+      \item beneficio che se ne otterrebbe inferiore al costo
+      \item eccessivo accoppiamento e esposizione di dettagli
+    \end{itemize}
+  \item Cercare un buon bilanciamento: più semplici le componenti, più complessa
+        la loro interazione
+\end{itemize}
