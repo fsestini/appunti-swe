@@ -195,3 +195,24 @@ La soluzione che fornisce un pattern architetturale deve
 
 Alcuni esempi di pattern architetturale sono il modello client-server o quello
 event-driven, o l'architettura di relazione MVC.
+
+%TODO: Espandere
+
+\subsection{Ricetta generale}
+
+In generale, durante la progettazione è importante
+
+\begin{itemize}
+  \item Dominare la complessità del sistema, organizzando il sistema in
+        componenti di complessità trattabile, riducendo la difficoltà di
+        comprensione e permettendo di affidarne la realizzazione al lavoro
+        individuale
+  \item Riconoscere le componenti terminali, che non richiedono ulteriore
+        decomposizione
+    \begin{itemize}
+      \item beneficio che se ne otterrebbe inferiore al costo
+      \item eccessivo accoppiamento e esposizione di dettagli
+    \end{itemize}
+  \item Cercare un buon bilanciamento: più semplici le componenti, più complessa
+        la loro interazione
+\end{itemize}
