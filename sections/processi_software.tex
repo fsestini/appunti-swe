@@ -37,6 +37,50 @@ l'acquirente, il fornitore, lo sviluppatore, l'utilizzatore e il mantenitore.
   \item \strong{ Manutenzione }: definisce le attività del mantenitore.
 \end{itemize}
 
+\subsubsection{Processo di sviluppo}\label{development-process}
+
+Il processo di sviluppo consiste nelle seguenti attività:
+
+\begin{itemize}
+  \item \strong{Implementazione di processo}: viene selezionato un modello di
+    ciclo di vita, e su esso vengono mappate le attività di sviluppo. Le
+    attività del processo di sviluppo vengono pianificate;
+  \item \strong{Analisi dei requisiti di sistema}: viene prodotta una SRS per il
+    sistema;
+  \item \strong{Progettazione del sistema}: viene stabilità una architettura
+    \frgnword{top-level} del sistema, che deve soddisfare, tra il resto,
+    tracciabilità e consistenza verso i requisiti di sistema;
+  \item \strong{Analisi dei requisiti software}: viene prodotta una SRS che
+    descrive i requisiti del prodotto software;
+  \item \strong{Progettazione architetturale}: viene prodotta l'architettura
+    software, a partire dai requisiti individuati;
+  \item \strong{Progettazione di dettaglio}: viene prodotta una progettazione
+    dettagliata e a basso livello delle singole componenti, compresa una
+    definizione in dettaglio delle interazioni e interfacce tra esse;
+  \item \strong{Codifica e \frgnword{ testing }}: viene sviluppato e documentato
+    ogni unità software e ogni test associato ad essa. Ogni componente è testata
+    per assicurare che soddisfi i requisiti;
+  \item \strong{Integrazione}: viene sviluppato un piano di integrazione delle
+    singole componenti in oggetti software;
+  \item \strong{\frgnword{Software qualification testing}}:
+    % TODO equivalente italiano?
+    viene verificato che ogni componente software soddisfi i requisiti
+    di qualità, secondo metriche e procedure definite dal piano di qualifica;
+  \item \strong{Integrazione del sistema}: i \frgnword{configuration item} sono
+    integrati nel sistema;
+  \item \strong{\frgnword{System qualification testing}}:
+    % TODO equivalente italiano?
+    viene verificato che il sistema soddisfi i requisiti di qualità;
+  \item \strong{Installazione}: viene sviluppato un piano di installazione del
+    prodotto nell'ambiente designato dal contratto;
+  \item \strong{Supporto all'accettazione}
+\end{itemize}
+
+Le attività possono essere eseguite in maniera iterativa e sovrapposte, e non
+devono seguire uno specifico ordine temporale. I \frgnword{task} che compongono
+le singole attività possono essere eseguiti in iterazioni diverse, ma devono
+essere tutti portati a termine, prima o dopo. % TODO maybe tono inopportuno
+
 \subsection{Processi di supporto}
 
 Questi processi vengono impiegati ed eseguiti da altri quando necessario, e
