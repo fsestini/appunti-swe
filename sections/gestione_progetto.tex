@@ -1,159 +1,328 @@
 \section{Gestione di progetto}
-La gestione di progetto e' una parte essenziale dell'Ingegneria del Software. Nella maggior parte dei casi, gli obbiettivi principali di un progetto sono i seguenti:
+
+La gestione di progetto e' una parte essenziale dell'Ingegneria del Software.
+Nella maggior parte dei casi, gli obbiettivi principali di un progetto sono i
+seguenti:
+
 \begin{enumerate}
-	\item Consegnare il software al cliente nei tempi accordati;
-	\item Mantenere i costi all'interno del \frgnword{budget};
-	\item Fornire software aderente alle aspettative del committente;
-	\item Mantenere un team di sviluppo organizzato ed efficiente;
+  \item Consegnare il software al cliente nei tempi accordati;
+  \item Mantenere i costi all'interno del \frgnword{budget};
+  \item Fornire software aderente alle aspettative del committente;
+  \item Mantenere un team di sviluppo organizzato ed efficiente;
 \end{enumerate}
 
-L'insegneria del software si differenzia da altri tipi di ingegneria in modi che la rendono particolarmente impegnativa:
-\begin{enumerate}
-	\item Il prodotto e' intangibile: i responsabili di progetto non possono rendersi conto del progresso semplicemente osservando il prodotto in via di sviluppo, ma devono affidarsi ad altre persone incaricate di produrre prove dell'avanzamento; 
-	\item I progetti software di grandi dimensioni sono spesso di tipo `\frgnword{one-off}' \todo{Inserire definizione di one-off}. Pertanto, anche \frgnword{software engineers} con ampia esperienza pregressa possono avere difficolta nell'anticipare i rischi. Inoltre, il rapido avanzamento tecnologico puo' rendere questa esperienza obsoleta in breve tempo.
-	\item I processi software sono variabili e specifici per ogni azienda; nonostante il progresso significativo nella standardizzazione, i processi software variano ampiamente da un'azienda all'altra;
-\end{enumerate}
+L'ingegneria del software si differenzia da altri tipi di ingegneria in modi che
+la rendono particolarmente impegnativa:
 
-\todo{Manca una vera definizione di responsabile di progetto}
-Il responsabile di progetto compie tipicamente le seguenti attivita':
-\begin{itemize}
-	\item Pianificazione di progetto: i responsabili di progetto pianificano e stimano lo sviluppo di progetto, e assegnano compiti alle persone. Essi supervisionano il lavoro e monitorano l'avanzamento;
-	\item Comunicazione: i responsabili tipicamente si occupano di comunicare lo stato di avanzamento del progetto agli \frgnword{stakeholder};
-	\item Gerstione dei rischi: i responsabili di progetto devono valutare i rischi che potrebbero verificarsi, monitorarli, e agire nel caso si verificassero;
-	\item Gestione del personale: i responsabili hanno il compito di selezionare il team di sviluppo e stabilire metodi di lavoro efficaci;
-\end{itemize}
+\begin{enumerate}
+  \item Il prodotto e' intangibile: i responsabili di progetto non possono
+    rendersi conto del progresso semplicemente osservando il prodotto in via di
+    sviluppo, ma devono affidarsi ad altre persone incaricate di produrre prove
+    dell'avanzamento;
+  \item I progetti software di grandi dimensioni sono spesso di tipo
+    `\frgnword{one-off}' \todo{Inserire definizione di one-off}. Pertanto, anche
+    \frgnword{software engineers} con ampia esperienza pregressa possono avere
+    difficolta nell'anticipare i rischi. Inoltre, il rapido avanzamento
+    tecnologico puo' rendere questa esperienza obsoleta in breve tempo.
+  \item I processi software sono variabili e specifici per ogni azienda;
+    nonostante il progresso significativo nella standardizzazione, i processi
+    software variano ampiamente da un'azienda all'altra;
+\end{enumerate}
 
 \subsection{Gestione dei rischi}
-La gestione dei rischi riguarda l'anticipazione dei rischi che potrebbero intaccare la pianificazione delle attivita' o la qualita' del prodotto, e la messa in atto di misure per evitarli.
+
+La gestione dei rischi riguarda l'anticipazione dei rischi che potrebbero
+intaccare la pianificazione delle attivita' o la qualita' del prodotto, e la
+messa in atto di misure per evitarli.
 
 Vi sono tre categorie di rischi, correlate tra loro:
+
 \begin{enumerate}
-	\item Rischi di progetto: influenzano la pianificazione o le risorse di progetto (ad esempio, la perdita di un bravo progettista);
-	\item Rischi di prodotto: colpiscono la qualita' o le prestazioni del software (ad esempio, un componente acquistato da fornitori terzi non funziona come ci si aspetta);
-	\item Rischi di impresa: influenzano l'azienda sviluppatrice o fornitrice del software (ad esempio, un la messa in vendita di un nuovo prodotto da parte di una azienda concorrente);
+  \item \strong{Rischi di progetto}: influenzano la pianificazione o le risorse
+    di progetto (ad esempio, la perdita di un bravo progettista);
+  \item \strong{Rischi di prodotto}: colpiscono la qualita' o le prestazioni del
+    software (ad esempio, un componente acquistato da fornitori terzi non
+    funziona come ci si aspetta);
+  \item \strong{Rischi di impresa}: influenzano l'azienda sviluppatrice o
+    fornitrice del software (ad esempio, la messa in vendita di un nuovo
+    prodotto da parte di una azienda concorrente);
 \end{enumerate}
 
-La gestione dei rischi e' particolarmente importante nei progetti software data l'insita incertezza che li caratterizza, causata principalmente da requisiti poco chiari e spesso variabili nel tempo, difficolta' nello stimare il tempo e le risorse necessarie e le differenze di abilita' tra gli individui che andranno a comporre il team;
+La gestione dei rischi è particolarmente importante nei progetti software data
+l'insita \strong{incertezza} che li caratterizza, causata principalmente da
+\strong{requisiti poco chiari} e spesso variabili nel tempo, difficolta' nello
+\strong{stimare} il tempo e le risorse necessarie e le differenze di abilita'
+tra gli individui che andranno a comporre il team.
 
 Il processo di gestione dei rischi si costituisce di alcuni passi:
+
 \begin{enumerate}
-	\item Identificazione dei rischi;
-	\item Analisi dei rischi: valutare la probabilita' che possano verificarsi e le conseguenze; i risultati di questa fase vanno registrati nel piano di progetto;
-	\item Pianificazione: stilare un piano per la loro gestione; 
-	\item Monitoraggio dei rischi: valutare regolarmente i rischi, e come essi sono gestiti;
+  \item \strong{Identificazione} dei rischi;
+  \item \strong{Analisi} dei rischi: valutare la probabilita' che possano
+    verificarsi e le conseguenze. I risultati di questa fase vanno registrati
+    nel piano di progetto;
+  \item \strong{Pianificazione}: stilare un piano per la loro gestione;
+  \item \strong{Monitoraggio} dei rischi: valutare regolarmente i rischi, e come
+    essi sono gestiti;
 \end{enumerate}
 
-Il processo di gestione dei rischi e' iterativo e continua durante tutto il progetto. I risultati del processo vanno documentati nel piano di progetto, inclusa l'analisi e le linee guida su come affrontarli, e una discussione di quelli gestiti durante il progetto.
+Il processo di gestione dei rischi e' \strong{iterativo} e continua durante
+tutto il progetto. I risultati del processo vanno documentati nel piano di
+progetto, inclusa l'analisi e le linee guida su come affrontarli, e una
+discussione di quelli gestiti durante il progetto.
 
 \subsection{Ruoli}
-\todo{Scrivere da zero almeno la definizione di ruolo}
+
+% TODO scrivere la definizione di 'ruolo'
 
 \subsubsection{Analisti e progettisti}
-Gli \strong{analisti} conoscono il dominio del problema e possiedono una vasta esperienza professionale; pertanto, influiscono pesantemente sul successo del progetto. Poiche' ve ne sono pochi, raramente seguono uno stesso progetto per tutti il ciclo di vita. \todo{frase ampiamente migliorabile}
 
-I \strong{progettisti} hanno una conoscenza tecnica e tecnologica ampia e aggiornata, e molta esperienza professionale. Giocano un ruolo chiave per quanto riguarda gli aspetti tecnici e tecnologici del progetto. Sono anch'essi in numero limitato \todo{bruttissimo}, ma talvolta seguono il progetto fino alla manutenzione.
+Gli \strong{analisti} conoscono il dominio del problema e possiedono una vasta
+esperienza professionale; pertanto, influiscono pesantemente sul successo del
+progetto. Poiche' ve ne sono pochi, raramente seguono uno stesso progetto per
+tutti il ciclo di vita. \todo{frase ampiamente migliorabile}
+
+I \strong{progettisti} hanno una conoscenza tecnica e tecnologica ampia e
+aggiornata, e molta esperienza professionale. Giocano un ruolo chiave per quanto
+riguarda gli aspetti tecnici e tecnologici del progetto. Sono anch'essi in
+numero limitato \todo{bruttissimo}, ma talvolta seguono il progetto fino alla
+manutenzione.
 
 \subsubsection{Programmatori e verificatori}
-I \strong{programmatori} partecipano alla realizzazione e alla manutenzione del prodotto. Hanno conoscenza tecnica, visione e responsabilita' limitate. Formano la categoria storicamente piu' popolosa.
 
-I \strong{verificatori} partecipano all'intero ciclo di vita del software. Possiedono competenze tecniche, esperienza di progetto, e conoscenza di leggi e standards. Hanno capacita' di relazione e giudizio.
+I \strong{programmatori} partecipano alla realizzazione e alla manutenzione del
+prodotto. Hanno conoscenza tecnica, visione e responsabilita' limitate. Formano
+la categoria storicamente piu' popolosa.
+
+I \strong{verificatori} partecipano all'intero ciclo di vita del software.
+Possiedono competenze tecniche, esperienza di progetto, e conoscenza di leggi e
+standard. Hanno capacita' di relazione e giudizio.
 
 \subsubsection{Responsabile di progetto}
-Il responsabile di progetto rappresenta l'intero progetto software nei confronti del fornitore e del cliente. Centralizza le responsabilita' di scelta e di approvazione, partecipa al progetto per tutta la sua durata ed e' difficile da rimpiazzare. Ha responsabilita' nella pianificazione, nella gestione delle risorse umane, nel controllo, nella coordinazione e nelle relazioni esterne. Deve essere in possesso di conoscenza tecnica e abilita' nel comprendere e anticipare l'evoluzione del progetto.
+
+Il responsabile di progetto rappresenta l'intero progetto software nei confronti
+del fornitore e del cliente. Centralizza le responsabilita' di scelta e di
+approvazione, partecipa al progetto per tutta la sua durata ed e' difficile da
+rimpiazzare. Ha responsabilita' nella pianificazione, nella gestione delle
+risorse umane, nel controllo, nella coordinazione e nelle relazioni esterne.
+Deve essere in possesso di conoscenza tecnica e abilita' nel comprendere e
+anticipare l'evoluzione del progetto.
+
+Il responsabile di progetto compie tipicamente le seguenti attivita':
+
+\begin{itemize}
+  \item \strong{Pianificazione di progetto}: i responsabili di progetto
+    pianificano e stimano lo sviluppo di progetto, e assegnano compiti alle
+    persone. Essi supervisionano il lavoro e monitorano l'avanzamento;
+  \item \strong{Comunicazione}: i responsabili tipicamente si occupano di
+    comunicare lo stato di avanzamento del progetto agli \frgnword{stakeholder};
+  \item \strong{Gestione dei rischi}: i responsabili di progetto devono valutare
+    i rischi che potrebbero verificarsi, monitorarli, e agire nel caso si
+    verificassero;
+  \item \strong{Gestione del personale}: i responsabili hanno il compito di
+    selezionare il team di sviluppo e stabilire metodi di lavoro efficaci;
+\end{itemize}
 
 \subsubsection{Amministratore}
-L'amministratore gestisce e controlla l'ambiente di lavoro, amministra le risorse di progetto e le infrastrutture, gestisce la documentazione del progetto (\frgnword{librarian}) e gli strumenti per il controllo di versione e configurazione.
+
+L'amministratore gestisce e controlla l'ambiente di lavoro, amministra le
+risorse di progetto e le infrastrutture, gestisce la documentazione del progetto
+(\frgnword{librarian}) e gli strumenti per il controllo di versione e
+configurazione.
 
 \subsection{Pianificazione di progetto}
-I \frgnword{project manager} suddividono il lavoro in piu' parti e le assegnano ai membri del team di sviluppo. La pianificazione di progetto avviene in tre momenti del ciclo di vida del progetto:
+
+La pianificazione di progetto è un'attività svolta dal Responsabile, e consiste
+nel \strong{suddividere} il lavoro in più parti e le \strong{assegnarle} ai
+membri del team di sviluppo. La pianificazione di progetto avviene in tre
+momenti del ciclo di vita del progetto:
+
 \begin{enumerate}
-	\item Al momento della proposta al committente, per aiutare a capire se si possiedono le risorse necessarie, e valutare il prezzo del lavoro;
-	\item Durante la fase di avvio del progetto, per pianificare la suddivisione del lavoro e chi vi lavorera', decidere l'allocazione delle risorse in azienda, ecc.;
-	\item Periodicamente durante il progetto, quando e' necessario effettuare modifiche al piano in luce dell'esperienza maturata e delle informazioni ricavate dal monitoraggio e dall'avanzamento del lavoro.
+  \item Al momento della \strong{proposta} al committente, per aiutare a capire
+    se si possiedono le risorse necessarie, e valutare il prezzo del lavoro;
+  \item Durante la fase di \strong{avvio} del progetto, per pianificare la
+    suddivisione del lavoro e chi vi lavorera', decidere l'allocazione delle
+    risorse in azienda, ecc.;
+  \item Periodicamente \strong{durante} il progetto, quando e' necessario
+    effettuare modifiche al piano in luce dell'esperienza maturata e delle
+    informazioni ricavate dal monitoraggio e dall'avanzamento del lavoro.
 \end{enumerate}
 
 \subsubsection{\frgnword{Project scheduling}}
-\todo{Non trovo una traduzione decente di `scheduling' che sia diversa da `pianificazione', che gia' traduce `planning'. Rimane in inglese per ora.}
-\frgnword{Project scheduling} e' il processo nel quale si decide come il lavoro verra' suddiviso in compiti separati (\frgnword{tasks}), e come e quando questi dovranno essere eseguiti. Alcuni compiti possono essere eseguiti in parallelo, avendo piu' persone che lavorano su componenti diversi del sistema. E' necessario stimare il tempo di calendario neccessario al completamento di ciascun compito oltre allo sforzo richiesto, e assegnarlo a un componente del team.
 
-\todo{inserire fig. 23.4 dal Sommerville}
+% TODO Non trovo una traduzione decente di `scheduling' che sia diversa da
+% `pianificazione', che gia' traduce `planning'. Rimane in inglese per ora.
 
-La rappresentazione dello \frgnword{schedule} di progetto puo' servirsi di strumenti grafici. Tra i piu' comuni vi sono:
+\frgnword{Project scheduling} e' il processo nel quale si decide come il lavoro
+verra' suddiviso in compiti separati (\frgnword{tasks}), e come e quando questi
+dovranno essere eseguiti. Alcuni compiti possono essere eseguiti in parallelo,
+avendo piu' persone che lavorano su componenti diversi del sistema. \`E
+necessario stimare il tempo di calendario neccessario al completamento di
+ciascun compito oltre allo sforzo richiesto, e assegnarlo a un componente del
+team.
+
+% TODO inserire fig. 23.4 dal Sommerville
+
+La rappresentazione dello \frgnword{schedule} di progetto puo' servirsi di
+\strong{strumenti}. Tra i piu' comuni vi sono:
+
 \begin{itemize}
-	\item Diagrammi di Gantt: basati su calendario, mostrano chi e' responsabile per ogni attivita' pianificata, oltre agli istanti di inizio e di fine previsti.
-	\item Program Evaluation and Review Technique (PERT);
-	\item Work Breakdown Structure;
+  \item Diagrammi di \strong{Gantt}: basati su calendario, mostrano chi e'
+    responsabile per ogni attivita' pianificata, oltre agli istanti di inizio e
+    di fine previsti;
+  \item Program Evaluation and Review Technique (\strong{PERT});
+  \item \strong{Work Breakdown Structure}.
 \end{itemize}
 
-Le attivita' di progetto sono l'elemento di pianificazione di base. Ogni attivita' ha:
+Le \strong{attività di progetto} sono l'elemento di pianificazione di base. Ogni
+attività è caratterizzata da:
+
 \begin{enumerate}
-	\item Una durata in giorni o mesi di calendario;
-	\item Una stima del lavoro necessario al suo completamento, in termini di tempo/persona;
-	\item Una \frgnword{deadline} entro il quale l'attivita' deve essere completata;
+  \item \strong{Durata} in giorni o mesi di calendario;
+  \item \strong{Stima del lavoro} necessario al suo completamento, in termini di
+    tempo/persona;
+  \item \strong{\frgnword{Deadline}} entro il quale l'attività deve essere
+    completata.
 \end{enumerate}
 
-\paragraph{Gantt diagram}
-\todo{Scrivere da zero}
+\paragraph{Diagramma di Gantt}
 
-%\paragraph{PERT diagram}
+Il diagramma di Gantt permette di organizzare le attività di progetto in
+\strong{funzione del tempo}. Ogni attività è rappresentata da una barra: la
+posizione e
+la lunghezza della barra danno indicazione della data di inizio, di fine e della
+durata dell'attività.
+
+% TODO immagine di esempio di diagramma Gantt
+
+Il diagramma di Gantt mostra istantaneamente \strong{cosa} deve essere fatto e
+\strong{quando}. Permette di capire a vista molte informazioni, tra cui quali
+attività si \strong{sovrappongono}, e la durata complessiva del progetto.
+Indicando il tempo effettivo impiegato per ciascuna attività, è possibile
+inoltre confrontare le stime con i progressi.
+
+\paragraph{Project Evaluation \& Review Techniques (PERT)}
+
+Il PERT è uno strumento statistico utilizzato nelle attività di gestione di
+progetto. Permette di analizzare le attività necessarie al completamento di un
+progetto, in particolare la durata di ogni singola attività e del progetto in
+totale, organizzando e disponendo le attività di progetto secondo relazioni di
+\strong{dipendenza temporale}.
+
+PERT utilizza la seguente terminologia:
+
+\begin{itemize}
+  \item \strong{PERT event}: punto che demarca l'inizio o la fine di una o più
+    attività;
+  \item \strong{PERT activity}: svolgimento di un'attività, che consuma risorse.
+    Il suo completamento risulta nel passaggio da un evento all'altro;
+  \item \strong{\frgnword{Float}} o \strong{\frgnword{slack}}: relativo a un
+    singolo \frgnword{task}, rappresenta quanto ritardo in termini di tempo può
+    avere quel \frgnword{task} senza causare ritardi ai \frgnword{task} seguenti
+    (\frgnword{free float}) o all'intero progetto (\frgnword{total float});
+  \item \strong{Cammino critico}: il cammino più lungo possibile dall'evento
+    iniziale a quello finale. Determina la durata di calendario totale del
+    progetto.
+\end{itemize}
+
+Il diagramma PERT permette di ragionare sulle scadenze di un progetto, e
+visualizzare efficacemente le dipendenze tra i diversi stati del progetto.
+
 %\paragraph{Work Breakdown Structure}
 
 \subsubsection{Allocazione delle risorse}
-Le attivita' vanno assegnate ai ruoli, e i ruoli alle persone. E' importante non sovrastimare (o sottostimare) la quantita' di lavoro richiesto da ciascuna attivita'.
+
+Le attivita' vanno assegnate ai ruoli, e i ruoli alle persone. E' importante non
+sovrastimare (o sottostimare) la quantita' di lavoro richiesto da ciascuna
+attivita'.
 
 \subsubsection{Stima dei costi di progetto}
 
-Stimare la quantita' di lavoro richiesto dalle attivita e calendarizzarle non e' un'operazione semplice, a causa di molteplici fattori di incertezza soprattutto nella fase iniziale. Le aziente possono avvalersi di due tipi di tecnice durante questa fase di progetto:
+Stimare la quantità di lavoro richiesto dalle attivita e calendarizzarle non è
+un'operazione semplice, a causa di molteplici fattori di incertezza soprattutto
+nella fase iniziale. Le aziente possono avvalersi di due tipi di tecnice durante
+questa fase di progetto:
 
 \begin{itemize}
-	\item Tecniche basate sull'esperienza: la stima e' basata sull'esperienza maturata nei precedenti progetti dal responsabile;
-	\item Modellazione algoritmica dei costi: vengono utilizzate alcune formule per calcolare il lavoro richiesto dal progetto in base a stime sugli attributi del prodotto;
+  \item Tecniche basate sull'esperienza: la stima e' basata sull'esperienza
+    maturata nei precedenti progetti dal responsabile;
+  \item Modellazione algoritmica dei costi: vengono utilizzate alcune formule
+    per calcolare il lavoro richiesto dal progetto in base a stime sugli
+    attributi del prodotto;
 \end{itemize}
 
-Una \gls{metrica} tipicamente usata per misurare il lavoro necessario in termini di tempo e' il \strong{tempo/persona}.
+Una \gls{metrica} tipicamente usata per misurare il lavoro necessario in termini
+di tempo e' il \strong{tempo/persona}.
 
 Tra i fattori che influenzano la stima vi sono:
+
 \begin{itemize}
-        \item Dimensione del progetto: quante linee di codice in relazione al tempo necessario a scriverle;
-        \item Esperienza nel dominio applicativo;
-        \item Tecnologie adottate;
-        \item Ambiente di sviluppo;
-        \item Livello di qualita' richiesto dai processi, in termini di efficienza ed efficacia;
+  \item Dimensione del progetto: quante linee di codice in relazione al
+    tempo necessario a scriverle;
+  \item Esperienza nel dominio applicativo;
+  \item Tecnologie adottate;
+  \item Ambiente di sviluppo;
+  \item Livello di qualita' richiesto dai processi, in termini di efficienza ed
+    efficacia;
 \end{itemize}
 
 \paragraph{Constructive Cost Model (CoCoMo)}
-Il CoCoMo e' un modello empirico definito sulla base di dati raccolti nel tempo da un largo numero di progetti software, successivamente analizzati per creare formule che aderissero il meglio possibile alle osservazioni. CoCoMo misura le risorse necessarie in mesi/persona (M/P).
+
+Il CoCoMo e' un modello empirico definito sulla base di dati raccolti nel tempo
+da un largo numero di progetti software, successivamente analizzati per creare
+formule che aderissero il meglio possibile alle osservazioni. CoCoMo misura le
+risorse necessarie in mesi/persona (M/P).
+
 \[
-        M/P = C \times D^S \times M
+  M/P = C \times D^S \times M
 \]
+
 \begin{itemize}
-	\item \strong{C}: fattore di complessita' del progetto;
-	\item \strong{D}: dimensione stimata del prodotto software, espressa in KDSI (Kilo Delivered Source Instructions);
-	\item \strong{S}: fattore di complessita';
-	\item \strong{M}: moltiplicatori di costo, $\prod_i \alpha_i$ dove $\alpha_i$ sono attributi i cui valori cadono entro interfalli fissati;
+  \item \strong{C}: fattore di complessita' del progetto;
+  \item \strong{D}: dimensione stimata del prodotto software, espressa in KDSI
+    (Kilo Delivered Source Instructions);
+  \item \strong{S}: fattore di complessita';
+  \item \strong{M}: moltiplicatori di costo, $\prod_i \alpha_i$ dove $\alpha_i$
+    sono attributi i cui valori cadono entro interfalli fissati;
 \end{itemize}
 
-Nella sua versione di base, CoCoMo assume l'utilizzo di un modello si sviluppo sequenziale (a cascata). \todo{da verificare}
+Nella sua versione di base, CoCoMo assume l'utilizzo di un modello si sviluppo
+sequenziale (a cascata). \todo{da verificare}
 
 Si possono evidenziare tre gradi di complessita':
+
 \begin{enumerate}
-	\item 'Semplice' (complessita' bassa): una singola persona e' in grado di comprendere tutto il prodotto nel suo inseme;
-	\item 'Moderato' (media complessita'): una persona e' in grado di comprendere il prodotto solo isolandolo per componenti;
-	\item '\frgnword{embedded}' (complessita' elevata): il prodotto interagisce con componenti esterni e con l'ambiente;
+  \item \strong{Semplice} (complessita' bassa): una singola persona e' in grado
+    di comprendere tutto il prodotto nel suo inseme;
+  \item \strong{Moderato} (media complessita'): una persona e' in grado di
+    comprendere il prodotto solo isolandolo per componenti;
+  \item \strong{\frgnword{embedded}} (complessita' elevata): il prodotto
+    interagisce con componenti esterni e con l'ambiente;
 \end{enumerate}
 
-\todo{Inserire grafico CoCoMo}
+% TODO Inserire grafico CoCoMo
 
 \subsection{Piano di progetto}
-Un piano di progetto e' un documento che espone le risorse disponibili nel progetto, il \frgnword{work breakdown} e il calendario delle attivita', oltre che il risultato del processo di analisi dei rischi. Viene costantemennte aggiornato durante tutto il ciclo di vita, e ha lo scopo di organizzare le attivita' in modo da permettere l'efficace valutazione del progresso raggiunto dal progetto in ogni dato momento. E' inoltre utile per stabilire \frgnword{milestone}, punti critici all'interno del calendario delle attivita' su cui e' possibile valutare il progresso raggiunto.
+
+Il piano di progetto e' un documento che espone le risorse disponibili nel
+progetto, il \frgnword{work breakdown} e il calendario delle attivita', oltre
+che il risultato del processo di analisi dei rischi. Viene costantemennte
+aggiornato durante tutto il ciclo di vita, e ha lo scopo di organizzare le
+attivita' in modo da permettere l'efficace valutazione del progresso raggiunto
+dal progetto in ogni dato momento.
+
+Nel piano di progetto vengono stabilite le \frgnword{milestone}, punti critici
+all'interno del calendario delle attività su cui è possibile valutare il
+progresso raggiunto.
 
 Un piano di progetto ha la seguente struttura tipica:
+
 \begin{itemize}
-	\item Introduzione (obbiettivi e struttura del progetto);
-	\item Organizzazione del progetto;
-	\item Analisi dei rischi;
-	\item Risorse disponibili e necessarie;
-	\item Scomposizione delle attivita' (\frgnword{work breakdown});
-	\item Calendario delle attivita';
-	\item Controllo e rendicontazione;
+  \item Introduzione (obbiettivi e struttura del progetto);
+  \item Organizzazione del progetto;
+  \item Analisi dei rischi;
+  \item Risorse disponibili e necessarie;
+  \item Scomposizione delle attivita' (\frgnword{work breakdown});
+  \item Calendario delle attivita';
+  \item Controllo e rendicontazione;
 \end{itemize}
