@@ -192,6 +192,24 @@ instabilità del package:
 
 dove $I = 0$ indica completa stabilità e $I = 1$ completa instabilità.
 
+\paragraph{Metriche del codice}
+\label{par:metriche_del_codice}
+
+\begin{itemize}
+  \item \strong{Livello di annidamento}: indica il livello di profondità di
+    annidamento raggiunto dalle strutture di controllo;
+  \item \strong{Complessità ciclomatica}: ogni programma può essere
+    rappresentato come un grafo direzionato, con i nodi rappresentanti i blocchi
+    di codice, e gli archi rappresentanti le ramificazioni delle strutture di
+    controllo. Questa metrica quantifica il numero di cammini linearmente
+    indipendenti di un dato modulo. \`E indicazione della complessità e
+    affidabilità di un modulo, ed è tipicamente considerato accettabile un
+    valore non superiore a 10;
+  \item{Densità dei commenti}: quantifica il rapporto tra il numero di righe di
+    commento e il numero di righe totali in un file di codice sorgente. Si
+    considerano accettabili valori intorno al 20\%.
+\end{itemize}
+
 \subsubsection{Standard di qualità}
 
 Gli standard giocano un ruolo molto importante nella gestione della qualità del
