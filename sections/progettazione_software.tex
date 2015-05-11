@@ -216,3 +216,46 @@ In generale, durante la progettazione è importante
   \item Cercare un buon bilanciamento: più semplici le componenti, più complessa
         la loro interazione
 \end{itemize}
+
+\subsection{Progettazione di dettaglio}
+\label{sub:progettazione_di_dettaglio}
+
+La progettazione di dettaglio riguarda le seguenti attività:
+
+\begin{itemize}
+  \item Definizione delle unità organizzative (moduli): ogni modulo deve avere
+    dimensione atomica (non ulteriormente scomponibile) e costituire un carico di
+    lavoro assegnabile a un singolo programmatore. Deve inoltre essere un
+    aggregato di tipi, dati e funzionalità strettamente correlate;
+  \item Specifica delle unità come insieme di moduli: definizione delle
+    caratteristiche significative;
+  \item Assegnare unità a componenti, per organizzare il lavoro e assicurare
+    congruenza con l'architettura del sistema;
+  \item Produrre la documentazione necessaria, per disciplinare l'attività di
+    codifica, tracciare requisiti e unità e definire le configurazioni ammissibili
+    del sistema;
+  \item Definire gli strumenti per le prove di unità: casi di prova e componenti
+    ausiliarie per la verifica unitaria e di integrazione.
+\end{itemize}
+
+\subsection{Documentazione: Software Design Document} % (fold)
+\label{ssub:documentazione_software_design_document}
+
+Lo standard IEEE 1016:1998 descrive la struttura della documentazione
+riguardante la progettazione software.
+
+\subsection{Stato di progresso per SEMAT} % (fold)
+\label{sub:stato_di_progresso_per_semat}
+
+\begin{itemize}
+  \item Architecture selected: selezione di un'architettura tecnicamente adatta
+    al problema e delle tecnologie necessarie. Decizioni su buy, build, make.
+  \item Demonstrable: dimostrazione delle principali caratteristiche
+    dell'architettura, accettata dagli stackeholder. Decisione sulle principali
+    interfacce e configurazioni di sistema;
+  \item Usable: il sistema è utilizzabile e ha le caratteristiche desiderate. Le
+    funzionalità e le prestazioni richieste sono state verificate e validate. La
+    quantità di difetti residui è accettabile;
+  \item Ready: la documentazione per l'utente è pronta e gli stackeholder hanno
+    accettato il prodotto e lo desiderano operativo.
+\end{itemize}
