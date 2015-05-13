@@ -1,0 +1,421 @@
+\subsection{Analisi dinamica}
+\label{sub:analisi_dinamica}
+
+L'analisi dinamica è un metodo sia di verifica che di validazione che richiede
+l'esecuzione del programma analizzato. Si svolge tramite \strong{test}, una
+prova consistente nella verifica dinamica del comportamento del programma.
+
+``Il processo di eseguire un programma con l'intento di trovarvi difetti'':
+visione delle prove che rappresenta lo spirito critico e l'atteggiamento
+scettico per metodo alla base di una strategia efficace di prova.
+
+La verifica avviene su un insieme finito di \strong{casi di prova} selezionati
+nel dominio delle esecuzioni possibili, che è generalmente infinito. Ciascun
+caso di prova specifica i valori di ingresso e lo stato iniziale del sistema, e
+deve produrre un esito decidibile (problema dell'oracolo.) Ogni caso di prova è
+verificato rispetto a un \strong{comportamento atteso}.
+
+La \strong{ripetibilità} è requisito essenziale per l'analisi dinamica, e
+riguarda:
+
+\begin{itemize}
+  \item Ambiente (HW, stato iniziale)
+  \item Specifica (valori in ingresso, comportamenti attesi)
+  \item Procedure (esecuzione, analisi dei risultati)
+\end{itemize}
+
+Gli strumenti a supporto dell'analisi dinamica sono
+
+\begin{itemize}
+  \item \strong{Driver}: componente attiva fittizia per pilotare una parte
+  \item \strong{Stub}: componente passiva fittizia per simulare una parte
+  \item \strong{Logger}: componente non intrusivo di registrazione dei dati di
+    esecuzione per analisi dei risultati
+\end{itemize}
+
+\subsubsection{Definizioni}
+\label{ssub:definizioni}
+
+\begin{description}
+  \item[Unità] La più piccola quantità di software che è conveniente verificare
+  singolarmente, tipicamente assegnata ad un singolo programmatore. La sua
+  natura specifica dipende dal linguaggio di programmazione in uso. Va sempre
+  intesa in senso architetturale: non linee di codice, ma entità di
+  strutturazione (procedura, classe, package);
+  \item[Modulo] Parte dell'unità;
+  \item[Componente] Integra più unità.
+\end{description}
+
+% TODO subsection 'stub e driver'
+
+\subsubsection{\frgnword{Faults}, \frgnword{errors} e \frgnword{failures}}
+\label{ssub:terminologia}
+
+Un \frgnword{failure} avviene quando il comportamento del sistema devia da
+quanto specificato per esso. Sono il risultato di problemi interni al sistema
+che ad un certo punto si manifestano nel suo comportamento esterno. Tali
+problemi sono chiamati \strong{errori}, e le loro cause meccaniche, algoritmiche
+o concettuali sono chiamate \strong{fault}.
+
+Gli \emph{errori} sono stati del sistema; i \emph{fault} sono ciò che causa
+l'esistenza di un errore.
+
+Un test rileva malfunzionamenti (failures) indicando la presenza di guasti
+(faults), ma non può provarne l'assenza!
+
+% TODO elaborare
+
+\subsubsection{Fattori da bilanciare}
+\label{ssub:fattori_da_bilanciare}
+
+Nella definizione della strategia di prova occorre un bilanciamento tra
+
+\begin{itemize}
+  \item la \strong{quantità minima di casi} di prova sufficienti a
+    fornire certezza adeguate sulla qualità del prodotto (fattore
+    governato da criteri tecnici);
+  \item la \strong{quantità massima di sforzo}, tempo e risorse
+    disponibile per il completamento della verifica (fattore governato
+    da criteri gestionali).
+\end{itemize}
+
+Secondo la legge del rendimento decrescente (\frgnword{diminishing returns}).
+
+\subsubsection{Criteri guida}
+\label{ssub:criteri_guida}
+
+L'\strong{oggetto} della prova può essere
+
+\begin{itemize}
+  \item Il sistema nel suo complesso
+  \item Parti di esso, in relazione funzionale, d'uso, di comportamento, di
+  struttura;
+  \item Singole unità.
+\end{itemize}
+
+L'\strong{obiettivo} della prova può essere
+
+\begin{itemize}
+  \item Specificato per ogni caso di prova
+  \item In termini precisi e quantitativi
+  \item Variabile al variare dell'oggetto della prova;
+\end{itemize}
+
+Il Piano di Qualità risponde alla domanda ``quali e quante prove''.
+
+La ``provabilità'' del software va assicurata a monte: la progettazione va
+raffinata per assicurare provabilità.
+
+I test devono essere ripetibili.
+
+Una singola prova non basta
+
+I test hanno limiti e problemi
+
+\begin{itemize}
+  \item Non esiste un algoritmo che, dato un programma P qualsiasi, eneri per
+    esso un test finito ideale (definito da un criterio affidabile e valido)
+    (teorema di Howden);
+  \item Il test di un programma può rilevare la presenza di malfunzionamenti, ma
+    non dimostrarne l'assenza (tesi di Dijkstra).
+\end{itemize}
+
+\subsubsection{Principi del testing software (secondo Bertrand Meyer)}
+\label{ssub:principi_del_testing_software}
+
+\begin{itemize}
+  \item Testare un programma è cercare di farlo fallire;
+  \item I test non sostituiscono le specifiche
+  \item Da ogni esecuzione fallita deve essere ricavato un caso di prova da
+    includere permanentemente nel progetto;
+  \item Gli oracoli dovrebbero essere parte del codice, come contratti
+    (???wat???)
+  \item Ogni strategia di testing dovrebbe includere un processo di testing
+    riproducibile ed essere valutato oggettivamente secondo criteri espliciti;
+  \item La qualità più importante di una strategia di testing è il numero di
+    guasti rilevati in funzione del tempo.
+\end{itemize}
+
+\subsubsection{Elementi di una prova}
+\label{ssub:elementi_di_una_prova}
+
+\begin{description}
+  \item[Caso di prova (test case)] Tripla ${ingresso, uscita,
+    ambiente}$. L'ambiente includo l'oggetto della prova;
+  \item[Batteria di prove (test suite)] Insieme di casi di prova;
+  \item[Procedura di prova] Procedimento (automatico o manuale) per eseguire,
+    registrare, analizzare e valutare i risultati di prove;
+  \item[Prova] $={Procedura, caso di prova}$.
+  \item[Oracolo] Metodo per generare a priori i risultati attesi e convalidare i
+    risultati ottenuti. Generalmente applicato  da agenti automatici per
+    velocizzare la convalida e renderla ``oggettiva''.
+\end{description}
+
+\paragraph{Oracolo}
+\label{par:oracolo}
+
+In software testing, un oracolo è un meccanismo per determinare se un test è
+superato o meno. Comporta il confronto tra l'output del sistema testato, dato
+uno specofico input per il caso di prova, e l'output che l'oracolo determina
+essere quello corretto.
+
+Il problema dell'oracolo è spesso più complesso di quanto si possa pensare.
+Alcuni oracoli sono basati su
+
+\begin{itemize}
+  \item Postcondizioni delle funzioni;
+  \item Specifiche e documentazione;
+  \item Altri prodotti utilizzanti algoritmi diversi da quello sotto test;
+  \item Euristiche;
+  \item valutazione umana.
+\end{itemize}
+
+\subsubsection{Strategie di integrazione}
+\label{ssub:strategie_di_integrazione}
+
+\begin{itemize}
+  \item Assemblare parti in \strong{modo incrementale}: Aggiungo ad una
+    cosa che so essere corretta un'altra cosa corretta. I difetti rilevati in un
+    test sono più probabilmente da attribuirsi all'ultima parte aggiunta;
+  \item Assemblare \strong{produttori prima dei consumatori}: la verifica dei
+    primi garantisce ai secondi flusso di controllo (chiamate) e flusso dei dati
+    corretti;
+  \item Assemblare in modo che ogni passo di integrazione sia
+    \strong{reversibile}, consentendo di retrocedere verso uno stato noto e
+    sicuro.
+\end{itemize}
+
+La pianificazione della codifica deve essere tale da rendere disponibile le
+componenti da integrare nell'ordine appropriato.
+
+\paragraph{Bottom-up}
+\label{par:bottom_up}
+
+Si sviluppano e si integrano prima le parti con minore dipendenza funzionale e
+maggiore utilità, e si procede risalendo l'albero delle dipendenze. Questo
+riduce il numero di stub necessari ai test, ma non permette di avere
+funzionalità tangibili nell'immediato (quanto ciò importi dipende dal rapporto
+con il committente.)
+
+\paragraph{Top-down}
+\label{par:top_down}
+
+Si sviluppano prima le parti più esterne, quelle poste sulle foglie dell'albero
+delle dipendenze e poi si scende. Questa strategia comporta l'uso di molti stub
+ma integra a partire dalla funzionalità più di alto livello.
+
+\subsubsection{Classi di equivalenza}
+\label{ssub:classi_di_equivalenza}
+
+Dato il costo elevato dei test, è importante cercare di ridurre al minimo la
+quantità di casi di prova necessari. Questo è possibile individuando delle
+\strong{classi di equivalenza} per i valori di input.
+
+Una classe di equivalenza è un insieme rappresentabile da un singolo valore che
+ne descriva le caratteristiche. L'idea è di raggruppare in astratto valori che
+ai fini di test sono indistinguibili. Ragionando per classi di equivalenza non è
+necessario testare con input che coprono tutto lo spazio dei valori, ma
+solamente un campione per classe di equivalenza.
+
+Il dominio di valori per ogni parametro è determinato dal tipo del parametro e
+dalla logica della funzione. Su questo dominio si individiano diverse classi di
+equivalenza, che tipicamente sono:
+
+\begin{itemize}
+  \item Valori nominali interni al dominio
+  \item Valori legali di limite
+  \item Valori illegali
+\end{itemize}
+
+Si consideri l'esempio di una variabile che rappresenta l'indice di un array. I
+valori illegali sono rappresentati dagli indici inferiori al lower bound e
+superiori all'upper bound, con quelli legali all'interno. Si individuano quindi
+cinque classi di equivalenza.
+
+\subsubsection{Test di unità}
+\label{ssub:test_di_unita}
+
+L'oggetto del test di unità è l'\strong{unità}, elemento software composto da
+uno o più moduli. Un modulo è un componenti elementari di progetto di dettaglio,
+che non necessita quindi di test.
+
+Unità e moduli sono determinati in fase di progettazione di dettaglio, e di
+conseguenza il piano di test di unità. Il testing di unità termina quando tutte
+le unità sono verificate.
+
+Due terzi dei difetti identificati tramite analisi dinamica provengono da test
+di unità, e il 50 \% di essi sono identificati da prove strutturali
+(\frgnword{white box}).
+
+Tra le diverse tipologie di test, delli di unità hanno costo maggiore. La loro
+produzione è responsabilità del programmatore per unità molto semplici,
+altrimenti di un verificatore indipendente.
+
+\paragraph{Test funzionale (\frgnword{black box})}
+\label{par:test_funzionale}
+
+Il test funzionale fa riferimento alla specifica dell'unità e valuta i risultati
+in uscita dall'unità, senza valutare la logica interna.
+
+Ciascun insieme di dati di ingresso che producono un dato comportamento
+funzionale costituisce un caso di prova. La scelta di classi di equivalenza
+minimizza i casi di prova da considerare (valori nella medesima classe producono
+lo stesso comportamento).
+
+Il test funzionale da solo non può accertare correttezza e completezza della
+logica interna dell'unità, e va necessariamente integrato con test strutturale.
+Inoltre, una valutazione più efficace delle classi di equivalenza degli input
+tiene conto della logica interna.
+
+\paragraph{Test strutturale (\frgnword{white box})}
+\label{par:test_strutturale}
+
+Il test strutturale verifica la logica interna del codice dell'unità cercando
+massima copertura. Ciascuna prova deve essere progettata per attivare ogni
+cammino di esecuzione all'interno del modulo.
+
+Ciascun insieme di dati di ingresso che attivano un percorso costituiscono un
+caso di prova. L'uso di debugger può agevolarne l'esecuzione ma non esonera
+dalla progettazione dei casi di prova.
+
+\subsubsection{Test di integrazione}
+\label{ssub:test_di_integrazione}
+
+Il test di integrazione attua la costruzione e verifica incrementale del sistema
+completo. Il suo obbiettivo è verificare che componenti verificate essere
+localmente corrette, lo sono assemblate insieme.
+
+I test di integrazione rilevano i seguenti problemi:
+
+\begin{itemize}
+  \item Errori residui nella realizzazione dei componenti;
+  \item Modifica delle interfacce o cambiamenti nei requisiti;
+  \item Riuso di componenti dal comportamento oscuso o inadatto;
+  \item Integrazione con altre applicazioni non ben conosciute.
+\end{itemize}
+
+Una logica di integrazione funzionale:
+
+\begin{itemize}
+  \item Seleziona le funzionalità da integrare;
+  \item Identifica le componenti che svolgono quelle funzionalità;
+  \item Ordina le componenti per numero di dipendenze crescente;
+  \item Esegue l'integrazione in quell'ordine.
+\end{itemize}
+
+Un'architettura con componenti coese e disaccoppiate facilita l'integrazione.
+
+I test di integrazione possono rilevare difetti di progettazione o insufficiente
+qualità dei test di unità.
+
+Quanti test di integrazione servono?
+
+\begin{itemize}
+  \item Accertare che tutti i dati scambiati attraverso \strong{ciascun
+    interfaccia} siano conformi alla loro specifica;
+  \item Accertare che tutti i flussi di controllo previsti in specifica siano
+    stati effettivamente realizzati e provati.
+\end{itemize}
+
+\subsubsection{Test di sistema}
+\label{ssub:test_di_sistema}
+
+Il test di sistema verifica il comportamento dinamico del sistema completo
+rispetto ai requisiti software. Ha inizio con il completamento del test di
+integrazione. Un test di sistema è completo quando ho verificato tutti i
+requisiti.
+
+\`E inerentemente funzionale (\frgnword{black box}): non dovrebbe richiedere
+conoscenza della logica interna del software.
+
+\subsubsection{Test di regressione}
+\label{ssub:test_di_regressione}
+
+Consiste nella ripetizione selettiva di test di sistema o test di integrazione,
+con l'obiettivo di accertare che modifiche intervenute per correzione o
+estensione di parti non comportino errori in altre parti del sistema.
+Modifiche effettuate per aggiunta, correzione o rimozione non devono
+pregiudicare le funzionalità già verificate. Il rischio di questo fenomeno
+aumenta all'aumentare dell'accoppiamento e al diminuire dell'incapsulazione.
+
+Il test di regressione può essere molto oneroso. La sua necessità, però, si
+elimina solo con il completo isolamento, che nella pratica è irrealizzabile.
+
+Dopo una modifica, è necessario valutare il perimetro dei test di regressione,
+ovvero le componenti che potrbbero essere influenzate dalla modifica e su cui
+vanno ripetuti i test. Tale perimetro è valutato architetturalmente, in base
+alle dipendenze.
+
+\subsubsection{Test di accettazione (collaudo)}
+\label{ssub:test_di_accettazione}
+
+Al test di sistema segue il \strong{collaudo}, attività supervisionata dal
+committente per dimostrare la conformità del prodotto sulla base di casi di
+prova specificati nel o implicati dal contratto.
+
+Il collaudo ha \strong{implicazioni contrattuali}. \`E un'attività formale a cui
+segue il rilascio del prodotto e la fine della commessa.
+
+\subsubsection{Fattore di copertura}
+\label{ssub:fattore_di_copertura}
+
+Un test non viene valutato solamente in base al numero di fault rilevati, ma
+anche con un indicatore chiamato \emph{copertura}. Il fattore di copertura
+rappresenta quanto la prova esercita il prodotto, e si ricerca soprattutto in
+sede di test di unità, in modo da integrare entità che già presentano coperturà
+elevata.
+
+\begin{itemize}
+  \item \strong{copertura funzionale}: rispetto alla percentuale di funzionalità
+    esercitate come viste dall'esterno.
+  \item \strong{copertura strutturale} (branch, condition): rispetto alla
+    percentuale di logica interna del codice esercitata.
+\end{itemize}
+
+Si ha \strong{statement coverage} al 100\% quando i test effettuati sull'unità
+sono sufficienti a eseguire---complessivamente---almeno una volta tutte le linee
+di comando di ciascuno dei moduli dell'unità.
+
+Si ha \strong{branch coverage} al 100\% quando ciascun ramo del flusso di
+controllo viene attraversato---complessivamente---almeno una volta.
+
+Lo statement coverage è meno potente del branch coverage: non vengono rilevati
+fault derivanti da statement posti in rami del flusso di controllo errati.
+
+La copertura costituisce una misura della bontà della prova, ma un valore del
+100\% non dimostra l'assenza di difetti, e può essere irraggiungibile.
+
+\paragraph{Condizione e decisione}
+\label{par:condizione_e_decisione}
+
+\begin{itemize}
+  \item \strong{Condizione}: espressione booleana semplice non contenente al suo
+    interno ulteriori condizioni combinate da operatori booleani;
+  \item \strong{Decisione}: espressione composta contenente condizioni combinate
+    da operatori booleani.
+\end{itemize}
+
+Al crescere del numero di condizioni all'interno di una decisione il numero di
+test necessario a massimizzzare il condition coverage diventa proibitivo. \`E
+importante quindi massimizzare il \frgnword{modified decision condition
+coverage}.
+
+% approfondire modified decision condition coverage
+
+\subsubsection{Maturità del prodotto}
+\label{ssub:maturit_del_prodotto}
+
+Valutare il grado di evoluzione del prodotto
+\begin{itemize}
+  \item quanto il prodotto migliora in seguito alle prove
+  \item quanto diminuisce la densità dei difetti
+  \item quanto può costare la scoperta del prossimo difetto
+\end{itemize}
+
+le tecniche correnti sono spesso empiriche, sotto influenza del modello
+code-and-fix.
+
+definire un modello ideale
+modello base: il numero di difetti del software è una costante iniziale.
+modello logaritmico: le modifiche introducono difetti.
+
