@@ -1,0 +1,318 @@
+\subsection{Analisi statica}
+\label{sub:analisi_statica}
+
+L'analisi statica non richiede l'esecuzione di codice. Studia caratteristiche
+del codice sorgente (talvolta anche del codice oggetto) e della documentazione
+associata, valutando la conformità alle regole.
+
+Viene utilizzata prevalentemente in \strong{verifica}, quando non è disponibile
+un prodotto finito.
+
+Un numero crescente di sistemi software incorpora funzionalità critiche in
+termini di \strong{sicurezza}, intesa come
+
+\begin{itemize}
+  \item \strong{\frgnword{Safety}}: prevenzione di condizioni di pericolo verso
+  persone o cose;
+  \item \strong{\frgnword{Security}}: prevenzione di intrusioni.
+\end{itemize}
+
+Tali sistemi devono possedere tutte le caratteristiche funzionali e non
+funzionali previste dai requisiti, e servono prove dimostrabili del possesso di
+tali proprietà.
+
+Nessun linguaggio garantisce a priori la completà verificabilità dei programmi
+scritti in esso. In ogni linguaggio c'è compromesso tra potere espressivo e
+costo di verifica. Tale compromesso va considerato nella scelta del linguaggio
+e dei suoi costrutti.
+
+\subsubsection{Forme di analisi statica}
+\label{ssub:forme_di_analisi_statica}
+
+L'analisi statica non richiede esecuzione di parti del sistema, e si applica a
+qualunque prodotto di processo, non solo il codice.
+
+\begin{itemize}
+  \item \strong{Metodi di lettura} (\frgnword{desk check}), impiegati solo per
+    prodotti semplici;
+  \item \strong{Metodi formali}, basati sulla prova assistita di proprietà la cui
+    dimostrazione dinamica può essere eccessivamente onerosa.
+\end{itemize}
+
+\paragraph{Metodi di lettura}
+\label{par:metodi_di_lettura}
+
+I metodi di lettura solo \strong{\frgnword{walkthrough}} e
+\strong{\frgnword{inspection}}. Sono pratici, basati sulla lettura del documento
+e dipendenti dall'esperienza del verificatore.
+
+L'\frgnword{inspection} consiste nel rilevare la presenta di difetti eseguendo
+una lettura mirata della documentazione (codice e non), focalizzando la ricerca
+su presupposti (\frgnword{error guessing}.) Viene svolta da verificatori
+separati e distinti dai programmatori, e si articola nei seguenti passi:
+
+\begin{itemize}
+  \item Pianificazione;
+  \item Definizione della lista di controllo;
+  \item Lettura;
+  \item Correzione dei difetti;
+  \item Redazione di documentazione come rapporto delle attività svolte.
+\end{itemize}
+
+
+Il \frgnword{walkthrough} consiste nel rilevare la presenza di difetti eseguendo
+una lettura a largo spettro della documentazione, senza assunzione di
+presupposti. Viene svolta da agenti e sviluppatori, ma con ruoli ben distinti.
+Si articola nei seguenti passi:
+
+\begin{itemize}
+  \item Pianificazione;
+  \item Lettura;
+  \item Discussione;
+  \item Correzione degli errori;
+  \item Redazione di documentazione come rapporto delle attività svolte.
+\end{itemize}
+
+Una possibile strategia per il \frgnword{walkthrough} del codice è la sua
+percorrenza simulandone l'esecuzione.
+
+Il \frgnword{walkthrough} è il metodo più semplice, ma è oneroso e non troppo
+utile. Richiede maggiore attenzione e tempo, mentre l'\frgnword{inspection}
+risulta la tecnica più rapida e, laddove non sia possibile automatizzare la
+verifica, appare la più ragionevole.
+
+% TODO subsection 'Verifica e validazione di qualità'
+
+\subsubsection{Tecniche di verifica}
+\label{ssub:tecniche_di_verifica}
+
+\paragraph{Tracciamento}
+\label{par:tracciamento}
+
+% paragraph tracciamento (end)
+
+Il tracciamento dimostra completezza ed economicità della soluzione (la
+soluzione ha \strong{tutto} e \strong{solo} quello che si doveva fare. Nessun
+componente è inguistificato.)
+
+Il tracciamento ha luogo
+
+\begin{itemize}
+  \item tra requisiti software e requisiti utente;
+  \item tra procedure di verifica e requisiti, disegno, codice;
+  \item tra codice sorgente e codice oggetto.
+\end{itemize}
+
+Alcuni stili di verifica facilitano il tracciamento. L'obiettivo è assegnare
+singoli requisiti elementari a singoli moduli del programma così da
+richiedere una sola procedura di prova e ottenere una più semplice
+corrispondenza tra essi. Maggiore è l'astrazione di un costrutto del linguaggio
+maggiore la quantità di codice oggetto generato e maggiore l'onere di
+dimostrazione di corrispondenza.
+
+\paragraph{Revisioni (\frgnword{joint review / audit})}
+\label{par:joint_review_audit}
+
+Le revisioni sono uno strumento essenziale del processo di verifica. Possono
+essere condotte su analisi, progettazione, codice, procedure e risultati di
+verifica. Richiedono l'interazione tra individui, pertanto non sono
+automatizzabili.
+
+Le revisioni possono essere \strong{formali} (\frgnword{audit}) o
+\strong{informali} (\frgnword{joint review}), richiedono indipendenza tra
+verificato e verificatore e semplicità e leggibilità di codice e diagrammi.
+
+\subsubsection{Tipi di analisi statica}
+\label{ssub:tipi_di_analisi_statica}
+
+\paragraph{Analisi di flusso di controllo}
+\label{par:analisi_di_flusso_di_controllo}
+
+L'analisi di flusso di controllo permette di
+
+\begin{itemize}
+  \item Accertare che il codice esegua nella sequenza specificata e sia ben
+  strutturato;
+  \item Localizzare codice non raggiungibile o loop infiniti.
+\end{itemize}
+
+\paragraph{Analisi di flusso dei dati}
+\label{par:analisi_di_flusso_dei_dati}
+
+L'analisi di flusso dei dati permette di
+
+\begin{itemize}
+  \item Accertare che nessun cammino di esecuzione acceda a variabili prive di
+  valore;
+  \item Rilevare possibili anomalie (es. più scritture successive senza letture
+  intermedie);
+  \item Problemi legati a variabili globali.
+\end{itemize}
+
+\paragraph{Analisi di flusso di informazione}
+\label{par:analisi_di_flusso_di_informazione}
+
+Permette di determinare quali dipendenze tra ingressi e uscite risultino
+dall'esecuzione di una unità di codice. Le sole dipendenze consentite sono
+quelle previste dalla specifica.
+
+L'analisi può limitarsi a un singolo modulo o estendersi a più moduli correlati
+o all'intero sistema.
+
+\paragraph{Esecuzione simbolica}
+\label{par:esecuzione_simbolica}
+
+Metodo per analizzare quali input causano l'esecuzione delle diverse parti di un
+programma. Un interprete esegue il programma, associando simboli a valori in
+input (invece che usare valori provenienti dall'effettiva esecuzione) e
+arrivando quindi a descrivere il programma come espressioni e vincoli in termini
+di tali simboli.
+
+Permette di verificare proprietà del programma mediante manipolazione algebrica
+del codice sorgente, combinando tecniche di analisi di flusso di controllo, di
+flusso di dati e di flusso di informazione.
+
+\paragraph{Verifica formale del codice}
+\label{par:verifica_formale_del_codice}
+
+La verifica formale è atta a provare la correttezza del codice sorgente
+rispetto alla specifica algebrica dei
+requisiti. Le condizioni di verifica sono espresse come teoremi la cui verità
+implica certe pre-condizioni in ingresso e certe post-condizioni in uscita.
+
+Sono ipotesi di terminazione del programma, si ha una prova di correttezza
+parziale. Una prova totale richiede prova di terminazione.
+
+\paragraph{Analisi di limite}
+\label{par:analisi_di_limite}
+
+Verifica che i dati del programma rimangano entro i limiti di tipo e di
+precisione desiderati. Vengono verificati eventuali
+
+\begin{itemize}
+  \item Overflow e underflow;
+  \item Errori di arrotondamento;
+  \item Range checking;
+  \item Analisi di limite di strutture.
+\end{itemize}
+
+Linguaggi evoluti assegnano limiti statici a tipi discreti consentendo verifiche
+automatiche sulle corrispondenti variabili. La verifica è più problematica con
+tipi enumerati e reali.
+
+\paragraph{Analisi di uso dello \frgnword{stack}}
+\label{par:analisi_di_uso_dello_frgnword_stack}
+
+L'analisi dello stack determina la massima domanda di stack richiesta da
+un'esecuzione in relazione con la dimensione dell'area di memoria assegnata al
+processo, verificando che non sia possibile la collisione tra stack e heap.
+
+\paragraph{Analisi temporale}
+\label{par:analisi_temporale}
+
+Studiare le proprietà temporali richieste ed esibite dalle dipendenze delle
+uscite dagli ingressi del programma. Limiti espressivi dei linguaggi limitano
+questa analisi (iterazioni while prive di limite statico, ricorso a strutture
+dinamiche).
+
+\paragraph{Analisi d'interferenza}
+\label{par:analisi_d_interferenza}
+
+L'analisi mostra l'assenza di effetti di interferenza tra parti separate del
+sistema (``partizioni''.) Veicoli di interferenza tipici sono aree di memoria
+dinamica (es. \frgnword{memory leak}) e dispositivi di I/O programmabili con
+effetto sull'intero sistema (es. \frgnword{watchdog}.)
+
+\paragraph{Analisi di codice oggetto}
+\label{par:analisi_di_codice_oggetto}
+
+Assicura che il codice oggetto da eseguire sia una traduzione corretta del
+codice sorgente corrispondente e che nessun errore od omissione siano stati
+introdotti dal compilatore.
+
+\subsubsection{Programmi verificabili}
+\label{ssub:programmi_verificabili}
+
+Serve coerenza tra standard di codifica e costrutti del linguaggio scelti e i
+metodi di verifica adottati. \`E inoltre importante sviluppare tenendo a mente
+le esigenze di verifica. La verifica retrospettiva (a valle dello sviluppo) è
+spesso inadeguata, e il costo di rilevazione e correzione di un errore è tanto
+maggiore quanto più avanzato è lo stadio di sviluppo.
+
+Eseguire cicli di revisione-verifica dopo ogni rilevazione di errore è
+inefficace e oneroso. Meglio effettuare analisi statica durante la codifica
+(\frgnword{correctness by construction}.)
+
+\`E bene avere norme di progetto che prediligano o proibiscano l'uso di
+particolari costrutti del linguaggio di programmazione, per
+
+\begin{itemize}
+  \item Assicurare comportamento predicibile;
+  \item Consentire analisi del sistema;
+  \item Facilitare le prove.
+\end{itemize}
+
+\paragraph{Comportamento predicibile}
+\label{ssub:comportamento_predicibile}
+
+Il codice sorgente non deve presentare ambiguità. In particolare, occore
+prestare attenzione a
+
+\begin{itemize}
+  \item \frgnword{Side effects} di funzioni;
+  \item Ordine di elaborazione e inizializzazione (es. ordine di attivazione di
+    thread);
+  \item Modalità di passaggio di parametri (per valore, per riferimento).
+\end{itemize}
+
+\paragraph{Analizzabilità del sistema}
+\label{ssub:analizzabilit_del_sistema}
+
+L'analisi statica costruisce modelli astratti del software in esame come grafo
+diretto e ne studia i possibili cammini. La presenza di flussi di eccezione e di
+risoluzione dinamica di chiamata (dispatching) complica notevolmente la
+struttura del grafo.
+
+Ciascun flusso di controllo (thread) viene analizzato separatamente.
+
+\paragraph{Facilità di prova}
+\label{ssub:facilit_di_prova}
+
+La strategia di prova può essere
+
+\begin{itemize}
+  \item Investigativa, informale e senza obiettivi prefissati di copertura;
+  \item Formale, regolata da norme e grado di copertura fissato.
+\end{itemize}
+
+Alcuni costrutti complicano le prove.
+
+\begin{itemize}
+  \item Il \frgnword{dispatching} complica le prove di copertura;
+  \item Il \frgnword{casting} complica l'analisi dell'identità dei dati;
+  \item Le eccezioni predefinite complicano le prove di copertura.
+\end{itemize}
+
+\subsubsection{Criteri di programmazione}
+\label{ssub:criteri_di_programmazione}
+
+\begin{itemize}
+  \item La programmazione deve riflettere l'architettura del codice, esprimendo
+  componenti, moduli, unità, e facilitarne il riuso;
+  \item Separare le interfacce dall'implementazione;
+  \item Massimizzare l'incapsulazione e l'\frgnword{information hiding};
+  \item Usare tipi specializzati per specificare dati;
+\end{itemize}
+
+\subsubsection{Considerazioni pragmatiche}
+\label{ssub:considerazioni_pragmatiche}
+
+L'efficacia dei metodi di analisi è funzione della qualità di strutturazione del
+codice.
+
+La verifica di un programma relaziona frammenti di codice con frammenti di
+specifica. La verificabilità è funzione inversa della dimensione del contesto
+(conviene confinare gli ambiti e la visibilità). Una buona architettura facilita
+la verifica (incapsulazione dello stato e controllo dell'accesso).
+
+% TODO migliorare
