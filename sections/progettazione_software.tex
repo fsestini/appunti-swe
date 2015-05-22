@@ -15,11 +15,7 @@ di produrre.
 Mentre l'analisi segue un processo \strong{investigativo}, la progettazione
 segue un approccio \strong{sintetico} nel quale da vincoli, obbiettivi e
 requisiti si ricava una soluzione soddisfacente per tutti gli
-\foreignword{stakeholder}.
-
-%TODO: da verificare
-%La progettazione architetturale è il primo \foreignord{stage} nel processo di
-%progettazione software.
+\frgnword{stakeholder}.
 
 \subsection{Architettura software}
 
@@ -39,7 +35,7 @@ definita come
 
 % TODO espandere
 L'architettura software è importante perchè influisce sulle caratteristiche non
-funzionali del sistema (mantenibilità, \foreignword{performance}, ecc.)
+funzionali del sistema (mantenibilità, \frgnword{performance}, ecc.)
 
 Una buona architettura facilita il successo del prodotto software:
 
@@ -55,10 +51,11 @@ Una buona architettura facilita il successo del prodotto software:
   \item L'architettura impone vincoli sull'implementazione;
   \item L'architettura detta la struttura organizzativa: poichè l'architettura
     decompone il sistema al livello di astrazione più alto, tipicamente
-    costituisce la base per il \foreignword{work breakdown structure};
+    costituisce la base per il \frgnword{work breakdown structure};
   \item Lo studio dell'architettura fornisce una descrizione della qualità del
     sistema;
   \item Le architetture sono modelli trasferibili e riusabili;
+\end{itemize}
 
 \subsubsection{Qualità architetturali}
 
@@ -66,7 +63,7 @@ Le seguenti qualità sono da ricercare in un'architettura software:
 
 \begin{itemize}
   \item Sufficienza: capacità di soddisfare tutti i requisiti
-  \item Comprensibilità: comprensibile agli \foreignword{stakeholder}
+  \item Comprensibilità: comprensibile agli \frgnword{stakeholder}
   \item Modularità: suddivisione in parti chiare e distinte
   \item Robustezza: capacità di sopportare ingressi diversi (corretti, errati,
         tanti, pochi), dall'utente e dall'ambiente
@@ -78,13 +75,13 @@ Le seguenti qualità sono da ricercare in un'architettura software:
   \item Affidabilità: funziona bene quando utilizzata
   \item Disponibilità: necessita di tempo ridotto o nullo per manutenzione fuori
         linea
-  \item Sicurezza rispetto alle intrusioni (\foreignword{security})
-  \item Sicurezza rispetto a malfunzionamenti (\foreignword{safety})
+  \item Sicurezza rispetto alle intrusioni (\frgnword{security})
+  \item Sicurezza rispetto a malfunzionamenti (\frgnword{safety})
   \item Semplicità: ogni parte contiene il necessario e nulla di superfluo
     \begin{itemize}
       \item Principio del `rasoio di Occam'
     \end{itemize}
-  \item Incapsulazione (\foreignword{information hiding})
+  \item Incapsulazione (\frgnword{information hiding})
     \begin{itemize}
       \item diminuisce l'accoppiamento
       \item cresce la manutenibilità
@@ -105,9 +102,9 @@ L'accoppiamento è una proprietà esterna dei componenti che indica quanto essi 
 usano tra loro. Vi sono due metriche utili alla misurazione dell'accoppiamento:
 
 \begin{itemize}
-  \item \foreignword{Structural \strong{fan-in}}: quanto il componente è
+  \item \frgnword{Structural \strong{fan-in}}: quanto il componente è
         utilizzato. È indice di utilità e va \strong{massimizzato};
-  \item \foreignword{Structural \strong{fan-out}}: quando il componente
+  \item \frgnword{Structural \strong{fan-out}}: quando il componente
         dipende da altre componenti. È indice di dipendenza e va
         \strong{minimizzato}.
 \end{itemize}
@@ -121,8 +118,8 @@ La decomposizione dell'architettura può seguire due approcci:
 
 \begin{itemize}
   \item Top-down: decomposizione di problemi in sotto-problemi
-  \item Bottom-up: composizione di soluzioni da basso, stile \foreignword{object
-        oriented}
+  \item Bottom-up: composizione di soluzioni da basso, stile
+    \frgnword{object oriented}
 \end{itemize}
 
 Solitamente si segue un approccio intermedio.
@@ -144,7 +141,7 @@ termine.
 
 \subsection{Framework}
 
-Un \foreignword{framework} è un insieme integrato di componenti software
+Un \frgnword{framework} è un insieme integrato di componenti software
 prefabbricate.
 
 \begin{itemize}
@@ -177,6 +174,7 @@ progettazione ricorrenti. Un pattern architetturale è determinato da:
   \item Un insieme di vincoli semantici;
   \item Un insieme di meccanismi di interazione, che determina come gli elementi
     interagiscono fra loro attraverso la topologia consentita.
+\end{itemize}
 
 Un pattern architetturale non è un'architettura, ma fornisce comunque un'utile
 visione d'insieme del sistema. Impone vincoli utili sull'architettura e, di
