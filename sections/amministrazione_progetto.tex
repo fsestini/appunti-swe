@@ -1,41 +1,45 @@
 \section{Amministrazione di progetto}
 
-L'amministrazione di progetto e' associata al ruolo dell'amministratore.
-L'amministratore di progetto ha il compito di gestire e mantenere organizzato e
-ben funzionante l'ambiente di lavoro, che comprende:
+L'amministrazione di progetto è l'attività, svolta dall'amministratore, atta ad
+equipaggiare, organizzare e gestire l'ambiente di lavoro e di produzione,
+secondo regole, procedure, strumenti e servizi a supporto.
+
+L'amministratore \strong{non effettua scelte} di gestione, ma mette in pratica
+scelte tecnologiche concordate con i responsabili di azienda e di progetto. Le
+sue attività comprendono:
 
 \begin{itemize}
-  \item Regole e procedure, preparate dall'amministratore e approvate dal
-    responsabile di progetto;
-  \item Strumenti e servizi di supporto, come l'infrastruttura, i prodotti, i
-    documenti, ecc. \todo{boh, da sistemare}
+  \item Redazione e manutenzione di regole e procedure, preparate
+  	dall'amministratore e approvate dal responsabile di progetto;
+  \item Reperimento, organizzazione, gestione e manutenzione delle risorse
+  	informatiche per l'erogazione dei servizi di supporto (che includono
+  	ambiente, infrastruttura, strumenti, prodotti, documenti.)
 \end{itemize}
 
-L'amministratore non effettua scelte di gestione, ma mette in pratica scelte
-tecnologiche concordate con i responsabili di azienda e di progetto;
+\begin{description}
+  \item[Infrastruttura] insieme di strumenti che determinano il
+    \frgnword{modus operandi};
+  \item[Servizio] mezzo o strumento che permette all'utilizzatore di raggiungere
+    un obiettivo senza preoccuparsi dei costi e dei rischi associati: un
+    servizio efficace aumenta l'efficienza complessiva.
+\end{description}
 
-Con \strong{infrastruttura} si intende un insieme di strumenti che insieme
-determinano il \frgnword{modus operandi}; con \strong{servizio} si intende un
-mezzo o strumento che permette all'utilizzatore di raggiungere un obbiettivo
-senza preoccuparsi dei costi e dei rischi associati: un servizio efficace
-aumenta l'efficienza complessiva. L'amministratore ha il compito decisivo di
-gestire i servizi e mantenere l'infrastruttura attiva ed efficiente; tale
-attivita' e' nascosta, ma continua.
+L'amministratore ha il compito decisivo di gestire i servizi e mantenere
+l'infrastruttura attiva ed efficiente; tale attivita' e' nascosta, ma continua.
 
 \subsection{Documentazione}
 
 La documentazione associata a un prodotto software ha diverse funzioni:
 
 \begin{itemize}
-	\item Agire come un canale di comunicazione tra i membri del team di sviluppo;
-	\item Costituire un \frgnword{repository} di informazioni per i manutentori;
-  \item Fornire informazioni utili per la pianificazione, il calcolo delle
-    risorse necessarie e la calendarizzazione delle attivita';
-	\item Guidare gli utenti all'utilizzo del sistema;
+	\item Agisce come un canale di \strong{comunicazione} tra i membri del team di
+    sviluppo;
+	\item Costituisce un \strong{\frgnword{repository}} di informazioni per i
+    mantenitori;
+  \item Fornisce informazioni utili alla \strong{pianificazione}, il calcolo
+    delle risorse necessarie e la calendarizzazione delle attività;
+	\item \strong{Guida} gli utenti all'utilizzo del sistema;
 \end{itemize}
-
-I \frgnword{software engineer} sono tipicamente incaricati della produzione
-della maggior parte della documentazione;
 
 \begin{description}
   \item[Documentazione di processo] Relativa ai processi di sviluppo e
@@ -45,7 +49,10 @@ della maggior parte della documentazione;
     documentazione di sistema, usata dagli ingegneri, e documentazione utente;
 \end{description}
 
-un documento e' utile solo se:
+\paragraph{Disponibilità e diffusione}
+\label{par:utilita}
+
+Un documento e' utile solo se possiede le seguenti caratteristiche:
 
 \begin{enumerate}
 	\item e' sempre disponibile e facilmente accessibile;
@@ -55,37 +62,64 @@ un documento e' utile solo se:
 	\item aggiornato, datato e versionato;
 \end{enumerate}
 
-\todo{Inserire roba su information hiding ecc.}
+La \strong{diffusione} della documentazione deve essere strettamente
+\strong{controllata}, identificando chiaramente i destinatari. Ogni documento ha
+una \strong{lista di distribuzione}; l'amministratore ha il compito di gestire
+questa lista e di assicurarne il rispetto.
 
 \subsection{Ambiente di lavoro}
 
-\todo{Scrivere da zero}
+L'ambiente di lavoro rappresenta le persone, i ruoli, le procedure e
+l'infrastruttura necessari ai processi di produzione per essere messi in opera.
+La sua qualità determina la produttività, e influisce sulla qualità del processo
+e del prodotto.
+
+L'ambiente di lavoro deve essere
+
+\begin{itemize}
+  \item \strong{Completo}: offrire tutto il necessario per svolgere le attività
+    previste;
+  \item \strong{Ordinato}: facile trovare ciò che si cerca;
+  \item \strong{Aggiornato}: il materiale obsoleto non deve causare intralcio.
+\end{itemize}
 
 \subsubsection{Infrastruttura}
 
 L'infrastruttura e' una serie di elementi strutturali interconnessi, servizi e
 strumenti che insieme forniscono un \frgnword{framework} a supporto delle
-operazioni e dei processi. Si compone di risorse hardware (server, workstation,
+operazioni e dei processi. Comprende risorse hardware (server, workstation,
 ecc.) e software (IDE, controllo di versione, ecc.). I servizi offerti
 dall'infrastruttura sono sotto la responsabilita' dell'amministratore.
 
 \subsection{Gestione di configurazione}
 
 Un prodotto software e' composto da diverse parti separate, unite secondo delle
-regole che costituiscono la \strong{configurazione}. Tutto cio' che e' posto
-sotto controllo di configurazione e' definito \strong{\frgnword{configuration
-item}}. Ogni \frgnword{configuration item} ha un nome identificativo unico, e si
-trova spesso in piu' versioni.
+regole rigorose che costituiscono la \strong{configurazione}. L'attività a
+gestione delle regole di configurazione è chiamata
+\strong{gestione di configurazione}, e deve \strong{automatizzata} con strumenti
+adatti.
 
-\todo{la gestione di configurazione deve essere automatizzabile}
+\paragraph{\frgnword{Configuration item}}
+\label{par:configuration_item}
 
-Gli obbiettivi primari del controllo di configurazione sono l'identificazione e
-il controllo dei \frgnword{configuration item} e delle \frgnword{baseline}, e la
-gestione del processo di \frgnword{build}. Una \frgnword{baseline} e' una
+Tutto ciò che è posto sotto controllo di configurazione è definito
+\strong{\frgnword{configuration item}}. Ogni \frgnword{configuration item} ha
+un'identità unica (nome, data, autore, registro delle modifiche, stato
+corrente), e si trova spesso in piu'versioni.
+
+La gestione di configurazione identifica e controlla i configuration item,
+definendo \strong{quali} compongono il prodotto, e \strong{come} questi sono
+aggregati nel processo di \strong{build}.
+
+\paragraph{Baseline}
+\label{par:baseline}
+
+La gestione di configurazione identifica e controlla le \frgnword{baseline},
 collezione di \frgnword{configuration item} formalmente approvati, che
 costituiscono un sistema. Costituisce una descrizione degli attributi di un
-prodotto ad un certo stato di avanzamento del prodotto, su cui ci si basa nelle
-successive definizioni di progresso.
+prodotto ad un certo stato di avanzamento, su cui è possibile fare una
+valutazione di \strong{progresso}. È tipicamente associata ad una
+\strong{milestone}.
 
 Le attivita' che compongono il processo di gestione di configurazione sono le
 seguenti:
@@ -142,3 +176,21 @@ sequenza di versioni del sorgente di un componente, dove ogni versione deriva da
 quella precedente. Il processo si serve di un \frgnword{repository}, una sorta
 di \frgnword{database}/\frgnword{filesystem} nel quale vengono memorizzati i
 \frgnword{configuration item} in tutte le loro versioni.
+
+\subsection{Norme di progetto}
+\label{sub:norme_di_progetto}
+
+Le norme di progetto costituiscono linee guida per le attività di progetto,
+riguardo
+
+\begin{itemize}
+  \item Organizzazione e convenzioni sugli strumenti di sviluppo;
+  \item Organizzazione della comunicazione e cooperazione;
+  \item Attività di codifica;
+  \item Gestione dei cambiamenti.
+\end{itemize}
+
+Possono essere \strong{regole}, verso il quale è richiesto e accertato il
+rispetto, o \strong{raccomandazioni}, prassi desiderabile senza verifica di
+rispetto. Il contesto definisce la portata della norma: troppe regole sono di
+difficile attuazione e verifica.
