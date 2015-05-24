@@ -94,86 +94,6 @@ punto di sviluppo strategico, chiamato \frgnword{milestone}. Si raggiunge una
 La definizione della \frgnword{requirements baseline} determina la fine
 dell'attività di analisi dei requisiti e l'inizio della progettazione.
 
-\subsection{Documentazione}
-\label{sub:documentazione}
-
-L'attività di analisi si concretizza nei documenti di \strong{Specifica Tecnica}
-e di \strong{Analisi dei requisiti}.
-
-Lo strumento della documentazione è necessario a rendere i requisiti oggettivi,
-discutibili (oggetto plausibile di discussione) e non ambigui, utilizzando
-diagrammi e formalismi grafici, ed evitando il linguaggio naturale. La poca
-narrazione associata ai diagrammi deve essere di supporto, tecnica e sintetica,
-e appoggiarsi a un glossario per eliminare l'ambiguità dei termini.
-
-I documenti riguardanti i requisiti sono l'Analisi dei requisiti e lo Studio
-di fattibilità.
-
-\subsection{Gestione e manutenzione dei requisiti}
-\label{ssub:gestione_e_manutenzione_dei_prodotti}
-
-I requisiti cambiano nel tempo per aggiunta, rimozione e estensione. Serve un
-insieme di regole, procedure e strumenti per gestire questi cambiamenti,
-valutandone la fattibilità tecnica e l'impatto sul progetto.
-
-I processi di Gestione della configurazione e Gestione dei cambiamenti hanno un
-ruolo chiave nella gestione dei requisiti.
-
-\paragraph{Tracciamento}
-\label{par:tracciamento}
-
-I requisiti devono essere tracciati, verso le fonti e verso le componenti
-architetturali, con il supporto di strumenti automatizzati. Questo permette di
-sapere, per ogni passo di avanzamento nel progetto, quale requisito si sta
-lavorando persoddisfare. Rappresentando il piano di attività come un grafo
-direzionato e aciclico, il tracciamento comunica il motivo di ciascun arco.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.5]{imgs/traceability}
-  \caption{Tracciabilità a livello di progetto}
-\end{figure}
-
-% TODO  mettere in Progettazione
-% \begin{figure}[h!]
-%  \centering
-%  \includegraphics[scale=0.5]{imgs/analysis_vs_design}
-%  \caption{Analisi vs progettazione}
-%\end{figure}
-
-\subsection{Studio di fattibilità}
-\label{sub:studio_di_fattibilita}
-
-Lo studio di fattibilità precede l'analisi dei requisiti, e si occupa di
-valutare la fattibilità del progetto in termini di \strong{rischi},
-\strong{costi} e \strong{benefici}, e decidere se sia conveniente procedere con
-il lavoro.
-
-\begin{itemize}
-  \item \strong{Fattibilità tecnico-organizzative}: valutare se si hanno le
-    competenze e gli strumenti necessari, le soluzioni algoritmiche e
-    architetturali e le piattaforme idonee per l'esecuzione;
-  \item Rapporto \strong{costi/benefici}: valutare il rapporto tra il costo di
-    produzione e la redditività dell'investimento, nei confronti del mercato
-    attuale e futuro;
-  \item Individuazione dei \strong{rischi}: capire le complessità e le
-    incertezze;
-  \item Valutazione delle \strong{scadenze temporali};
-  \item Valutazione delle \strong{alternative}
-
-    \begin{itemize}
-      \item Scelte architetturali: sistema centralizzato o distribuito, modello
-            client-server, ecc.
-      \item Strategie realizzative: riuso o sviluppo ex-novo
-      \item Strategie operative
-    \end{itemize}
-
-\end{itemize}
-
-Lo studio di fattibilità è un'attività preliminare che non può impiegare troppo
-tempo; è quindi un \strong{processo rapido}, i cui risultati però non vengono
-scartati, ma costituiscono una base di partenza per l'analisi dei requisiti.
-
 \subsection{Classificazione dei requisiti}
 \label{sub:classificazione_dei_requisiti}
 
@@ -202,6 +122,22 @@ I requisiti di sistema si dividono in \strong{funzionali} e
     \item \strong{Requisiti non-funzionali}: descrivono le caratteristiche del
       sistema nel suo insieme, come un insieme di vincoli sul suo comportamento.
   \end{itemize}
+
+\paragraph{Attributi di prodotto e di processo} % (fold)
+\label{par:attributi_di_prodotto_e_di_processo}
+
+Occorre distinguere tra attributi di prodotto e di processo:
+
+\begin{itemize}
+  \item Attributi di prodotto: definiscono le caratteristiche richieste al
+  sistema. Esprimono requisiti funzionali in termini di funzionalità richieste
+  al sistema, e non-funzionali in termini di vincoli sulla soluzione;
+  \item Attributi di processo: rappresentano vincoli sulla conduzione e sulle
+  uscite dei processi di produzione. Esprimono requisiti non-funzionali.
+\end{itemize}
+
+Alcuni requisiti derivano, esplicitamente o implicitamente, da attributi di
+prodotto o di processo, assegnati dal cliente o dal fornitore.
 
 \paragraph{Requisiti non funzionali}
 \label{par:requisiti_non_funzionali}
@@ -251,45 +187,59 @@ conseguenza:
   \item \strong{Opzionali}: relativamente utili oppure contrattabili in seguito;
 \end{itemize}
 
-\paragraph{Requisiti verificabili}
-\label{par:requisiti_verificabili}
+\subsection{Documentazione}
+\label{sub:documentazione}
 
-Un requisito è verificabile se e solo se esiste una procedura dal costo finito
-(possibilmente automatizzata) che permetta di verificare che il prodotto
-soddisfi il requisito (requisiti non verificabili spesso includono diciture come
-``funziona bene'' oppure ``solitamente dovrebbe succedere'');
+L'attività di analisi si concretizza nei documenti di \strong{Specifica Tecnica}
+e di \strong{Analisi dei requisiti}.
 
-Chi impone un requisito deve avere idea di come accertarne il soddisfacimento;
-chi è chiamato a soddisfare un requisito deve saperne valutare costo e
-complessità di verifica.
+Lo strumento della documentazione è necessario a rendere i requisiti oggettivi,
+discutibili (oggetto plausibile di discussione) e non ambigui, utilizzando
+diagrammi e formalismi grafici, ed evitando il linguaggio naturale. La poca
+narrazione associata ai diagrammi deve essere di supporto, tecnica e sintetica,
+e appoggiarsi a un glossario per eliminare l'ambiguità dei termini.
 
-\begin{figure}[h!]
-  \centering
-  \begin{tabular}{|l|l|}
-    \hline
-    \strong{Tipologia di requisito} & \strong{Modalità di verifica} \\
-    \hline
-    Requisiti funzionali & test, dimostrazione formale, revisione \\
-    \hline
-    Requisiti prestazionali & misurazione \\
-    \hline
-    Requisiti qualitativi & verifica \emph{ad hoc} \\
-    \hline
-    Requisiti dichiarativi & revisione \\
-    \hline
-  \end{tabular}
-\end{figure}
+I documenti riguardanti i requisiti sono l'Analisi dei requisiti e lo Studio
+di fattibilità.
+
+\subsection{Studio di fattibilità}
+\label{sub:studio_di_fattibilita}
+
+Lo studio di fattibilità precede l'analisi dei requisiti, e si occupa di
+valutare la fattibilità del progetto in termini di \strong{rischi},
+\strong{costi} e \strong{benefici}, e decidere se sia conveniente procedere con
+il lavoro.
+
+\begin{itemize}
+  \item \strong{Fattibilità tecnico-organizzative}: valutare se si hanno le
+    competenze e gli strumenti necessari, le soluzioni algoritmiche e
+    architetturali e le piattaforme idonee per l'esecuzione;
+  \item Rapporto \strong{costi/benefici}: valutare il rapporto tra il costo di
+    produzione e la redditività dell'investimento, nei confronti del mercato
+    attuale e futuro;
+  \item Individuazione dei \strong{rischi}: capire le complessità e le
+    incertezze;
+  \item Valutazione delle \strong{scadenze temporali};
+  \item Valutazione delle \strong{alternative}
+
+    \begin{itemize}
+      \item Scelte architetturali: sistema centralizzato o distribuito, modello
+            client-server, ecc.
+      \item Strategie realizzative: riuso o sviluppo ex-novo
+      \item Strategie operative
+    \end{itemize}
+
+\end{itemize}
+
+Lo studio di fattibilità è un'attività preliminare che non può impiegare troppo
+tempo; è quindi un \strong{processo rapido}, i cui risultati però non vengono
+scartati, ma costituiscono una base di partenza per l'analisi dei requisiti.
 
 \subsection{\frgnword{Software Requirements Specification}}
 
 Lo standard IEEE 830-1998 definisce la struttura e le caratteristiche del
-documento \frgnword{Software Requirements Specification} (SRS).
-
-Un corretto SRS limita il \frgnword{range} di soluzioni progettuali valide,
-ma non ne specifica alcuna.
-
-Il documento di \frgnword{Software Requirements Specification} e i requisiti in
-esso contenuti possiedono le seguenti caratteristiche:
+documento \frgnword{Software Requirements Specification} (SRS). Il documento, e
+i requisiti in esso contenuti, possiedono le seguenti caratteristiche:
 
 \begin{itemize}
   \item \strong{Correttezza}: ogni requisito indicato verrà soddisfatto dal
@@ -329,6 +279,39 @@ esso contenuti possiedono le seguenti caratteristiche:
     da stadi successivi dello sviluppo (\frgnword{forward traceability}).
 \end{itemize}
 
+Un corretto SRS limita il \frgnword{range} di soluzioni progettuali valide, ma
+non ne specifica alcuna.
+
+\paragraph{Requisiti verificabili}
+\label{par:requisiti_verificabili}
+
+Un requisito è verificabile se e solo se esiste una procedura dal costo finito
+(possibilmente automatizzata) che permetta di verificare che il prodotto
+soddisfi il requisito (requisiti non verificabili spesso includono diciture come
+``funziona bene'' oppure ``solitamente dovrebbe succedere'');
+
+Chi impone un requisito deve avere idea di come accertarne il soddisfacimento;
+chi è chiamato a soddisfare un requisito deve saperne valutare costo e
+complessità di verifica.
+
+\begin{figure}[h!]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \strong{Tipologia di requisito} & \strong{Modalità di verifica} \\
+    \hline
+    Requisiti funzionali & test, dimostrazione formale, revisione \\
+    \hline
+    Requisiti prestazionali & misurazione \\
+    \hline
+    Requisiti qualitativi & verifica \emph{ad hoc} \\
+    \hline
+    Requisiti dichiarativi & revisione \\
+    \hline
+  \end{tabular}
+\end{figure}
+
+
 \subsubsection{Struttura del documento}
 \label{ssub:struttura_del_documento}
 
@@ -351,6 +334,38 @@ Lo standard IEEE 830-1998 suggerisce la seguente struttura per un documento SRS.
     \end{itemize}
   \item Eventuali appendici
 \end{itemize}
+
+\subsection{Gestione e manutenzione dei requisiti}
+\label{ssub:gestione_e_manutenzione_dei_prodotti}
+
+I requisiti cambiano nel tempo per aggiunta, rimozione e estensione. Serve un
+insieme di regole, procedure e strumenti per gestire questi cambiamenti,
+valutandone la fattibilità tecnica e l'impatto sul progetto.
+
+I processi di Gestione della configurazione e Gestione dei cambiamenti hanno un
+ruolo chiave nella gestione dei requisiti.
+
+\paragraph{Tracciamento}
+\label{par:tracciamento}
+
+I requisiti devono essere tracciati, verso le fonti e verso le componenti
+architetturali, con il supporto di strumenti automatizzati. Questo permette di
+sapere, per ogni passo di avanzamento nel progetto, quale requisito si sta
+lavorando persoddisfare. Rappresentando il piano di attività come un grafo
+direzionato e aciclico, il tracciamento comunica il motivo di ciascun arco.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{imgs/traceability}
+  \caption{Tracciabilità a livello di progetto}
+\end{figure}
+
+% TODO  mettere in Progettazione
+% \begin{figure}[h!]
+%  \centering
+%  \includegraphics[scale=0.5]{imgs/analysis_vs_design}
+%  \caption{Analisi vs progettazione}
+%\end{figure}
 
 \subsection{Stato di progresso per SEMAT}
 \label{sub:stato_di_progresso_per_semat}
